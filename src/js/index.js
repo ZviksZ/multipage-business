@@ -1,4 +1,99 @@
 import * as $  from 'jquery';
+
+$(function () {
+
+   window.onmousewheel = handleScroll;
+   window.addEventListener('DOMMouseScroll', handleScroll);
+
+   window.scrollY=0;
+
+   let maxContainerTranslate = 0;
+   const container = document.querySelector('.fullscreen-page');
+   const pages = Array.from(document.querySelectorAll('.fullscreen-page .section'));
+
+   pages.forEach((item, index) => {
+      if (index !== 0) {
+         maxContainerTranslate += item.offsetHeight
+      }
+   })
+
+   let curr = 0;
+   pages[curr].classList.add('active');
+   let scrolling = false;
+
+   let lastScroll = Date.now();
+   function handleScroll(event) {
+      const delta = event.wheelDelta || event.detail;
+      const now = Date.now();
+      const duration = now - lastScroll;
+      lastScroll = now;
+      if (duration < 50 && Math.abs(delta) < 50) {
+         return;
+      }
+      if (scrolling) {
+         return;
+      }
+      const down = delta < 0;
+      const next = Math.max(0, Math.min(curr + (down ? 1 : -1), pages.length - 1));
+      scrollTo(next, down);
+      curr = next;
+      pages.forEach((page, index) => {
+         if (index === curr) {
+            page.classList.add('active');
+         } else {
+            page.classList.remove('active');
+         }
+      });
+   }
+
+   let ticker = 0;
+   let index;
+   function scrollTo(pageIndex, isDown) {
+      if (index === pageIndex) {
+         return
+      }
+
+      index = pageIndex
+      //const target = - pageIndex * window.innerHeight;
+      let containerTranslate = Number.parseInt(window.getComputedStyle(container).transform.split(', ')[5]) || 0;
+      let target
+
+      if (pages[pageIndex].offsetHeight <= window.innerHeight && isDown) {
+         target = - pages[pageIndex].offsetHeight + containerTranslate;
+      } else if (pages[pageIndex].offsetHeight <= window.innerHeight && !isDown) {
+         target = pages[pageIndex + 1].offsetHeight + containerTranslate;
+      } else {
+         target = - pageIndex * window.innerHeight;
+      }
+
+      const _ticker = ticker = Date.now();
+      scrolling = true;
+
+      const timer = setInterval(() => {
+
+
+         if (ticker !== _ticker) {
+            clearInterval(timer);
+            return;
+         }
+         //const source = Number.parseInt(container.style.top) || 0;
+         const source = Number.parseInt(window.getComputedStyle(container).transform.split(', ')[5]) || 0;
+
+         const nextStep = source + (target > source ? Math.ceil : Math.floor)((target - source) * 0.1);
+
+         container.style.transform = 'translateY(' + nextStep +'px)';
+
+         if (nextStep === target) {
+            clearInterval(timer);
+            scrolling = false;
+         }
+      }, 10);
+   }
+
+
+})
+/*
+
 import { Header } from './components/header';
 import { MobileMenu } from './components/mobile-menu';
 import { MainSlider } from './components/main-slider';
@@ -193,3 +288,4 @@ function initScripts() {
 
    //
 }
+*/

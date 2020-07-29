@@ -145,7 +145,7 @@
 .nobr {
     white-space: nowrap;
 }
-
+/*
 .color-main {
     color: $colorMain !important;
 }
@@ -166,12 +166,12 @@
 }
 .color-white {
     color: $colorWhite !important;
-}
+}*/
 
 hr, .hr {
     margin: 0;
     height: 1px;
-    background: $colorGrayLight;
+    //background: $colorGrayLight;
     border: none;
 }
 

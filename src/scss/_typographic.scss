@@ -1,5 +1,6 @@
 // Типографика
-.section {
+
+/*.section {
     display: block;
     position: relative;
     z-index: 10;
@@ -54,7 +55,7 @@
         }
     }
 
-    /* заголовки */
+    !* заголовки *!
     %title-shared {
         margin: 24px 0;
         line-height: 1.2em;
@@ -114,9 +115,9 @@
             font-size: 20px;
         }
     }
-    /* END заголовки */
+    !* END заголовки *!
 
-    /* текста */
+    !* текста *!
     %text-shared {
         margin: 20px 0;
         font-size: 16px;
@@ -272,7 +273,7 @@
         font-weight: 500;
         line-height: 26px;
     }
-    /* END текста */
+    !* END текста *!
 
 
 
@@ -305,4 +306,4 @@
             }
         }
     }
-}
+}*/

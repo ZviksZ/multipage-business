@@ -40,9 +40,6 @@
 @import './node_modules/choices.js/src/styles/choices.scss';
 @import 'selects';
 
-// анимации
-@import 'animate';
-
 //header
 @import 'header';
 
@@ -65,6 +62,9 @@
 
 
 @import 'fancybox';
+
+//Стили для постраничной прокрутки
+@import 'fullscreen-page';
 
 
 //@import './node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css';

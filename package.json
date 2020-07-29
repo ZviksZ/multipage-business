@@ -1,5 +1,5 @@
 {
-  "name": "AGC Info",
+  "name": "agc-info",
   "version": "1.0.0",
   "description": "AGC",
   "main": "src/index.js",

@@ -1,153 +1,16 @@
-/*
-Все в !important чтобы никакие ссылки в контенте не переопределяли стили
-*/
 .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px auto;
-    padding: 0 15px;
-    width: 100%;
-    height: 52px;
-    background: $colorMain;
-    border: none;
-    font-family: $fontBase;
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 700;
-    color: $colorWhite !important;
-    text-align: center;
-    text-decoration: none !important;
-    text-outline: none;
-    border-radius: 20px;
-    box-shadow: 0 4px 6px rgba(237, 28, 36, 0.2);
-    user-select: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    -webkit-tap-highlight-color: transparent;
-
-    @include mobile {
-        font-size: 17px;
-    }
-
-    &:active {
-        background: $colorMainActive !important;
-    }
-
-    @include desktop {
-        &:hover {
-            background: $colorMainActive;
-        }
-    }
-
-    &.secondary {
-        color: $colorText !important;
-        background: $colorWhite !important;
-        box-shadow: none !important;
-
-        &:active {
-            background: $colorWhite !important;
-        }
-
-        @include desktop {
-            &:hover {
-                color: $colorMain !important;
-                background: $colorWhite !important;
-            }
-        }
-    }
-
-    &.tertiary {
-        display: inline-flex;
-        width: auto;
-        padding: 0 17px;
-        height: 28px;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 12px;
-
-        cursor: pointer;
-        color: $colorText !important;
-        background: $colorGrayLight !important;
-        box-shadow: none !important;
-    }
-
-    &.small {
-        padding: 0 17px;
-        height: 28px;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 12px;
-
-        .icon {
-            font-size: 8px;
-        }
-    }
-
-    &.width-auto {
-        width: auto;
-    }
-    &.secondary.disabled-text {
-        color: rgba(34, 34, 34, .3) !important;
-    }
-    &.secondary.bordered {
-        border: 1px solid #E6E6E6;
-    }
-
-    &.inline {
-        display: inline-flex;
-        width: auto;
-        margin-right: 22px;
-        margin-bottom: 0;
-
-        @include mobile {
-            margin-right: 10px;
-            margin-top: 10px;
-        }
-    }
-
-    &.button-icon {
-        padding: 0;
-        width: 28px; height: 28px;
-        border-radius: 12px;
-
-        .icon {
-            font-size: 12px;
-            color: $colorWhite;
-        }
-
-        &.small {
-            width: 20px; height: 20px;
-            border-radius: 6px;
-
-            .icon {
-                font-size: 6px;
-            }
-        }
-    }
-
-
-
-    &:disabled,
-    &.disabled {
-        opacity: .2;
-    }
-}
-
-.download-btn {
     display: inline-block;
-    text-decoration: none !important;
-    background: #F3F3F3;
-    border-radius: 12px;
-    color: $colorText !important;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 16px;
-    padding: 6px 17px;
+    width: auto;
+    padding: 10px 23px;
+    background: $colorRed;
+    transition: 0.2s ease;
+    text-decoration: none;
+    font-size: 16px;
+    color: $colorWhite;
+    margin: 50px 0;
     @include desktop {
         &:hover {
-            background: darken(#F3F3F3, 5%);
+            background: $colorRedDarken;
         }
     }
 }
