@@ -8,6 +8,7 @@ export class FooterSearch {
 
       this.activateSearch = this.activateSearch.bind(this);
       this.deactivateSearch = this.deactivateSearch.bind(this);
+      this.openBtnOnInputChange = this.openBtnOnInputChange.bind(this);
 
 
       this.init();
@@ -16,6 +17,7 @@ export class FooterSearch {
    init() {
       this.$iconSearch.addEventListener('click', this.activateSearch);
       this.$iconClean.addEventListener('click', this.deactivateSearch);
+      this.$input.addEventListener('focus', this.openBtnOnInputChange);
 
       //document.addEventListener('mouseup', this.outsideClickClose);
    }
@@ -35,17 +37,13 @@ export class FooterSearch {
       this.$btn.classList.remove('show');
       this.$iconSearch.classList.remove('icon-hide');
       this.$iconClean.classList.add('icon-hide');
+      this.$input.value = '';
    }
 
-  /* closeMenu(e) {
-      e.preventDefault();
-
-      this.$body.classList.remove('header__menu-open');
+   openBtnOnInputChange() {
+      this.$btn.classList.add('show');
+      this.$iconSearch.classList.add('icon-hide');
+      this.$iconClean.classList.remove('icon-hide');
    }
 
-   outsideClickClose(e) {
-      if (e.target !== this.$menu && !this.$menu.contains(e.target)) {
-         this.$body.classList.remove('header__menu-open');
-      }
-   }*/
 }

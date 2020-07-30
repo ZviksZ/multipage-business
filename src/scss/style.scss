@@ -43,9 +43,6 @@
 //header
 @import 'header';
 
-// все меню
-@import 'menu';
-
 // модальные окна
 @import 'modals';
 
@@ -62,6 +59,9 @@
 
 
 @import 'fancybox';
+
+
+@import 'main';
 
 //Стили для постраничной прокрутки
 @import 'fullscreen-page';

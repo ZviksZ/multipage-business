@@ -10,8 +10,9 @@ export class FullscreenScroll {
       this.$header = document.getElementById('header');
       this.headerClassName = 'compact';
 
-      if (!this.container || !this.pages.length) {
-         return
+
+      if (!this.container || !this.pages.length || document.documentElement.clientWidth < 1000) {
+         return false
       }
 
       this.handleScroll = this.handleScroll.bind(this)
@@ -36,16 +37,20 @@ export class FullscreenScroll {
       this.lastScroll = now;
 
       if (duration < 50 && Math.abs(delta) < 50) {
-         return;
+         return false
       }
       if (this.scrolling) {
-         return;
+         return false
       }
 
       const down = delta < 0;
-      const next = Math.max(0, Math.min(this.curr + (down ? 1 : -1), this.pages.length - 0.05));
+      const next = Math.max(0, Math.min(this.curr + (down ? 1 : -1), this.pages.length));
+      if (this.index === next || next === this.pages.length) {
+         return false
+      }
       this.scrollTo(next, down);
       this.curr = next;
+
       this.pages.forEach((page, index) => {
          if (index === this.curr) {
             page.classList.add('active');
@@ -55,13 +60,11 @@ export class FullscreenScroll {
       });
 
       this.changeHeaderOnScroll()
-
-
    }
 
    scrollTo(pageIndex, isDown) {
-      if (this.index === pageIndex) {
-         return
+      if (this.index === pageIndex || pageIndex === this.pages.length) {
+         return false
       }
       this.index = pageIndex;
 
@@ -69,15 +72,13 @@ export class FullscreenScroll {
       let target;
 
       if (containerTranslate === 0 && !isDown) {
-         return
+         return false
       }
 
       if (this.pages[pageIndex].offsetHeight <= window.innerHeight && isDown) {
          target = - this.pages[pageIndex].offsetHeight + containerTranslate;
       } else if (this.pages[pageIndex].offsetHeight <= window.innerHeight && !isDown) {
          target = this.pages[pageIndex + 1].offsetHeight + containerTranslate;
-      } else {
-         target = - pageIndex * window.innerHeight;
       }
 
       const _ticker = this.ticker = Date.now();
@@ -98,7 +99,7 @@ export class FullscreenScroll {
             clearInterval(timer);
             this.scrolling = false;
          }
-      }, 3);
+      }, 6);
    }
 
    changeHeaderOnScroll() {

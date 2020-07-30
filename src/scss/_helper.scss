@@ -176,21 +176,4 @@ hr, .hr {
 }
 
 
-.section-bg {
-    display: inline-block;
-    width: 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    &:before {
-        display: block;
-        float: left;
-        content: '';
-        padding-top: 24%;
-    }
-}
-.center-mob {
-    @include mobile {
-        text-align: center;
-    }
-}
+
