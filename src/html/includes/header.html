@@ -21,20 +21,19 @@
 
 <script src="https://yastatic.net/browser-updater/v1/script.js" charset="utf-8"></script><script>var yaBrowserUpdater = new ya.browserUpdater.init({"lang":"ru","browsers":{"yabrowser":"16.12","chrome":"62","ie":"9","opera":"49","safari":"9.1","fx":"57","iron":"35","flock":"Infinity","palemoon":"25","camino":"Infinity","maxthon":"4.5","seamonkey":"2.3"},"theme":"yellow"});</script>
 
+<!--<div id="header" class="header header-black">-->
 <div id="header" class="header">
     <a href="/" class="header__logo">
         <img src="/img/agc/logo-3.png" alt="AGC">
     </a>
 
     <a href="tel:74954116565" class="header__link">
-        <img src="/img/agc/icon-phone.svg" alt="Phone">
-        <img class="header-black-img" src="/img/agc/icon-phone-black.svg" alt="Phone">
+        <span class="icon icon-phone"></span>
         <span>+7 (495) 411 65 65</span>
     </a>
 
     <a href="mailto:info.ru@eu.agc.com" class="header__link">
-        <img src="/img/agc/icon-mail.svg" alt="Email">
-        <img class="header-black-img" src="/img/agc/icon-mail-black.svg" alt="Email">
+        <span class="icon icon-email"></span>
         <span>info.ru@eu.agc.com</span>
     </a>
 
@@ -44,8 +43,7 @@
 
     <a href="#" class="header__menu-btn">
         <span>Меню</span>
-        <img src="/img/agc/icon-menu.svg" alt="">
-        <img class="header-black-img" src="/img/agc/icon-menu-black.svg" alt="">
+        <span class="icon icon-menu"></span>
     </a>
 </div>
 
@@ -101,28 +99,17 @@
             Бизнес-центр «Гранд Сетунь Плаза», 5 этаж, офис B 504
         </p>
 
-        <a href="tel:" class="phone">Тел : +7 (495) 411 65 65</a>
+        <a href="tel:" class="phone">Тел: +7 (495) 411 65 65</a>
         <a href="tel:" class="phone">Факс: +7 (495) 411 65 64</a>
     </div>
 </div>
 
-<!--
-<div id="mobile_menu" class="mobile-menu hide-desktop">
-    <div class="menu">
-        <a href="#" class="link link-main active">Квартиры <i class="icon icon-right-arrow"></i></a>
-        <a href="#" class="link link-main">Гаражи и паркинги <i class="icon icon-right-arrow"></i></a>
-        <a href="#" class="link link-main">Коммерческая недвижимость <i class="icon icon-right-arrow"></i></a>
-        <a href="#" class="link link-main">Контакты <i class="icon icon-right-arrow"></i></a>
-        <a href="#" class="link">Реализованные объекты <i class="icon icon-right-arrow"></i></a>
-        <a href="#" class="link">Ипотека <i class="icon icon-right-arrow"></i></a>
-        <a href="#" class="link">Новости <i class="icon icon-right-arrow"></i></a>
-        <a href="#" class="link">Акции <i class="icon icon-right-arrow"></i></a>
-        <a href="#" class="link">О компании <i class="icon icon-right-arrow"></i></a>
-    </div>
-</div>
 
-<div class="preloader-page-pxl"></div>-->
+<% if (url === 'index.html') { %>
+    <div class="body fullscreen-page">
+<% } %>
 
-<div class="body">
-    <!--<div class="header-margin hide-mobile"></div>
-    <div class="header-mobile-margin hide-desktop"></div>-->
+<% if (url !== 'index.html') { %>
+    <div class="body ">
+<% } %>
+<!--<div class="body fullscreen-page">  Для постраничного скрола-->

@@ -22,6 +22,26 @@
     .header__logo + .header__link {
         margin-left: auto;
     }
+    .icon {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        margin-right: 26px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        -webkit-background-size: contain;
+        background-size: contain;
+        &.icon-phone {
+            background-image: url("/img/agc/icon-phone.svg");
+        }
+        &.icon-email {
+            background-image: url("/img/agc/icon-mail.svg");
+        }
+        &.icon-menu {
+            background-image: url("/img/agc/icon-menu.svg");
+        }
+    }
+
     .header__link {
         display: flex;
         align-items: center;
@@ -31,13 +51,12 @@
         text-decoration: none;
         color: $colorWhite;
         margin-right: 50px;
-        img {
-            display: block;
-            width: 18px;
-            height: 18px;
-            margin-right: 26px;
+        @include desktop {
+            &:hover {
+                opacity: .8;
+            }
         }
-        span {
+        span:not(.icon) {
             display: inline-block;
         }
     }
@@ -62,6 +81,7 @@
             }
         }
     }
+
     .header__menu-btn {
         display: flex;
         align-items: center;
@@ -70,7 +90,12 @@
         color: $colorWhite;
         font-size: 18px;
         margin: 0 60px 0 100px;
-        span {
+        @include desktop {
+            &:hover {
+                opacity: .8;
+            }
+        }
+        span:not(.icon) {
             display: inline-block;
             margin-right: 22px;
         }
@@ -88,6 +113,28 @@
         .header__logo {
             width: 45px;
         }
+    }
+
+    &.header-black {
+        .icon {
+            &.icon-phone {
+                background-image: url("/img/agc/icon-phone-black.svg");
+            }
+            &.icon-email {
+                background-image: url("/img/agc/icon-mail-black.svg");
+            }
+            &.icon-menu {
+                background-image: url("/img/agc/icon-menu-black.svg");
+            }
+        }
+        .header__link,
+        .header__btn,
+        .header__menu-btn {
+            color: #000000;
+        }
+    }
+    &.header-black.compact {
+        background: #737373;
     }
 }
 

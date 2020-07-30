@@ -18,9 +18,6 @@ export class FullscreenScroll {
       this.scrollTo = this.scrollTo.bind(this)
 
       this.init();
-
-
-
    }
 
    init() {
@@ -46,7 +43,7 @@ export class FullscreenScroll {
       }
 
       const down = delta < 0;
-      const next = Math.max(0, Math.min(this.curr + (down ? 1 : -1), this.pages.length - 1));
+      const next = Math.max(0, Math.min(this.curr + (down ? 1 : -1), this.pages.length - 0.05));
       this.scrollTo(next, down);
       this.curr = next;
       this.pages.forEach((page, index) => {
@@ -93,7 +90,7 @@ export class FullscreenScroll {
          }
 
          const source = this.getContainerTranslateY();
-         const nextStep = source + (target > source ? Math.ceil : Math.floor)((target - source) * 0.07);
+         const nextStep = source + (target > source ? Math.ceil : Math.floor)((target - source) * 0.05);
 
          this.container.style.transform = 'translateY(' + nextStep +'px)';
 
@@ -101,7 +98,7 @@ export class FullscreenScroll {
             clearInterval(timer);
             this.scrolling = false;
          }
-      }, 10);
+      }, 3);
    }
 
    changeHeaderOnScroll() {
