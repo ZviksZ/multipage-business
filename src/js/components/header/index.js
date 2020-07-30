@@ -15,7 +15,7 @@ export class Header {
     }
 
     refreshStateHeader() {
-        if (pageYOffset > 200) {
+        if (pageYOffset > 150) {
             this.$header.classList.add(this.headerClassName);
         } else {
             this.$header.classList.remove(this.headerClassName);
