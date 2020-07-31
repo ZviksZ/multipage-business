@@ -157,9 +157,9 @@
     }
 
     @include mobile {
-        top: 30px;
+        top: 0;
         &.compact {
-            transform: translateY(-30px);
+            transform: translateY(0);
         }
         .header__btn {
             margin-left: auto;

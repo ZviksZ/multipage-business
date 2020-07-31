@@ -482,23 +482,161 @@
 
     @include mobile {
         .section-first-screen {
-
+            padding: 100px 15px;
+            min-height: 100vh;
+            .main-title {
+                font-size: 36px;
+            }
+            .down-btn {
+                display: none;
+            }
+            .caption-with-line h2 {
+                font-weight: 400;
+                font-size: 24px;
+            }
         }
 
         .section-news {
+            padding-top: 80px;
+            .col {
+                height: 50%;
+            }
+            .title {
+                padding-left: 15px;
+                font-size: 30px;
+            }
+            .news-row {
+                .item {
+                    min-height: 300px;
+                    justify-content: flex-start;
+                    padding: 40px 20px !important;
+                    border-top: 0;
+                    .overlay {
+                        transform: translateX(0) !important;
+                        background: rgba(53,88,162,0.4) !important;
+                    }
+                    .news-content {
+                        width: 100%;
+                        padding: 0 !important;
+
+                    }
+                }
+                &.item-right {
+                    .news-content {
+                        padding: 0;
+                    }
+                }
+                .more-btn-block {
+                    bottom: calc(50% - 23px);
+                    .btn {
+                        &:before,
+                        &:after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+
 
         }
 
         .section-blur {
-
+            .blur-item {
+                height: 200px;
+                .blur-item_bg {
+                    filter: blur(0);
+                }
+                .blur-item_btn {
+                    height: 30px;
+                    right: -45px;
+                    span {
+                        width: 120px;
+                        background-color: #e31a52;
+                        font-size: 14px;
+                        height: 30px;
+                        line-height: 30px;
+                    }
+                }
+            }
         }
 
         .section-numbers {
-
+            padding: 80px 15px 110px;
+            .section-number_wrap {
+                padding: 0;
+                .item {
+                    margin-bottom: 30px;
+                }
+            }
+            .section-btn-wrap {
+                bottom: -10px;
+            }
         }
 
         &.section-links {
+            .section-links_wrap {
+                .col.w-25 + .col.w-25 .item {
+                    border-left: 0;
+                    border-top: 1px solid rgba(247, 247, 247, 0.45);
+                }
+                .item {
+                    height: 100px;
+                    padding: 40px;
+                }
+            }
+        }
 
+    }
+
+    @include only-mobile {
+        .section-news {
+            padding-top: 40px;
+            .title {
+                font-size: 28px;
+                margin-bottom: 40px;
+            }
+            .news-row {
+                .item {
+                    min-height: 270px;
+                    .news-content {
+                        .news-tag {
+                            margin-bottom: 15px;
+                        }
+                        .news-title {
+                            font-size: 22px;
+                            &:after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .section-blur {
+            .blur-item {
+                padding-left: 15px;
+            }
+        }
+
+        .section-numbers {
+            padding: 40px 15px 110px;
+            .item {
+                .circle-item {
+                    width: 150px;
+                    height: 150px;
+                    .counter {
+                        font-size: 30px;
+                    }
+                    .counter-text {
+                        font-size: 19px;
+                    }
+                }
+                .text {
+                    width: 100%;
+                    font-size: 20px;
+                }
+            }
         }
     }
 }

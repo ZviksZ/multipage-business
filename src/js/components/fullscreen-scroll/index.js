@@ -1,4 +1,4 @@
-import * as $                    from 'jquery';
+import * as $          from 'jquery';
 var ProgressBar = require('progressbar.js');
 
 export class FullscreenScroll {
@@ -13,10 +13,12 @@ export class FullscreenScroll {
       this.index = 0;
       this.$header = document.getElementById('header');
       this.headerClassName = 'compact';
-      this.$animatedBLocks = []
-
+      this.$animatedBLocks = [];
 
       if (!this.container || !this.pages.length || document.documentElement.clientWidth < 1000) {
+         this.initAnimateBlockMobile()
+
+
          return false
       }
 
@@ -161,6 +163,41 @@ export class FullscreenScroll {
          }
 
          this.$animatedBLocks.push(pageIndex)
+      }
+   }
+
+   initAnimateBlockMobile() {
+      this.container.querySelectorAll('.circle-item').forEach(function (item) {
+         let bar = new ProgressBar.Circle(item, {
+            strokeWidth: 2,
+            easing: 'easeInOut',
+            duration: 1400,
+            color: '#ba1946',
+            trailColor: 'rgba(255,255,255,0.3)',
+            trailWidth: 2,
+            svgStyle: null
+         });
+
+         bar.animate(1.0);
+
+         item.querySelectorAll('.counter').forEach(function (counter) {
+            counter.classList.add('circle-active')
+         })
+      })
+
+      if (this.container.querySelectorAll('.counter').length) {
+
+         $('.circle-active').each(function () {
+            $(this).prop('Counter',0).animate({
+               Counter: $(this).text()
+            }, {
+               duration: 1500,
+               easing: 'swing',
+               step: function (now) {
+                  $(this).text(Math.ceil(now));
+               }
+            });
+         });
       }
    }
 

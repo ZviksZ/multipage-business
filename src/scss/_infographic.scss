@@ -22,6 +22,14 @@
             background: $colorText;
         }
     }
+
+    @include mobile {
+        padding-left: 0;
+        &:before {
+            display: none;
+
+        }
+    }
 }
 
 .section-btn-wrap {
