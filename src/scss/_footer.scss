@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     z-index: 999;
-    padding: 20px 55px;
+    padding: 20px 55px !important;
     height: auto !important;
     margin-top: auto;
     &.section {
@@ -48,7 +48,7 @@
             background-color: $colorBlue;
             font-size: 12px;
             font-weight: 600;
-            color: $colorWhite;
+            color: $colorWhite !important;
             padding: 5px 10px;
             white-space: nowrap;
             line-height: 1;
@@ -159,8 +159,18 @@
     }
 
     @include mobile {
-        flex-wrap: wrap;
         padding: 10px;
+        justify-content: space-between;
+        .footer-btns {
+            flex-wrap: wrap;
+        }
+        .footer-search {
+            display: none;
+        }
+    }
+    @include only-mobile {
+        flex-wrap: wrap;
+        justify-content: center;
         .footer-socials,
         .footer-btns {
             display: flex;
@@ -168,12 +178,6 @@
             margin: 0;
             margin-bottom: 10px;
             justify-content: center;
-        }
-        .footer-btns {
-            flex-wrap: wrap;
-        }
-        .footer-search {
-            display: none;
         }
     }
 }

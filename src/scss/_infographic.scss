@@ -1,0 +1,25 @@
+.caption-with-line {
+    color: $colorWhite;
+    position: relative;
+    padding-left: 102px;
+    &:before {
+        position: absolute;
+        left: -51px;
+        top: 15px;
+        display: block;
+        content: '';
+        width: 102px;
+        height: 2px;
+        background: $colorWhite;
+    }
+    h2 {
+        font-weight: 400;
+        font-size: 27px;
+    }
+    &.caption-black {
+        color: $colorText !important;
+        &:before {
+            background: $colorText;
+        }
+    }
+}

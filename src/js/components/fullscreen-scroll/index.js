@@ -1,7 +1,11 @@
+import * as $                    from 'jquery';
+var ProgressBar = require('progressbar.js');
+
 export class FullscreenScroll {
    constructor() {
       this.container = document.querySelector('.fullscreen-page');
       this.pages = Array.from(document.querySelectorAll('.fullscreen-page .section'));
+      this.downBtn = document.querySelector('#screen-down-btn');
       this.curr = 0;
       this.scrolling = false;
       this.lastScroll = Date.now();
@@ -9,6 +13,7 @@ export class FullscreenScroll {
       this.index = 0;
       this.$header = document.getElementById('header');
       this.headerClassName = 'compact';
+      this.$animatedBLocks = []
 
 
       if (!this.container || !this.pages.length || document.documentElement.clientWidth < 1000) {
@@ -17,15 +22,19 @@ export class FullscreenScroll {
 
       this.handleScroll = this.handleScroll.bind(this)
       this.scrollTo = this.scrollTo.bind(this)
+      this.initFirstSectionDownBtn = this.initFirstSectionDownBtn.bind(this)
 
       this.init();
    }
 
    init() {
       this.pages[this.curr].classList.add('active');
-
       window.onmousewheel = this.handleScroll;
       window.addEventListener('DOMMouseScroll', this.handleScroll);
+
+      this.downBtn.addEventListener('click', this.initFirstSectionDownBtn)
+
+
 
       window.scrollY=0;
    }
@@ -58,6 +67,8 @@ export class FullscreenScroll {
             page.classList.remove('active');
          }
       });
+
+      this.startAnimateBlock(next)
 
       this.changeHeaderOnScroll()
    }
@@ -112,6 +123,62 @@ export class FullscreenScroll {
 
    getContainerTranslateY() {
       return Number.parseInt(window.getComputedStyle(this.container).transform.split(', ')[5]) || 0
+   }
+
+   startAnimateBlock(pageIndex) {
+      if (this.pages[this.curr].classList.contains('animate-section') && !this.$animatedBLocks.includes(pageIndex)) {
+         this.pages[this.curr].querySelectorAll('.circle-item').forEach(function (item) {
+            let bar = new ProgressBar.Circle(item, {
+               strokeWidth: 2,
+               easing: 'easeInOut',
+               duration: 1400,
+               color: '#ba1946',
+               trailColor: 'rgba(255,255,255,0.3)',
+               trailWidth: 2,
+               svgStyle: null
+            });
+
+            bar.animate(1.0);
+
+            item.querySelectorAll('.counter').forEach(function (counter) {
+               counter.classList.add('circle-active')
+            })
+         })
+
+         if (this.pages[this.curr].querySelectorAll('.counter').length) {
+
+            $('.circle-active').each(function () {
+               $(this).prop('Counter',0).animate({
+                  Counter: $(this).text()
+               }, {
+                  duration: 1500,
+                  easing: 'swing',
+                  step: function (now) {
+                     $(this).text(Math.ceil(now));
+                  }
+               });
+            });
+         }
+
+         this.$animatedBLocks.push(pageIndex)
+      }
+   }
+
+   initFirstSectionDownBtn(e) {
+      this.scrollTo(1, true)
+      this.curr = 1;
+
+      this.pages.forEach((page, index) => {
+         if (index === this.curr) {
+            page.classList.add('active');
+         } else {
+            page.classList.remove('active');
+         }
+      });
+
+      this.startAnimateBlock(1)
+
+      this.changeHeaderOnScroll()
    }
 
 }
