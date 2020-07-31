@@ -78,6 +78,7 @@
         text-transform: uppercase;
         border: 1px solid #FF1353;
         transition: 0.1s ease;
+        white-space: nowrap;
         @include desktop {
             &:hover {
                 background: #FF1353;
@@ -143,6 +144,17 @@
         background: #bcbcbc;
     }
 
+    @include desktop-small {
+        .header__menu-btn {
+            margin: 0 30px;
+        }
+        .header__btn {
+            margin-left: 50px;
+        }
+        .header__link {
+            margin-right: 25px;
+        }
+    }
 
     @include mobile {
         top: 30px;
@@ -159,6 +171,9 @@
             .icon {
                 margin-right: 0;
             }
+        }
+        .header__search {
+            margin-left: 20px;
         }
     }
     @include only-mobile {

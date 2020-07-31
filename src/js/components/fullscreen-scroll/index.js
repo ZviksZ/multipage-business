@@ -165,6 +165,8 @@ export class FullscreenScroll {
    }
 
    initFirstSectionDownBtn(e) {
+      e.preventDefault();
+
       this.scrollTo(1, true)
       this.curr = 1;
 

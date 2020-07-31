@@ -24,9 +24,6 @@
 // типографика контента
 @import 'typographic';
 
-// preloader
-@import 'preloader';
-
 // типографика форм
 @import 'forms';
 
@@ -38,7 +35,7 @@
 
 //Select
 @import './node_modules/choices.js/src/styles/choices.scss';
-@import 'selects';
+//@import 'selects';
 
 //header
 @import 'header';
@@ -48,7 +45,7 @@
 
 // стилизация базовых элементов swiper слайдера
 @import './node_modules/swiper/swiper';
-@import 'swiper-slider';
+//@import 'swiper-slider';
 
 // инфографика
 @import 'infographic';
@@ -67,5 +64,4 @@
 @import 'fullscreen-page';
 
 
-//@import './node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css';
 //@import './node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css';
