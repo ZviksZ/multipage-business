@@ -67,10 +67,15 @@
 
 
     .about-persons {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
         .item {
             position: relative;
-            margin-bottom: 35px;
             overflow: hidden;
+            width: 23%;
+            margin: 0 1% 35px;
 
             .bg {
                 display: inline-block;
@@ -82,8 +87,8 @@
                 background-size: cover;
                 transition: .4s ease;
                 -webkit-backface-visibility: hidden;
-                -moz-backface-visibility:    hidden;
-                -ms-backface-visibility:     hidden;
+                -moz-backface-visibility: hidden;
+                -ms-backface-visibility: hidden;
                 &:before {
                     display: block;
                     content: '';
@@ -100,6 +105,7 @@
                 height: 100%;
                 background-color: rgba(0,0,0,0.45);
                 opacity: 0;
+                transition: .4s ease;
             }
 
             .content {
@@ -122,6 +128,7 @@
                     transition: .2s linear;
                     padding: 15px 5px;
                     margin: 0;
+                    line-height: 1.4;
                 }
                 .position {
                     position: absolute;
@@ -137,6 +144,7 @@
                     line-height: 1.4;
                     margin: 0;
                     transition-delay: .1s;
+
                 }
             }
 
@@ -159,6 +167,57 @@
                         }
                     }
                 }
+            }
+
+
+        }
+        @include desktop-smaller {
+            .item {
+                width: 30%;
+                margin: 0 1.6% 35px;
+            }
+        }
+        @include mobile {
+            align-items: flex-start;
+            .item {
+                width: 30%;
+                margin: 0 1.6% 35px;
+                .bg {
+                    position: relative;
+                }
+                .content {
+                    position: relative;
+                    .name {
+                        position: relative;
+                        color: $colorText;
+                        padding: 0;
+                        text-align: left;
+                        font-size: 19px;
+                        margin-bottom: 4px;
+                        margin-top: 4px;
+                    }
+                    .position {
+                        position: relative;
+                        color: $colorText;
+                        opacity: 1;
+                        transform: translateY(0);
+                        padding: 0;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+
+        @include only-mobile {
+            .item {
+                width: 46%;
+                margin: 0 2% 35px;
+            }
+        }
+        @include mobile-small {
+            .item {
+                width: 100%;
+                margin: 0 0 35px;
             }
         }
     }

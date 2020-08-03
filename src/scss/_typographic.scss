@@ -12,6 +12,9 @@
         width: 100%;
         min-height: 100vh;
         padding: 10% 18%;
+        @include desktop-smaller {
+            padding: 10% 12%;
+        }
         @include mobile {
             min-height: auto;
             padding: 10%;
@@ -23,9 +26,16 @@
     }
     &.section-padding {
         padding: 5% 18%;
+        @include desktop-smaller {
+            padding: 5% 12%;
+        }
+
     }
     .section-content-padding {
         padding: 0 18%;
+        @include desktop-smaller {
+            padding: 0 12%;
+        }
     }
     .section-content {
         position: relative;
