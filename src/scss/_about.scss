@@ -54,6 +54,7 @@
             text-transform: lowercase;
             text-decoration: none;
             line-height: 1;
+            text-align: center;
             @include desktop {
                 &:hover {
                     padding: 0 12px;
