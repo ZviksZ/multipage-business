@@ -8,6 +8,30 @@
     padding: 50px 0;
     background-color: $colorWhite;
     overflow: hidden;
+    &.fullscreen {
+        width: 100%;
+        min-height: 100vh;
+        padding: 10% 18%;
+        @include mobile {
+            min-height: auto;
+            padding: 10%;
+        }
+    }
+    &.content-center {
+        display: flex;
+        align-items: center;
+    }
+    &.section-padding {
+        padding: 5% 18%;
+    }
+    .section-content-padding {
+        padding: 0 18%;
+    }
+    .section-content {
+        position: relative;
+        z-index: 5;
+        height: 100%;
+    }
     .section-overlay {
         position: absolute;
         top: 0;
@@ -39,7 +63,7 @@
     }
 
     &.gray {
-        background-color: $colorGrayLight;
+        background-color: $colorGray;
     }
     &.blue {
         background-color: #153757;
@@ -51,20 +75,11 @@
         background-color: transparent;
     }
 
-    /*&.fullscreen,
-    .fullscreen {
-        height: calc(100vh - 45px);
-        min-height: 500px;
-
-        @include mobile {
-            height: 530px;
-        }
-
-        @include mobile-small {
-            min-height: 450px;
-            height: 450px;
-        }
-    }*/
+    .section-title {
+        text-transform: uppercase;
+        font-size: 42px;
+        color: $colorWhite;
+    }
 
     %title-shared {
         margin: 24px 0;
@@ -161,15 +176,6 @@
             font-size: 16px;
         }
 
-        /*&.small {
-            @extend %text-small-shared;
-        }
-        &.medium {
-            @extend %text-medium-shared;
-        }
-        &.big {
-            @extend %text-big-shared;
-        }*/
     }
 
 

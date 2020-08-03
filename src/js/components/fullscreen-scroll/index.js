@@ -7,6 +7,8 @@ export class FullscreenScroll {
       this.downBtn = document.querySelector('#screen-down-btn');
       this.$header = document.getElementById('header');
 
+      if (!this.container) return
+
       this.desktop = this.isDesktop();
 
       this.viewportHeight = window.innerHeight;

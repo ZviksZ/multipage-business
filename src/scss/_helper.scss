@@ -145,6 +145,13 @@
 .nobr {
     white-space: nowrap;
 }
+
+.color-text {
+    color: $colorText !important;
+}
+.color-white {
+    color: $colorWhite !important;
+}
 /*
 .color-main {
     color: $colorMain !important;
@@ -152,9 +159,7 @@
 .color-main-active {
     color: $colorMainActive !important;
 }
-.color-text {
-    color: $colorText !important;
-}
+
 .color-text-gray {
     color: $colorTextGray !important;
 }
@@ -164,9 +169,7 @@
 .color-error {
     color: $colorError !important;
 }
-.color-white {
-    color: $colorWhite !important;
-}*/
+*/
 
 hr, .hr {
     margin: 0;

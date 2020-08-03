@@ -29,6 +29,9 @@
         .caption-with-line {
             max-width: 670px;
             font-weight: 400 !important;
+            .caption-text {
+                font-size: 28px;
+            }
         }
         .down-btn {
             display: block;
@@ -494,7 +497,7 @@
             .down-btn {
                 display: none;
             }
-            .caption-with-line h2 {
+            .caption-with-line .caption-text {
                 font-weight: 400;
                 font-size: 24px;
             }

@@ -1,0 +1,165 @@
+.big_title {
+    span {
+        display: block;
+    }
+    .big {
+        font-size: 60px;
+        margin-bottom: 35px;
+    }
+    .text {
+        font-size: 45px;
+        margin-bottom: 30px;
+    }
+
+    @include mobile {
+        .big {
+            font-size: 40px;
+        }
+        .text {
+            font-size: 32px;
+        }
+    }
+}
+
+.about-section {
+    .about-img {
+        width: 100%;
+        img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .about-content {
+        padding: 50px 20px;
+        .about-content_title {
+            font-size: 26px;
+            font-weight: 600;
+            color: $colorText;
+        }
+        .about-content_text {
+            font-size: 20px;
+            color: $colorText;
+            margin: 60px 0;
+        }
+        .about-content_btn {
+            display: inline-block;
+            color: $colorGrayLight;
+            font-size: 20px;
+            border-left: 1px solid $colorGrayLight;
+            border-right: 1px solid $colorGrayLight;
+            padding: 0 8px;
+            transition: .2s ease;
+            text-transform: lowercase;
+            text-decoration: none;
+            line-height: 1;
+            @include desktop {
+                &:hover {
+                    padding: 0 12px;
+                    color: $colorRedMiddle;
+                    border-left: 1px solid $colorRedMiddle;
+                    border-right: 1px solid $colorRedMiddle;
+                }
+            }
+        }
+    }
+
+
+    .about-persons {
+        .item {
+            position: relative;
+            margin-bottom: 35px;
+            overflow: hidden;
+
+            .bg {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                background-position: center center;
+                background-repeat: no-repeat;
+                -webkit-background-size: cover;
+                background-size: cover;
+                transition: .4s ease;
+                -webkit-backface-visibility: hidden;
+                -moz-backface-visibility:    hidden;
+                -ms-backface-visibility:     hidden;
+                &:before {
+                    display: block;
+                    content: '';
+                    float: left;
+                    padding-top: 111%;
+                }
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.45);
+                opacity: 0;
+            }
+
+            .content {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                z-index: 6;
+
+                .name {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    font-size: 23px;
+                    font-weight: 600;
+                    color: $colorWhite;
+                    text-transform: uppercase;
+                    text-align: center;
+                    transition: .2s linear;
+                    padding: 15px 5px;
+                    margin: 0;
+                }
+                .position {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    font-size: 20px;
+                    opacity: 0;
+                    color: $colorWhite;
+                    transform: translateY(100%);
+                    transition: .2s linear;
+                    padding: 15px 20px;
+                    line-height: 1.4;
+                    margin: 0;
+                    transition-delay: .1s;
+                }
+            }
+
+            @include desktop {
+                &:hover {
+                    .bg {
+                        transform: scale(1.05);
+                    }
+                    .overlay {
+                        opacity: 1;
+                    }
+                    .content {
+                        .name {
+                            opacity: 0;
+                            transform: translateY(100%);
+                        }
+                        .position {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

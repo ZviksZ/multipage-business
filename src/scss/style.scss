@@ -55,13 +55,14 @@
 @import 'footer';
 
 
-@import 'fancybox';
 
-
+// Главная страница
 @import 'main';
+
+// страница О компании
+@import 'about';
 
 //Стили для постраничной прокрутки
 @import 'fullscreen-page';
 
 
-//@import './node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css';
