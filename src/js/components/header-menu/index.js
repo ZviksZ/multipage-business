@@ -4,10 +4,10 @@ export class HeaderMenu {
       this.$menu = document.querySelector('.header__menu');
       this.$openBtn = document.querySelector('#header .header__menu-btn');
       this.$closeBtn = document.querySelector('.header__menu .header__menu-close');
+      this.$menuOverlay = document.querySelector('.header__menu-overlay');
 
-      this.openMenu = this.openMenu.bind(this)
-      this.closeMenu = this.closeMenu.bind(this)
-      this.outsideClickClose = this.outsideClickClose.bind(this)
+      this.openMenu = this.openMenu.bind(this);
+      this.closeMenu = this.closeMenu.bind(this);
 
       this.init();
    }
@@ -17,7 +17,7 @@ export class HeaderMenu {
 
       this.$closeBtn.addEventListener('click', this.closeMenu);
 
-      document.addEventListener('mouseup', this.outsideClickClose);
+      this.$menuOverlay.addEventListener('click', this.closeMenu);
    }
 
    openMenu(e) {
@@ -30,11 +30,5 @@ export class HeaderMenu {
       e.preventDefault();
 
       this.$body.classList.remove('header__menu-open');
-   }
-
-   outsideClickClose(e) {
-      if (e.target !== this.$menu && !this.$menu.contains(e.target)) {
-         this.$body.classList.remove('header__menu-open');
-      }
    }
 }

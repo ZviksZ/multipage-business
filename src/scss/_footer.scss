@@ -89,11 +89,6 @@
             text-align: center;
             transition: 0.1s linear;
             font-size: 0;
-            &.show {
-                width: 82px;
-                margin: 0 10px;
-                font-size: 16px;
-            }
             @include desktop {
                 &:hover {
                     color: $colorWhite;
@@ -116,13 +111,26 @@
             }
             &-clean {
                 background-image: url('/img/agc/cross-white.svg');
-            }
-            &.icon-hide {
                 display: none;
             }
             @include desktop {
                 &:hover {
                     opacity: .8;
+                }
+            }
+        }
+        &.footer-search__active {
+            .footer-search_btn {
+                width: 82px;
+                margin: 0 10px;
+                font-size: 16px;
+            }
+            .footer-search_icon {
+                &-search {
+                    display: none;
+                }
+                &-clean {
+                    display: inline-block;
                 }
             }
         }
