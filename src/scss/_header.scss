@@ -32,16 +32,16 @@
         -webkit-background-size: contain;
         background-size: contain;
         &.icon-phone {
-            background-image: url("/img/agc/icon-phone.svg");
+            background-image: url("../img/agc/icon-phone.svg");
         }
         &.icon-email {
-            background-image: url("/img/agc/icon-mail.svg");
+            background-image: url("../img/agc/icon-mail.svg");
         }
         &.icon-menu {
-            background-image: url("/img/agc/icon-menu.svg");
+            background-image: url("../img/agc/icon-menu.svg");
         }
         &.icon-search {
-            background-image: url('/img/agc/search.svg');
+            background-image: url('../img/agc/search.svg');
         }
     }
 
@@ -122,16 +122,16 @@
     &.header-black {
         .icon {
             &.icon-phone {
-                background-image: url("/img/agc/icon-phone-black.svg");
+                background-image: url("../img/agc/icon-phone-black.svg");
             }
             &.icon-email {
-                background-image: url("/img/agc/icon-mail-black.svg");
+                background-image: url("../img/agc/icon-mail-black.svg");
             }
             &.icon-menu {
-                background-image: url("/img/agc/icon-menu-black.svg");
+                background-image: url("../img/agc/icon-menu-black.svg");
             }
             &.icon-search {
-                background-image: url('/img/agc/search-black.svg');
+                background-image: url('../img/agc/search-black.svg');
             }
         }
         .header__link,

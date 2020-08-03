@@ -80,9 +80,6 @@ export class FullscreenScroll {
    }
 
    resize() {
-
-
-
          let desktop = this.isDesktop();
 
          this.viewportHeight = window.innerHeight;
@@ -102,6 +99,10 @@ export class FullscreenScroll {
 
          if (this.desktop !== desktop) {
             this.initHandlers()
+
+            if (!this.desktop) {
+               this.animateBlockMobile()
+            }
 
             this.desktop = desktop;
          }

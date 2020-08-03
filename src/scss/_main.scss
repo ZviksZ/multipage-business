@@ -38,7 +38,7 @@
             margin-left: -10px;
             width: 20px;
             height: 22px;
-            background-image: url(/img/agc/chevrons-down.svg);
+            background-image: url(../img/agc/chevrons-down.svg);
             background-size: 40px;
             background-position: center;
             pointer-events: auto;
@@ -170,7 +170,7 @@
                             bottom: -43px;
                             width: 18px;
                             height: 16px;
-                            background-image: url(/img/agc/forward.svg);
+                            background-image: url(../img/agc/forward.svg);
                             background-size: 23px;
                             background-position: left top;
                             background-repeat: no-repeat;
@@ -510,6 +510,8 @@
                 font-size: 30px;
             }
             .news-row {
+                height: auto;
+                min-height: 45%;
                 .item {
                     min-height: 300px;
                     justify-content: flex-start;
@@ -587,6 +589,9 @@
                 .item {
                     height: 100px;
                     padding: 40px;
+                    &:before {
+                        display: none;
+                    }
                 }
             }
         }

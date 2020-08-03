@@ -27,16 +27,16 @@
                 margin-right: 25px;
             }
             &.facebook {
-                background-image: url("/img/agc/facebook.svg");
+                background-image: url("../img/agc/facebook.svg");
             }
             &.instagram {
-                background-image: url("/img/agc/instagram.svg");
+                background-image: url("../img/agc/instagram.svg");
             }
             &.youtube {
-                background-image: url("/img/agc/youtube.svg");
+                background-image: url("../img/agc/youtube.svg");
             }
             &.telegram {
-                background-image: url("/img/agc/telegram-white.svg");
+                background-image: url("../img/agc/telegram-white.svg");
             }
         }
 
@@ -107,10 +107,10 @@
             margin-left: 10px;
             cursor: pointer;
             &-search {
-                background-image: url('/img/agc/search.svg');
+                background-image: url('../img/agc/search.svg');
             }
             &-clean {
-                background-image: url('/img/agc/cross-white.svg');
+                background-image: url('../img/agc/cross-white.svg');
                 display: none;
             }
             @include desktop {
@@ -142,16 +142,16 @@
         .footer-socials {
             &_link {
                 &.facebook {
-                    background-image: url("/img/agc/facebook-black.svg");
+                    background-image: url("../img/agc/facebook-black.svg");
                 }
                 &.instagram {
-                    background-image: url("/img/agc/instagram-black.svg");
+                    background-image: url("../img/agc/instagram-black.svg");
                 }
                 &.youtube {
-                    background-image: url("/img/agc/youtube-black.svg");
+                    background-image: url("../img/agc/youtube-black.svg");
                 }
                 &.telegram {
-                    background-image: url("/img/agc/telegram.svg");
+                    background-image: url("../img/agc/telegram.svg");
                 }
             }
 
@@ -163,10 +163,10 @@
             }
             .footer-search_icon {
                 &-search {
-                    background-image: url('/img/agc/search-black.svg');
+                    background-image: url('../img/agc/search-black.svg');
                 }
                 &-clean {
-                    background-image: url('/img/agc/cross.svg');
+                    background-image: url('../img/agc/cross.svg');
                 }
             }
         }

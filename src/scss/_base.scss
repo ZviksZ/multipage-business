@@ -12,13 +12,12 @@ html {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
     height: 100%;
     padding: 0;
     min-height: 100%;
     margin: 0;
     background: #fff;
+    overflow-x: hidden;
 }
 
 * {
@@ -37,6 +36,7 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 .container {
