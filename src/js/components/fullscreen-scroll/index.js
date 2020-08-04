@@ -23,21 +23,12 @@ export class FullscreenScroll {
          this.animateBlockMobile()
       }
 
-
-      this.handleScroll = this.handleScroll.bind(this)
-      this.initHandlers = this.initHandlers.bind(this)
-      this.animate = this.animate.bind(this)
-      this.initFirstSectionDownBtn = this.initFirstSectionDownBtn.bind(this)
-      this.animateBlockOnScroll = this.animateBlockOnScroll.bind(this)
-      this.initialize = this.initialize.bind(this)
-      this.animateBlockMobile = this.animateBlockMobile.bind(this)
-      this.isDesktop = this.isDesktop.bind(this)
-      this.resize = this.resize.bind(this)
-
       this.init();
    }
 
-   init() {
+   init = () =>  {
+
+
       this.initialize()
 
       this.initHandlers()
@@ -47,11 +38,11 @@ export class FullscreenScroll {
 
    }
 
-   isDesktop() {
+   isDesktop = () => {
       return window.innerWidth >= 1000 ? true : false;
    }
 
-   initHandlers() {
+   initHandlers = () => {
       let desktop = this.isDesktop();
       window.onmousewheel = null;
       window.removeEventListener('DOMMouseScroll', this.handleScroll);
@@ -68,7 +59,7 @@ export class FullscreenScroll {
 
    }
 
-   initialize() {
+   initialize = () => {
       document.querySelectorAll('.fullscreen-page .section').forEach((item, index) => {
          let newIndex = +index + 1
          item.id = 'fullscreen-section_' + newIndex;
@@ -79,7 +70,7 @@ export class FullscreenScroll {
       })
    }
 
-   resize() {
+   resize = () => {
          let desktop = this.isDesktop();
 
          this.viewportHeight = window.innerHeight;
@@ -110,7 +101,7 @@ export class FullscreenScroll {
 
    }
 
-   handleScroll(event) {
+   handleScroll = (event) => {
       if (this.stopScrolling) {
          return
       }
@@ -122,14 +113,14 @@ export class FullscreenScroll {
    }
 
 
-   next() {
+   next = () => {
 
       this.currentSection += 1;
       this.animate(this.translateY - this.viewportHeight);
 
    }
 
-   prev() {
+   prev = () => {
       let y = this.translateY;
       this.currentSection -= 1;
       if (this.lastBlock) {
@@ -143,7 +134,7 @@ export class FullscreenScroll {
       this.animate(y);
    }
 
-   animate(translateY) {
+   animate = (translateY) => {
       if (translateY > 0) {
          return
       }
@@ -162,7 +153,7 @@ export class FullscreenScroll {
       this.animateBlockOnScroll();
    }
 
-   transform(translateY) {
+   transform = (translateY) => {
       this.stopScrolling = true
       this.container.style.transform = "translateY(" + translateY + "px)"
 
@@ -171,7 +162,7 @@ export class FullscreenScroll {
       }, 600)
    }
 
-   changeHeaderOnScroll(translateY) {
+   changeHeaderOnScroll = (translateY) => {
       if (translateY < 0) {
          this.$header.classList.add('compact');
       } else {
@@ -179,13 +170,13 @@ export class FullscreenScroll {
       }
    }
 
-   initFirstSectionDownBtn(e) {
+   initFirstSectionDownBtn = (e) =>  {
       e.preventDefault();
 
       this.animate(-this.viewportHeight);
    }
 
-   animateBlockOnScroll() {
+   animateBlockOnScroll = () =>  {
       const $block = document.getElementById('fullscreen-section_' + this.currentSection);
       const $blockId = '#fullscreen-section_' + this.currentSection;
       if ($block) {
@@ -232,7 +223,7 @@ export class FullscreenScroll {
 
    }
 
-   animateBlockMobile() {
+   animateBlockMobile = () =>  {
       this.container.querySelectorAll('.circle-item').forEach(function (item) {
          let bar = new ProgressBar.Circle(item, {
             strokeWidth: 2,

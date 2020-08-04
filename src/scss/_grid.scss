@@ -163,6 +163,30 @@
         &.w-100 {
             width: 100%;
         }
+
+        @include desktop-small {
+            &.w-33-dsmall {
+                float: left;
+                width: 33.33333333% !important;
+            }
+        }
+
+        @include only-mobile {
+            &.w-50-mb {
+                float: left;
+                width: 50% !important;
+            }
+        }
+
+        @include mobile-small {
+            &.w-50-mb {
+                float: none;
+                width: 100% !important;
+            }
+        }
+
+
+
     }
 
     &:after {

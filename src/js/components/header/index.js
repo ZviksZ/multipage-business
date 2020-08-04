@@ -6,7 +6,7 @@ export class Header {
         this.init();
     }
 
-    init() {
+    init = () => {
         this.refreshStateHeader();
 
         window.addEventListener('scroll', () => {
@@ -14,11 +14,20 @@ export class Header {
         });
     }
 
-    refreshStateHeader() {
-        if (pageYOffset > 150) {
-            this.$header.classList.add(this.headerClassName);
+    refreshStateHeader = () => {
+        if (window.innerWidth < 1000) {
+            if (pageYOffset > 0) {
+                this.$header.classList.add(this.headerClassName);
+            } else {
+                this.$header.classList.remove(this.headerClassName);
+            }
         } else {
-            this.$header.classList.remove(this.headerClassName);
+            if (pageYOffset > 150) {
+                this.$header.classList.add(this.headerClassName);
+            } else {
+                this.$header.classList.remove(this.headerClassName);
+            }
         }
+
     }
 }

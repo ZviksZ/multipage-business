@@ -1,0 +1,123 @@
+.products_list {
+    margin-top: 50px;
+    @include mobile {
+        margin-top: 25px;
+    }
+    .products_item {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 25px;
+        .bg {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            -webkit-background-size: cover;
+            background-size: cover;
+            transition: .2s linear;
+            &:before {
+                display: block;
+                content: '';
+                float: left;
+                padding-top: 56%;
+            }
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #151515;
+            opacity: 0.25;
+            transition: .2s linear;
+        }
+        .info {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 30px);
+            padding: 0 15px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            .title {
+                position: relative;
+                height: 52px;
+                font-weight: 600;
+                font-size: 23px;
+                color: $colorWhite;
+                text-transform: uppercase;
+                &:before {
+                    position: absolute;
+                    display: block;
+                    content: '';
+                    left: 0;
+                    top: -13px;
+                    width: 38px;
+                    height: 2px;
+                    background-color: #fff;
+                }
+            }
+            .subtitle {
+                height: 52px;
+                overflow: hidden;
+                font-size: 19px;
+                line-height: 1.38;
+                opacity: 0;
+                transition: opacity .3s ease;
+                color: $colorWhite;
+                margin-top: auto;
+                margin-bottom: 28px;
+            }
+        }
+        @include desktop {
+            &:hover {
+                .bg {
+                    transform: scale(1.1) translateZ(0);
+                }
+                .overlay {
+                    opacity: 0.7;
+                }
+                .info {
+                    .subtitle {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        @include mobile {
+            .info {
+                .subtitle {
+                    display: none;
+                }
+                .title {
+                    height: 38px;
+                    margin-top: auto;
+                    font-size: 17px;
+                    &:before {
+                        top: -8px;
+                    }
+                }
+            }
+        }
+        @include only-mobile {
+            .info {
+                .title {
+                    font-size: 16px;
+                    height: 35px;
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+
+}

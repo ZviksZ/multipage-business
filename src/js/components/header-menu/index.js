@@ -6,13 +6,11 @@ export class HeaderMenu {
       this.$closeBtn = document.querySelector('.header__menu .header__menu-close');
       this.$menuOverlay = document.querySelector('.header__menu-overlay');
 
-      this.openMenu = this.openMenu.bind(this);
-      this.closeMenu = this.closeMenu.bind(this);
 
       this.init();
    }
 
-   init() {
+   init = () => {
       this.$openBtn.addEventListener('click', this.openMenu);
 
       this.$closeBtn.addEventListener('click', this.closeMenu);
@@ -20,13 +18,13 @@ export class HeaderMenu {
       this.$menuOverlay.addEventListener('click', this.closeMenu);
    }
 
-   openMenu(e) {
+   openMenu = (e) => {
       e.preventDefault();
 
       this.$body.classList.add('header__menu-open');
    }
 
-   closeMenu(e) {
+   closeMenu = (e) => {
       e.preventDefault();
 
       this.$body.classList.remove('header__menu-open');

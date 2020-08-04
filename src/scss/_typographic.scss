@@ -17,7 +17,10 @@
         }
         @include mobile {
             min-height: auto;
-            padding: 10%;
+            padding: 15% 10%;
+        }
+        @include only-mobile {
+            padding: 30% 6%;
         }
     }
     &.content-center {
@@ -29,6 +32,12 @@
         @include desktop-smaller {
             padding: 5% 12%;
         }
+        @include mobile {
+            padding: 10%;
+        }
+        @include only-mobile {
+            padding: 8% 4%;
+        }
 
     }
     .section-content-padding {
@@ -36,6 +45,7 @@
         @include desktop-smaller {
             padding: 0 12%;
         }
+
     }
     .section-content {
         position: relative;
@@ -89,132 +99,141 @@
         text-transform: uppercase;
         font-size: 42px;
         color: $colorWhite;
-    }
-
-    %title-shared {
-        margin: 24px 0;
-        line-height: 1.2em;
-        font-weight: 600;
-        &:first-child {
-            margin-top: 0;
-        }
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-    h1, .h1 {
-        @extend %title-shared;
-        font-size: 48px;
         @include mobile {
-            font-size: 26px;
+            font-size: 32px;
+        }
+        @include only-mobile {
+            font-size: 28px;
+        }
+        @include mobile-small {
+            font-size: 25px;
         }
     }
-    h2, .h2 {
-        @extend %title-shared;
-        font-size: 28px;
+}
 
-        @include mobile {
-            font-size: 16px;
-        }
+%title-shared {
+    margin: 24px 0;
+    line-height: 1.2em;
+    font-weight: 600;
+    &:first-child {
+        margin-top: 0;
     }
-    h3, .h3 {
-        @extend %title-shared;
-        font-size: 20px;
-
-        @include mobile {
-            font-size: 12px;
-        }
+    &:last-child {
+        margin-bottom: 0;
     }
-    /*h4, .h4 {
-        @extend %title-shared;
-        font-size: 38px;
-
-        @include mobile {
-            font-size: 24px;
-        }
+}
+h1, .h1 {
+    @extend %title-shared;
+    font-size: 48px;
+    @include mobile {
+        font-size: 26px;
     }
-    h5, .h5 {
-        @extend %title-shared;
-        font-size: 30px;
+}
+h2, .h2 {
+    @extend %title-shared;
+    font-size: 28px;
 
-        @include mobile {
-            font-size: 22px;
-        }
+    @include mobile {
+        font-size: 16px;
     }
-    h6, .h6 {
-        @extend %title-shared;
-        font-size: 24px;
+}
+h3, .h3 {
+    @extend %title-shared;
+    font-size: 20px;
 
-        @include mobile {
-            font-size: 20px;
-        }
-    }*/
-    /*%text-shared {
-
-    }
-    %text-small-shared {
-        @extend %text-shared;
+    @include mobile {
         font-size: 12px;
+    }
+}
+/*h4, .h4 {
+    @extend %title-shared;
+    font-size: 38px;
 
-        @include mobile {
-            font-size: 11px;
-        }
+    @include mobile {
+        font-size: 24px;
     }
-    %text-medium-shared {
-        @extend %text-shared;
-        font-size: 18px;
+}
+h5, .h5 {
+    @extend %title-shared;
+    font-size: 30px;
+
+    @include mobile {
+        font-size: 22px;
     }
-    %text-big-shared {
-        @extend %text-shared;
+}
+h6, .h6 {
+    @extend %title-shared;
+    font-size: 24px;
+
+    @include mobile {
         font-size: 20px;
-    }*/
+    }
+}*/
+/*%text-shared {
 
-    p {
-        margin: 10px 0;
-        font-size: 21px;
-        line-height: 1.75;
-        font-weight: 400;
+}
+%text-small-shared {
+    @extend %text-shared;
+    font-size: 12px;
 
-        &:first-child {
-            margin-top: 0;
-        }
-        &:last-child {
-            margin-bottom: 0;
-        }
+    @include mobile {
+        font-size: 11px;
+    }
+}
+%text-medium-shared {
+    @extend %text-shared;
+    font-size: 18px;
+}
+%text-big-shared {
+    @extend %text-shared;
+    font-size: 20px;
+}*/
 
-        @include mobile {
-            font-size: 16px;
-        }
+p {
+    margin: 10px 0;
+    font-size: 21px;
+    line-height: 1.75;
+    font-weight: 400;
 
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
     }
 
-
-    a {
-        color: $colorLink;
-        outline: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        text-decoration: none;
-        @include desktop {
-            &:hover {
-                color: #0056b3;
-            }
-        }
+    @include mobile {
+        font-size: 16px;
     }
 
+}
 
-    .d-flex {
-        display: flex;
-        align-items: center;
-    }
-    .flex-wrap {
-        flex-wrap: wrap;
-        & > div, & > p {
-            width: 100%;
+
+a {
+    color: $colorLink;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-decoration: none;
+    @include desktop {
+        &:hover {
+            color: #0056b3;
         }
+    }
+}
+
+
+.d-flex {
+    display: flex;
+    align-items: center;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+    & > div, & > p {
+        width: 100%;
     }
 }

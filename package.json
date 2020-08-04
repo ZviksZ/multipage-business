@@ -10,6 +10,7 @@
     "build": "webpack --mode production && prettier --print-width=120 --parser html --write dist/*.html"
   },
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@svgdotjs/svg.js": "^3.0.16",
     "blazy": "^1.8.2",
     "choices.js": "^9.0.1",
