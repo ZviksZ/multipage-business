@@ -12,6 +12,8 @@ export class ProductsSlider {
    }
 
    init = () => {
+      $('.body, .products-detail').addClass('overflow-visible');
+
       this.initSlider();
 
       this.initTabs()
@@ -31,26 +33,25 @@ export class ProductsSlider {
          },
          on: {
             slideChange: () => {
-               // костыль для lazy load - ХЗ почему не работает нормально!
-               // this.slider.lazy.load();
+               let slideIndex = +this.$instance.activeIndex;
+
+               this.$tabs.find('.item').removeClass('active');
+               this.$tabs.find('[data-slide="'+ slideIndex + '"]').addClass('active');
             }
          }
       });
    }
 
    initTabs = () => {
-      let productsSlider = this.$instance;
-      let colorTabs = this.$tabs;
-
-      this.$tabs.find('.item').on('click', function (e) {
+      this.$tabs.find('.item').on('click', (e) => {
          e.preventDefault();
 
-         let slideIndex = $(this).attr('data-slide');
+         let slideIndex = $(e.currentTarget).attr('data-slide');
 
-         colorTabs.find('.item').removeClass('active');
-         $(this).addClass('active');
+         this.$tabs.find('.item').removeClass('active');
+         $(e.currentTarget).addClass('active');
 
-         productsSlider.slideTo(slideIndex, 600, true);
+         this.$instance.slideTo(slideIndex, 300, true);
       })
    }
 

@@ -1,4 +1,15 @@
 .products-detail {
+    &-row {
+        display: flex;
+        min-height: 100%;
+        align-items: stretch;
+    }
+    &-part {
+        width: 50%;
+        padding: 0 12px;
+        flex:1;
+    }
+
     &_tabs {
         .tab {
             display: flex;
@@ -227,6 +238,16 @@
         position: sticky;
         top: 100px;
         width: 100%;
+        .products-detail_slider-wrap {
+            position: relative;
+        }
+        .swiper-arrows {
+            width: auto;
+            height: fit-content;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
     }
 
     &_slider {
@@ -249,3 +270,6 @@
         }
     }
 }
+
+
+

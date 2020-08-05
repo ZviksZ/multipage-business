@@ -146,12 +146,18 @@
     white-space: nowrap;
 }
 
+.overflow-visible {
+    overflow: visible !important;
+}
+
 .color-text {
     color: $colorText !important;
 }
 .color-white {
     color: $colorWhite !important;
 }
+
+
 /*
 .color-main {
     color: $colorMain !important;

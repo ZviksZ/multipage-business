@@ -6,6 +6,13 @@ $desktop: 1000px;
 $desktop-smaller: 1250px;
 $desktop-small: 1400px;
 $desktop-medium: 1600px;
+$desktop-big: 1920px;
+
+@mixin desktop-big  {
+    @media (min-width: #{$desktop-big}) {
+        @content;
+    }
+};
 
 @mixin desktop  {
     @media (min-width: #{$desktop}) {
