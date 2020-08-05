@@ -35,6 +35,12 @@
         }
     }
 
+    &.caption-middle-line {
+        &:before {
+            top: calc(50% - 1px);
+        }
+    }
+
     @include mobile {
         padding-left: 0;
         &.caption-big-line {
@@ -89,6 +95,7 @@
         background-repeat: no-repeat;
         -webkit-background-size: cover;
         background-size: cover;
+        background-color: $colorGray;
     }
 
     &_title {
@@ -121,7 +128,7 @@
             height: 45px;
         }
         &_title {
-            margin-top: 10px;
+            margin-top: 15px;
         }
     }
 }
@@ -285,7 +292,14 @@
             .page-filter_category {
                 width: 100%;
                 min-width: 100%;
+                padding-top: 5px;
+                padding-bottom: 5px;
             }
+        }
+    }
+    @include only-mobile {
+        .page-filter-wrap {
+            padding-top: 15px !important;
         }
     }
 }

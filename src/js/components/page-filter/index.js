@@ -47,14 +47,18 @@ export class PageFilter {
 
    changeTabs = (e) => {
       e.preventDefault();
-      this.$switchesItems.removeClass('active');
-      this.$tabs.removeClass('active');
 
-      console.log(e.target.classList.contains('active'))
-      if (!e.target.classList.contains('active')) {
+      if (!$(e.target).hasClass('active')) {
+         this.removeActive();
+
          e.target.classList.add('active');
          this.$filter.find('.page-filter_tab[data-tab="' + e.target.dataset['id'] + '"]').addClass('active');
       }
+   }
+
+   removeActive = () => {
+      this.$switchesItems.removeClass('active');
+      this.$tabs.removeClass('active');
    }
 
 

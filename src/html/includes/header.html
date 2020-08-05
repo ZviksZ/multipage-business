@@ -20,7 +20,13 @@
 <body>
 
 <!--<div id="header" class="header header-black">-->
+<% if (header === 'black') { %>
+<div id="header" class="header header-black">
+<% } else { %>
 <div id="header" class="header">
+<% } %>
+
+
     <a href="/" class="header__logo">
         <img src="./img/agc/logo-3.png" alt="AGC">
     </a>

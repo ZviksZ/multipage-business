@@ -190,7 +190,7 @@ h6, .h6 {
 }*/
 
 p {
-    margin: 10px 0;
+    margin: 20px 0;
     font-size: 21px;
     line-height: 1.75;
     font-weight: 400;
@@ -208,8 +208,39 @@ p {
 
 }
 
+ul {
+    padding-left: 0;
+    list-style: none;
+    li {
+        position: relative;
+        font-size: 21px;
+        line-height: 1.2;
+        font-weight: 400;
+        padding-left: 30px;
+        color: $colorText;
+        margin-bottom: 4px;
+        @include mobile {
+            font-size: 16px;
+        }
+
+        &:before {
+            position: absolute;
+            left: 0;
+            top: 11px;
+            display: block;
+            content: '';
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: $colorText;
+        }
+    }
+}
+
 
 a {
+    display: inline-block;
+    font-size: 21px;
     color: $colorLink;
     outline: none;
     -webkit-user-select: none;
@@ -224,6 +255,10 @@ a {
             color: #0056b3;
         }
     }
+}
+
+.bold-text {
+    font-weight: 600 !important;
 }
 
 

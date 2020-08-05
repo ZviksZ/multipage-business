@@ -1,6 +1,8 @@
 <% var data = {
 title: "Продукция | AGC Glass Russia",
-url: "products.html"
+url: "products.html",
+header: "white",
+footer: "black"
 }; %>
 <%= _.template(require('./../includes/header.html').default)(data) %>
 
@@ -9,7 +11,7 @@ url: "products.html"
     <h1 class="h1 page-header_title color-white">ПРОДУКЦИЯ</h1>
 </div>
 
-<section class="section no-padding-top">
+<section class="section no-padding-top no-padding-bottom">
     <div class="section-content">
         <div class="container">
             <div class="page-filter">
@@ -36,7 +38,7 @@ url: "products.html"
                             <div class="page-filter_category">
                                 По типу стекла:
                             </div>
-                            <a href="" class="page-filter_item">Все стекла</a>
+                            <a href="" class="page-filter_item active">Все стекла</a>
                             <a href="" class="page-filter_item">Архитектурное</a>
                             <a href="" class="page-filter_item">Интерьерное</a>
                         </div>
@@ -48,7 +50,7 @@ url: "products.html"
                                 По функциональному
                                 назначению:
                             </div>
-                            <a href="" class="page-filter_item">Все стекла</a>
+                            <a href="" class="page-filter_item active">Все стекла</a>
                             <a href="" class="page-filter_item">Просветленное</a>
                         </div>
 

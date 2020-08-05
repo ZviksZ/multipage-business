@@ -1,0 +1,251 @@
+.products-detail {
+    &_tabs {
+        .tab {
+            display: flex;
+            flex-direction: column;
+            &_header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 30px 20px 30px 5px;
+                transition: background-color .2s ease;
+                border-top: 1px solid #e8e8e8;
+                cursor: pointer;
+                .title {
+                    font-size: 27px;
+                    font-weight: 600;
+                }
+                .arrow {
+                    border: solid black;
+                    border-width: 0 1px 1px 0;
+                    display: inline-block;
+                    padding: 10px;
+                    transform: rotate(45deg);
+                    -webkit-transform: rotate(45deg);
+                    margin-top: -10px;
+                }
+
+                @include desktop {
+                    &:hover {
+                        background-color: $colorGray;
+                    }
+                }
+            }
+            &_content {
+                height: auto;
+                max-height:0;
+                opacity: 0;
+                overflow:hidden;
+                .bold-text ~ .bold-text {
+                    margin-top: 50px;
+                }
+                p {
+                   padding: 0 5px;
+                }
+                p:first-child {
+                    margin-top: 20px;
+                }
+                p:last-child {
+                    margin-bottom: 20px;
+                }
+                .indicators-table {
+                    width: 100%;
+                    table-layout: fixed;
+                    border-collapse: collapse;
+                    thead {
+                        th {
+                            border: 1px solid #e9f4f6;
+                            border-top: 0;
+                            font-size: 21px;
+                            vertical-align: middle;
+                            line-height: 1.38;
+                            padding: 17px 10px;
+                            &:first-child {
+                                text-align: left;
+                                padding: 17px 10px 17px 4px;
+                                border-left: 0;
+                            }
+                            &:last-child {
+                                border-right: 0;
+                            }
+                        }
+                    }
+                    tbody {
+                        td {
+                            font-size: 27px;
+                            font-weight: 600;
+                            border: 0px;
+                            padding: 15px 2px;
+                            vertical-align: middle;
+                            span {
+                                display: inline-block;
+                                width: 100%;
+                                margin-bottom: 2px;
+                            }
+                            .small {
+                                font-size: 18px;
+                                color: $colorGrayLight;
+                            }
+                            &.number {
+                                text-align: center;
+                                color: $colorBlueDarken;
+                            }
+                        }
+                    }
+                }
+
+                .colors {
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding-top: 20px;
+                    .item + .item {
+                        margin-left: 2.5%;
+                    }
+                    .item {
+                        width: 18%;
+                        height: 100%;
+                        margin-bottom: 10px;
+                        cursor: pointer;
+                        .image {
+                            position: relative;
+                            display: flex;
+                            width: 100%;
+                            height: 100%;
+                            background-position: center center;
+                            background-repeat: no-repeat;
+                            -webkit-background-size: cover;
+                            background-size: cover;
+                            transition: .2s linear;
+                            &:before {
+                                display: block;
+                                content: '';
+                                float: left;
+                                padding-top: 60%;
+                            }
+                            .border {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                border: 2px solid transparent;
+                            }
+                            span {
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                width: 20px;
+                                height: 20px;
+                                background-color: $colorBlueDarken;
+                                font-size: 12px;
+                                color: $colorWhite;
+                                text-align: center;
+                                line-height: 20px;
+                            }
+                        }
+                        .desc {
+                            font-size: 12px;
+                            line-height: 1.17;
+                            color: #000000;
+                            margin-top: 6px;
+                        }
+                       &.active {
+                           .image {
+                               .border {
+                                   border: 2px solid $colorBlueDarken;
+                               }
+                           }
+                       }
+
+                        &:nth-child(5n+6) {
+                            margin-left: 0;
+                        }
+                    }
+
+                }
+
+
+                .advantages-list {
+                    padding: 20px 25px 20px 15px;
+                }
+
+                .tab_links {
+                    padding: 20px 5px;
+                    display: flex;
+                    flex-direction: column;
+                    a:not(:last-child) {
+                        margin-bottom: 25px;
+                    }
+                }
+            }
+            &.open {
+                .tab_header {
+                    border-bottom: 1px solid #e8e8e8;
+                    .arrow {
+                        position: relative;
+                        width: 25px;
+                        height: 30px;
+                        cursor: pointer;
+                        border: 0;
+                        padding: 0;
+                        margin-top: -3px;
+                        transform: rotate(0deg);
+                        @include desktop {
+                            &:hover {
+                                opacity: 1;
+                            }        }
+                        &:before, &:after {
+                            position: absolute;
+                            left: 15px;
+                            content: ' ';
+                            height: 36px;
+                            width: 2px;
+                            background-color: $colorText;
+                        }
+                        &:before {
+                            transform: rotate(45deg);
+                        }
+                        &:after {
+                            transform: rotate(-45deg);
+                        }
+                    }
+                }
+                .tab_content {
+                    max-height: 4999px;
+                    opacity: 1;
+                    transition: .4s linear;
+                }
+            }
+            &:last-child {
+                border-bottom: 1px solid #e8e8e8;
+            }
+        }
+
+    }
+
+    &_sticky {
+        position: sticky;
+        top: 100px;
+        width: 100%;
+    }
+
+    &_slider {
+        overflow: hidden;
+        .slide {
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            -webkit-background-size: cover;
+            background-size: cover;
+            &:before {
+                display: block;
+                content: '';
+                float: left;
+                padding-top: 68%;
+            }
+        }
+    }
+}

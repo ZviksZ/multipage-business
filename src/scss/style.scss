@@ -45,7 +45,7 @@
 
 // стилизация базовых элементов swiper слайдера
 @import './node_modules/swiper/swiper';
-//@import 'swiper-slider';
+@import 'swiper-slider';
 
 // инфографика
 @import 'infographic';
@@ -64,6 +64,9 @@
 
 // страница Продукция
 @import 'products';
+
+// страница Продукция детальная
+@import 'products-detail';
 
 //Стили для постраничной прокрутки
 @import 'fullscreen-page';
