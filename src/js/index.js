@@ -5,7 +5,7 @@ import { FullscreenScroll }      from './components/fullscreen-scroll';
 import { ModalWindowFullScreen } from './components/modal-window-fullscreen';
 import { FooterSearch }          from './components/footer-search';
 import { PageFilter }          from './components/page-filter';
-import { ProductsTabs, ProductsSlider }          from './components/products';
+import { ProductsTabs, ProductsSlider, ProductsModal }          from './components/products';
 
 
 $(function () {
@@ -28,6 +28,9 @@ $(function () {
 
    // инициализация функционала слайдера на детальной странице Продукции
    new ProductsSlider()
+
+   // инициализация функционала модалки на детальной странице Продукции
+   new ProductsModal()
 
    // инициализация функционала модальных окон
    new ModalWindowFullScreen()

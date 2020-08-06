@@ -303,32 +303,50 @@
     }
 }
 
+.products-modal {
+    .products-modal_info {
+        p {
+            font-size: 16px;
+            color: $colorText;
+            line-height: 1.2;
+            margin: 0;
+        }
+        a {
+            display: inline-block;
+            font-size: 16px;
+            line-height: 1.2;
+            margin: 0;
+        }
+        .city-text {
+            margin: 0 0 12px;
+        }
+        .city {
+            font-weight: 600;
+        }
+        .address-item {
+            display: none;
+            width: 100%;
+            margin-bottom: 10px;
+            font-size: 16px;
+            &.active {
+                display: block;
+            }
+        }
+    }
 
-.products-modal_info {
-    p {
-        font-size: 16px;
-        color: $colorText;
-        line-height: 1.2;
-        margin: 0;
-    }
-    a {
-        display: inline-block;
-        font-size: 16px;
-        line-height: 1.2;
-        margin: 0;
-    }
-    .city-text {
-        margin: 0 0 12px;
-    }
-    .city {
-        font-weight: 600;
-    }
-    .address-item {
-        width: 100%;
-        margin-bottom: 10px;
-        font-size: 16px;
+    &.show-full-list {
+        .city-text {
+            display: none;
+        }
+        .more-btn {
+            display: none;
+        }
+        .address-item {
+            display: block;
+        }
     }
 }
+
 
 
 
