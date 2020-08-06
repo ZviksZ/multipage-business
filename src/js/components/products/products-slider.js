@@ -4,7 +4,7 @@ import Swiper from 'swiper/js/swiper.min';
 export class ProductsSlider {
    constructor() {
       this.$slider = $('#products-detail_slider');
-      if (!this.$slider) return;
+      if (!this.$slider) return false;
       this.$tabs = $('#slider-colors');
 
 
@@ -12,7 +12,7 @@ export class ProductsSlider {
    }
 
    init = () => {
-      $('.body, .products-detail').addClass('overflow-visible');
+     // $('.body, .products-detail').addClass('overflow-visible');
 
       this.initSlider();
 

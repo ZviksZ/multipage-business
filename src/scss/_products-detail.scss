@@ -267,9 +267,69 @@
                 float: left;
                 padding-top: 68%;
             }
+            .info {
+                position: absolute;
+                top: 20px;
+                left: 0;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                padding-right: 20px;
+                .img {
+                    display: flex;
+                    margin-right: 30px;
+                    width: 104px;
+                    min-width: 104px;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    -webkit-background-size: cover;
+                    background-size: cover;
+                    border: 2px solid $colorWhite;
+                    &:before {
+                        display: block;
+                        content: '';
+                        float: left;
+                        padding-top: 61%;
+                    }
+                }
+                .desc {
+                    font-size: 24px;
+                    font-weight: 600;
+                    line-height: 26px;
+                    color: $colorWhite;
+                }
+            }
         }
     }
 }
+
+
+.products-modal_info {
+    p {
+        font-size: 16px;
+        color: $colorText;
+        line-height: 1.2;
+        margin: 0;
+    }
+    a {
+        display: inline-block;
+        font-size: 16px;
+        line-height: 1.2;
+        margin: 0;
+    }
+    .city-text {
+        margin: 0 0 12px;
+    }
+    .city {
+        font-weight: 600;
+    }
+    .address-item {
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+}
+
 
 
 

@@ -29,31 +29,14 @@
         display: block;
         position: relative;
         margin: 30px auto;
-        padding: 20px 0;
-        max-width: 480px;
+        padding: 0;
+        max-width: 500px;
         background: #fff;
         box-sizing: border-box;
-        border-radius: 15px;
-        &.modal-content-medium {
-            padding: 0;
-            border-radius: 0;
-            background: transparent;
-            @include desktop {
-                max-width: 612px;
-            }
-        }
-        &.modal-content-small {
-            @include desktop {
-                max-width: 340px;
-            }
-        }
+        border-radius: 4px;
         @include mobile {
             margin-left: 15px;
             margin-right: 15px;
-            &.modal-content-small, &.modal-content-medium {
-                margin-left: auto;
-                margin-right: auto;
-            }
         }
 
         .modal-caption-with-close {
@@ -61,6 +44,36 @@
                 padding-right: 40px;
             }
         }
+    }
+
+    .modal-header {
+        display: flex;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 20px;
+        border-bottom: 1px solid #e9ecef;
+        margin-bottom: 15px;
+        .title {
+            font-size: 20px;
+            color: $colorText;
+        }
+    }
+
+    .modal-footer {
+        margin-top: 15px;
+        display: flex;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        -ms-flex-pack: justify;
+        justify-content: flex-end;
+        padding: 15px 20px;
+        border-top: 1px solid #e9ecef;
+    }
+
+    .modal-info {
+        padding: 0 20px;
     }
 
     .content {
@@ -80,60 +93,52 @@
     }
 
     .close {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        z-index: 900;
-        right: 0;
-        top: 50%;
-        margin: -26px 0 0 0;
-        width: 52px;
-        height: 52px;
-        background: rgba(0, 0, 0, .5);
-        border-radius: 20px;
-        text-decoration: none;
-        &.close-small{
-            width: 30px;
-            height: 30px;
-            border-radius: 12px;
-            top: 0;
-            margin-top: 0;
-            .icon {
-                font-size: 15px;
-                color: $colorWhite;
-            }
-        }
-        &.top {
-            top: 56px;
-            right: 66px;
-            margin: 0;
-
-            @include mobile {
-                margin: 0;
-                top: 20px;
-                right: 20px;
-            }
-        }
-
-        @include mobile {
-            margin-top: -16px;
-            width: 30px;
-            height: 30px;
-            border-radius: 12px;
-        }
-
+        position: relative;
+        width: 20px;
+        height: 25px;
+        cursor: pointer;
+        border: 0;
+        padding: 0;
+        margin-top: 2px;
+        margin-right: 3px;
+        transform: rotate(0deg);
+        opacity: 0.7;
         @include desktop {
             &:hover {
-                background: rgba(0, 0, 0, .7);
-            }
+                opacity: 1;
+            }        }
+        &:before, &:after {
+            position: absolute;
+            left: 15px;
+            content: ' ';
+            height: 20px;
+            width: 2px;
+            background-color: $colorText;
         }
-
-        .icon {
-            font-size: 16px;
-            color: $colorWhite;
+        &:before {
+            transform: rotate(45deg);
+        }
+        &:after {
+            transform: rotate(-45deg);
         }
     }
+
+    .close-btn {
+        padding: 10px 15px;
+        font-size: 15px;
+        white-space: nowrap;
+        line-height: 1.5;
+        color: $colorWhite;
+        background-color: #6c757d;
+        border: 0;
+        @include desktop {
+            &:hover {
+                background-color: darken(#6c757d, 10%)
+            }
+        }
+    }
+
+
 
     .close-mobile-button {
         position: absolute;
