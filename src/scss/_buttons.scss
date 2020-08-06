@@ -9,6 +9,7 @@
     color: $colorWhite !important;
     margin: 50px 0;
     cursor: pointer;
+    text-align: center;
     @include desktop {
         &:hover {
             background: $colorRedDarken;

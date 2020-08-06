@@ -10,6 +10,8 @@
         flex:1;
     }
 
+
+
     &_tabs {
         .tab {
             display: flex;
@@ -25,6 +27,9 @@
                 .title {
                     font-size: 27px;
                     font-weight: 600;
+                    @include mobile {
+                        font-size: 22px;
+                    }
                 }
                 .arrow {
                     border: solid black;
@@ -34,6 +39,11 @@
                     transform: rotate(45deg);
                     -webkit-transform: rotate(45deg);
                     margin-top: -10px;
+
+                    @include mobile {
+                        padding: 6px;
+                        margin-top: -6px;
+                    }
                 }
 
                 @include desktop {
@@ -88,6 +98,7 @@
                             border: 0px;
                             padding: 15px 2px;
                             vertical-align: middle;
+
                             span {
                                 display: inline-block;
                                 width: 100%;
@@ -100,6 +111,50 @@
                             &.number {
                                 text-align: center;
                                 color: $colorBlueDarken;
+                            }
+                        }
+                    }
+                    @include mobile {
+                        thead {
+                            th {
+                                padding: 12px 8px;
+                                font-size: 17px;
+                                &:first-child {
+                                    text-align: left;
+                                    padding: 12px 8px 12px 4px;
+                                    border-left: 0;
+                                }
+                            }
+                        }
+                        tbody {
+                            td {
+                                padding: 12px 2px;
+                                font-size: 22px;
+                                .small {
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                    @include only-mobile {
+                        thead {
+                            th {
+                                padding: 10px 6px;
+                                font-size: 14px;
+                                &:first-child {
+                                    text-align: left;
+                                    padding: 10px 6px 10px 4px;
+                                    border-left: 0;
+                                }
+                            }
+                        }
+                        tbody {
+                            td {
+                                padding: 15px 2px;
+                                font-size: 16px;
+                                .small {
+                                    font-size: 11px;
+                                }
                             }
                         }
                     }
@@ -168,7 +223,36 @@
                            }
                        }
 
-                        &:nth-child(5n+6) {
+                        @include desktop {
+                            &:nth-child(5n+6) {
+                                margin-left: 0;
+                            }
+                        }
+
+
+
+
+                    }
+
+                    @include mobile {
+                        .item {
+                            width: 23%;
+                            margin: 0 1% 25px;
+                        }
+                        .item + .item {
+                            margin-left: 1%;
+                        }
+
+
+                    }
+
+                    @include only-mobile {
+                        justify-content: space-between;
+                        .item {
+                            width: 48%;
+                            margin: 0 0 25px;
+                        }
+                        .item + .item {
                             margin-left: 0;
                         }
                     }
@@ -186,6 +270,7 @@
                     flex-direction: column;
                     a:not(:last-child) {
                         margin-bottom: 25px;
+
                     }
                 }
             }
@@ -219,6 +304,13 @@
                         &:after {
                             transform: rotate(-45deg);
                         }
+                        @include mobile {
+                            margin-top: 0;
+                            width: 22px;
+                            &:before, &:after {
+                                height: 22px;
+                            }
+                        }
                     }
                 }
                 .tab_content {
@@ -240,6 +332,7 @@
         width: 100%;
         .products-detail_slider-wrap {
             position: relative;
+            margin-top: 50px;
         }
         .swiper-arrows {
             width: auto;
@@ -297,6 +390,82 @@
                     font-weight: 600;
                     line-height: 26px;
                     color: $colorWhite;
+                }
+
+                @include mobile {
+                    .img {
+                        width: 86px;
+                        min-width: 86px;
+                    }
+                    .desc {
+                        font-size: 20px;
+                        line-height: 22px;
+                    }
+                }
+
+                @include only-mobile {
+                    .img {
+                        width: 60px;
+                        min-width: 60px;
+                    }
+                    .desc {
+                        font-size: 15px;
+                        line-height: 17px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    @include desktop-small {
+        &_sticky {
+            .button {
+                margin: 20px 0;
+                padding: 16px;
+            }
+        }
+
+    }
+    @include desktop-smaller {
+        &-row {
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        &-part {
+            width: 100%;
+            flex: auto;
+        }
+        &_sticky {
+            position: relative;
+            top: auto;
+        }
+        .swiper-slide {
+            width: 100% !important;
+        }
+
+    }
+    @include mobile {
+        &-row {
+            flex-wrap: wrap;
+            font-size: 16px;
+        }
+        &-part {
+            width: 100%;
+            flex: auto;
+        }
+        .swiper-slide {
+            width: 100% !important;
+        }
+        &_sticky {
+            position: relative;
+            top: auto;
+            .button {
+                margin: 5px auto;
+                padding: 16px;
+                font-size: 15px;
+                &:first-of-type {
+                    margin-top: 20px;
                 }
             }
         }

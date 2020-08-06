@@ -218,6 +218,10 @@
     transition: .2s linear;
     transform: translateX(100%);
     padding: 50px 60px;
+    overflow-y: auto;
+    &::-webkit-scrollbar { width: 0; }
+    & { -ms-overflow-style: none; }
+    & { overflow: -moz-scrollbars-none; }
     &-close {
         position: absolute;
         right: 25px;

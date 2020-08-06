@@ -40,6 +40,11 @@
         }
 
     }
+    &.contacts {
+        @include mobile {
+            min-height: 100vh;
+        }
+    }
     .section-content-padding {
         padding: 0 18%;
         @include desktop-smaller {
@@ -255,10 +260,16 @@ a {
             color: #0056b3;
         }
     }
+    @include mobile {
+        font-size: 16px;
+    }
 }
 
 .bold-text {
     font-weight: 600 !important;
+}
+.normal-text {
+    font-weight: normal !important;
 }
 
 

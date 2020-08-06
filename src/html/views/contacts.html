@@ -1,0 +1,46 @@
+<% var data = {
+title: "Контакты | AGC Glass Russia",
+url: "contacts.html",
+header: "white",
+footer: "white"
+}; %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+
+
+
+<section class="section fullscreen content-center contacts">
+    <div class="section-overlay"></div>
+    <div class="section-bg" style="background-image: url('./img/agc/development.jpg')"></div>
+
+    <div class="section-content ">
+        <h1 class="section-title">КОНТАКТЫ</h1>
+        <div class="caption-with-line caption-big-line">
+            <p class="caption-text">
+                ЦЕНТРАЛЬНЫЙ ОФИС:
+                121596 Москва, ул. Горбунова, д. 2, стр. 204,
+                Бизнес-центр «Гранд Сетунь Плаза», 5 этаж, офис B 504
+            </p>
+            <p class="caption-text">
+                <span class="caption-text_link">
+                    Тел : <a href="tel:74954116565">+7 (495) 411 65 65</a>
+                </span>
+                <span class="caption-text_link">
+                    Факс: <a href="tel:74954116564">+7 (495) 411 65 64</a>
+                </span>
+
+            </p>
+            <p class="caption-text">
+                <span class="caption-text_link">
+                    Email: <a href="mailto:info.ru@eu.agc.com">info.ru@eu.agc.com</a>
+                </span>
+
+            </p>
+        </div>
+    </div>
+    <div class="section-btn-wrap">
+        <a href="/" class="button">Перейти на главную</a>
+    </div>
+</section>
+
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>

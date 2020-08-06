@@ -1,0 +1,116 @@
+<% var data = {
+title: "Сервис каталог | AGC Glass Russia",
+url: "service.html",
+header: "white",
+footer: "black"
+}; %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+
+<div class="page-header service_header">
+    <div class="page-header_bg" style="background-image: url('./img/agc/service-banner.jpg')"></div>
+    <div class="page-header_overlay"></div>
+    <h1 class="h1 page-header_title color-white">Сервис каталог AGC</h1>
+</div>
+
+<section class="section service-section">
+    <div class="container container-sm">
+        <div class="caption-with-line caption-black caption-no-overflow margin-bottom-x3">
+            <h2 class="color-text text-italic">
+                Новый сервис AGC позволяет расширить возможности миксования продуктов и предусматривает компоновку всех специальных архитектурных и декоративных продуктов, локализованных в России в формате PLF.
+            </h2>
+        </div>
+
+        <div class="service-item">
+            <h2 class="h2 normal-text">Гибкий подход к заказам</h2>
+            <table class="service-item_table cols-2">
+                <thead>
+                    <tr>
+                        <th>Услуга</th>
+                        <th>Описание услуги</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Миксование множества продуктов</td>
+                        <td>
+                            Доставка более 3 различных продуктов PLF полными блоками одной машиной (дополнительная плата, начиная с 4-го продукта/артикля) Доставка более 5 различных продуктов DLF/MF полными блоками одной машиной (дополнительная плата, начиная с 6-го продукта/артикля)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PLF миксование</td>
+                        <td>Миксование разных продуктов внутри одного PLF блока/пачки *</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="additional-text">
+                * Миксование внутри блоков только для продуктов российского производства. Стандартные продукты (Clear Float, TopN+ и TopN+T) не миксуются между собой. Информация по срокам подачи заявок на миксован ие, срок ам выполнения микс ов , а так же возможност ям корректирово к заявок доступна в Цент ре Обслуживан ия Клиентов.
+            </p>
+        </div>
+
+        <div class="service-item">
+            <h2 class="h2 normal-text">Гибкий подход к доставке</h2>
+            <table class="service-item_table cols-2">
+                <thead>
+                <tr>
+                    <th>Услуга</th>
+                    <th>Описание услуги</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Изменения "в последнюю минуту"</td>
+                    <td>
+                        Изменения в заказ, сделанные после 12:00 дня, предшествующего загрузке транспорта
+                    </td>
+                </tr>
+                <tr>
+                    <td>Перенаправление заказа</td>
+                    <td>Изменения по адресу доставки должны быть сделаны до выезда грузовика со склада</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="service-item">
+            <h2 class="h2 normal-text">Продукты AGC можно разделить на типы</h2>
+            <table class="service-item_table cols-3">
+                <thead>
+                <tr>
+                    <th>Тип</th>
+                    <th>Обозначение</th>
+                    <th>Время обработки заказа</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Стандарт</td>
+                    <td>ST1 в каталоге Продуктов</td>
+                    <td>≤ 5 недели ex works</td>
+                </tr>
+                <tr>
+                    <td>В работе</td>
+                    <td>STX в каталоге Продуктов</td>
+                    <td>≤ 5 недели ex works</td>
+                </tr>
+                <tr>
+                    <td>По заказу **</td>
+                    <td>OR в каталоге Продуктов</td>
+                    <td>Свяжитесь с центром обслуживания клиентов</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p class="additional-text">
+                ** Заказ должен быть отгружен со склада AGC в течении 45 дней с даты производства. Он не может быть отменен после того, как был выполнен. Перед подтверждением заказа в производство
+                требуется письменное подтверждение Коммерческого директора. Во всех случаях требуется 100% предоплата
+            </p>
+        </div>
+
+
+        <p class="text-align-center">Центр обслуживания клиентов в России: <a href="tel:74992713784">+7 (499) 271 37-84</a> и <a href="tel:74992713794">+7 (499) 271 37-94</a>.</p>
+    </div>
+</section>
+
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>

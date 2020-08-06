@@ -12,7 +12,7 @@ export class ProductsSlider {
    }
 
    init = () => {
-     // $('.body, .products-detail').addClass('overflow-visible');
+      $('.body, .products-detail').addClass('overflow-visible');
 
       this.initSlider();
 
@@ -26,6 +26,7 @@ export class ProductsSlider {
          preloadImages: false,
          lazy: true,
          resistance: false,
+         slidesPerView: 1,
          //spaceBetween: 32,
          navigation: {
             nextEl: '.swiper-arrows .swiper-button-next',
