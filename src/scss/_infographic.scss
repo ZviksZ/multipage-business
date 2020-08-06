@@ -62,6 +62,12 @@
                 display: none;
             }
         }
+        &.caption-no-overflow {
+            padding-left: 0;
+            &:before {
+                display: none;
+            }
+        }
         &:before {
             display: none;
 
@@ -144,6 +150,9 @@
             color: $colorText !important;
             text-align: center;
         }
+        &_overlay {
+            height: 82px;
+        }
     }
 
     @include only-mobile {
@@ -152,6 +161,9 @@
         }
         &_title {
             margin-top: 15px;
+        }
+        &_overlay {
+            height: 45px;
         }
     }
 }

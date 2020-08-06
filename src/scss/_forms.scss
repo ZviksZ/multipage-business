@@ -1,13 +1,4 @@
 // Типографика форм
-.form-steps-wrapper {
-    .form-step {
-        display: none;
-
-        &.active {
-            display: block;
-        }
-    }
-}
 
 @-webkit-keyframes autofill {
     to {
@@ -15,22 +6,22 @@
     }
 }
 
-/*
+
 ::-webkit-input-placeholder {
-    color: $colorGrayMiddle;
+    color: $colorGrayLight;
 }
 :-ms-input-placeholder {
-    color: $colorGrayMiddle;
+    color: $colorGrayLight;
 }
 ::-moz-placeholder {
-    color: $colorGrayMiddle;
+    color: $colorGrayLight;
     opacity: 1;
 }
 :-moz-placeholder {
-    color: $colorGrayMiddle;
+    color: $colorGrayLight;
     opacity: 1;
 }
-*/
+
 
 .field {
     position: relative;
@@ -46,7 +37,7 @@
         margin-top: 0;
         font-weight: 500;
         font-size: 12px;
-        color: $colorGray;
+        color: $colorText;
         left: 15px;
         top: 7px;
         line-height: 1;
@@ -97,10 +88,18 @@
             -webkit-animation-name: autofill;
             -webkit-animation-fill-mode: both;
         }
-        @include desktop {
-            &:hover, &:focus {
-                border: 1px solid $colorGray;
+        &:focus {
+           border: 1px solid $colorGrayLight;
+
+        }
+
+    }
+    @include desktop {
+        &:hover {
+            .input-text, .input-fill-control {
+                border: 1px solid $colorGrayLight;
             }
+
         }
     }
     textarea.input-text {
@@ -125,37 +124,20 @@
         }
     }
 }
-.form-bottom {
-    display: flex;
-    .button {
-        max-width: 135px;
-        margin-right: 55px;
-        cursor: pointer;
-        margin-left: 0;
-    }
-    p {
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 26px;
-        color: $colorText;
-        margin-top: 0;
-    }
-    @include mobile {
-       flex-wrap: wrap;
-        p {
-            margin-bottom: 15px;
-        }
-    }
-}
 
-form {
-    position: relative;
-}
-.feedback-form {
+.form {
     position: relative;
     background: #ffffff;
+    .form-row {
+        display: flex;
+        justify-content: space-between;
+        .field {
+            width: 49%;
+        }
+    }
     .field {
         z-index: 999;
+        overflow: hidden;
     }
     * {
         position: relative;
@@ -175,6 +157,7 @@ form {
         background: #ffffff;
         opacity: 0;
         transition-delay: 1s;
+        z-index: -1;
         * {
             transform: translateY(100%);
             opacity: 0;
@@ -242,12 +225,33 @@ form {
             }
         }
     }
-}
 
-
-form {
     .button {
         cursor: pointer;
+    }
+
+
+    &.career_form {
+        .career_file {
+            display: inline-flex;
+            margin: 0;
+            border: solid 1px $colorGrayMiddle;
+            background-color: transparent;
+            padding: 18px 26px;
+            position: relative;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 21px;
+            color: $colorText;
+            transition: .2s;
+            @include desktop {
+                &:hover {
+                    border: 1px solid $colorGrayLight;
+                }
+            }
+        }
     }
 }
 

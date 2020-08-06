@@ -1,0 +1,78 @@
+<% var data = {
+title: "Карьера | AGC Glass Russia",
+url: "career.html",
+header: "white",
+footer: "black"
+}; %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+
+<div class="page-header">
+    <div class="page-header_bg" style="background-image: url('./img/agc/career-bg.jpg')"></div>
+    <div class="page-header_overlay"></div>
+    <h1 class="h1 page-header_title color-white">КАРЬЕРА</h1>
+</div>
+
+<section class="section">
+    <div class="container container-sm">
+        <div class="caption-with-line caption-black caption-no-overflow margin-bottom-x3">
+            <h2 class="color-text">
+                Возможность работать в команде профессионалов и вместе делать мир лучше, комфортнее и красивее – вот что значит быть сотрудником мирового лидера по производству стекла – компании AGC.
+            </h2>
+        </div>
+        <p>
+            Немногие материалы столь же значительны, как и стекло. Вместе мы создаем здания и уникальные отделки интерьеров. Стекло – это зашита домов, автомобилей, самолетов и поездов. Являясь крупнейшим в мире производителем стекла, мы предлагаем все больше и больше возможностей для формирования того, как люди видят мир.
+        </p>
+        <p>
+            Каждый сотрудник AGC – часть той команды, которая создает материалы и решения, улучшающие жизнь людей по всему миру изо дня в день.
+        </p>
+        <p>
+            Присоединяйтесь к команде AGC и ощутите преимущества динамичной культуры, ориентированной на достижение единой цели – делать окружающий нас мир лучше через знание, профессиональный опыт и инновации в области стекла. Попробуйте свои силы в международной группе, где люди работают в разных странах, в разных культурных и языковых средах, разделяя общие ценности.
+        </p>
+        <p>
+            Если вы заинтересованы в том, чтобы стать частью нашей команды, заполните на сайте форму обратной связи, прикрепите свое резюме и напишите сопроводительное письмо, почему именно вы должны работать в компании AGC. Менеджеры отдела персонала рассмотрят вашу кандидатуру и в случае заинтересованности, обязательно с вами свяжутся.
+        </p>
+
+
+        <h2 class="h2 margin-top-x2">Отклик</h2>
+
+        <form action="" class="form career_form" id="career_form">
+            <div class="form-row">
+                <label class="field field-input item delay-200">
+                    <input class="input-text placeholder validate" placeholder="Ваше Имя" data-placeholder="Как к вам обращаться" data-validate="required"
+                           name="career_name" type="text">
+                    <p class="error-message"></p>
+                </label>
+
+                <label class="field field-input item delay-300">
+                    <input class="input-text placeholder validate input-mask" placeholder="Ваш телефон" data-mask_tpl="phone_plus7" data-placeholder="Номер телефона" data-validate="mobile_phone"
+                           name="career_phone" type="text" value="" inputmode="text">
+                    <p class="error-message"></p>
+                </label>
+            </div>
+
+
+            <div class="career_file">Прикрепить резюме</div>
+
+
+            <div style='height: 0px;width: 0px; overflow:hidden;'>
+                <input id="career_file-input" accept=".doc, .docx, .pdf, .jpg" type="file" value="upload" name="career_file" />
+            </div>
+
+
+            <div class="form-message">
+                <div class="form-info">
+                    <span class="message-icon success"><i class="icon-confirm"></i></span>
+                    <span class="message-icon error"><i class="icon-cancel"></i></span>
+                    <p class="message-title"></p>
+                    <p class="message-subtitle"></p>
+                </div>
+            </div>
+
+
+            <button class="button delay-500 big margin-top" type="submit">Отправить</button>
+        </form>
+    </div>
+</section>
+
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>

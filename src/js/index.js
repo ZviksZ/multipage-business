@@ -1,15 +1,15 @@
-import * as $                    from 'jquery';
-import { Header }                from './components/header';
-import { HeaderMenu }            from './components/header-menu';
-import { FullscreenScroll }      from './components/fullscreen-scroll';
-import { ModalWindowFullScreen } from './components/modal-window-fullscreen';
-import { FooterSearch }          from './components/footer-search';
-import { PageFilter }          from './components/page-filter';
-import { ProductsTabs, ProductsSlider, ProductsModal }          from './components/products';
-
+import * as $                                        from 'jquery';
+import {CareerForm}                                  from './components/career-form';
+import {FooterSearch}                                from './components/footer-search';
+import {initMaskedInput, initPlaceholders}           from './components/form'
+import {FullscreenScroll}                            from './components/fullscreen-scroll';
+import {Header}                                      from './components/header';
+import {HeaderMenu}                                  from './components/header-menu';
+import {ModalWindowFullScreen}                       from './components/modal-window-fullscreen';
+import {PageFilter}                                  from './components/page-filter';
+import {ProductsModal, ProductsSlider, ProductsTabs} from './components/products';
 
 $(function () {
-
 
    // инициализация функционала хедера
    new Header();
@@ -37,6 +37,14 @@ $(function () {
 
    // инициализация функционала работы инпута в футере
    new FooterSearch()
+
+   // инициализация функционала работы формы на странице Карьера
+   new CareerForm()
+
+
+   // Инициализация плейсхолдеров и масок
+   initMaskedInput();
+   initPlaceholders();
 })
 
 
