@@ -39,76 +39,76 @@ export const mockUpNews = {
       ],
       2: [
          {
-            id: 1,
+            id: 21,
             image: './img/news/1.jpg',
             title: 'Тариф выходного дня на услуги миксования',
             date: '14 июля 2020',
-            link: 'url1'
+            link: 'url21'
          },
          {
-            id: 2,
+            id: 22,
             image: './img/news/2.jpg',
             title: 'Matelac Silver Crystalvision: новый декоративный продукт AGC',
             date: '15 июля 2020',
-            link: 'url2'
+            link: 'url22'
          },
          {
-            id: 3,
+            id: 23,
             image: './img/news/3.jpg',
             title: 'Matelac Silver Crystalvision: новый декоративный продукт AGC',
             date: '15 июля 2020',
-            link: 'url3'
+            link: 'url23'
          },
          {
-            id: 4,
+            id: 24,
             image: './img/news/4.jpg',
             title: 'Matelac Silver Crystalvision: новый декоративный продукт AGC',
             date: '15 июля 2020',
-            link: 'url4'
+            link: 'url24'
          },
          {
-            id: 5,
+            id: 25,
             image: './img/news/5.jpg',
             title: 'Matelac Silver Crystalvision: новый декоративный продукт AGC',
             date: '15 июля 2020',
-            link: 'url5'
+            link: 'url25'
          },
       ],
       3: [
          {
-            id: 1,
+            id: 31,
             image: './img/news/1.jpg',
             title: 'Тариф выходного дня на услуги миксования',
             date: '14 июля 2020',
-            link: 'url1'
+            link: 'url31'
          },
          {
-            id: 2,
+            id: 32,
             image: './img/news/2.jpg',
             title: 'Matelac Silver Crystalvision: новый декоративный продукт AGC',
             date: '15 июля 2020',
-            link: 'url2'
+            link: 'url32'
          },
          {
-            id: 3,
+            id: 33,
             image: './img/news/3.jpg',
             title: 'Matelac Silver Crystalvision: новый декоративный продукт AGC',
             date: '15 июля 2020',
-            link: 'url3'
+            link: 'url33'
          },
          {
-            id: 4,
+            id: 34,
             image: './img/news/4.jpg',
             title: 'Matelac Silver Crystalvision: новый декоративный продукт AGC',
             date: '15 июля 2020',
-            link: 'url4'
+            link: 'url34'
          },
          {
-            id: 5,
+            id: 35,
             image: './img/news/5.jpg',
             title: 'Matelac Silver Crystalvision: новый декоративный продукт AGC',
             date: '15 июля 2020',
-            link: 'url5'
+            link: 'url35'
          },
       ]
    }

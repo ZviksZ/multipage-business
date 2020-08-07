@@ -11,6 +11,8 @@ export class NewsLoad {
       }
 
       this.$lastDownloadedPage = 1;
+      this.$isLast = false;
+      this.$isLoading = false;
 
       this.init();
    }
@@ -18,12 +20,35 @@ export class NewsLoad {
    init = () => {
       this.getNews(this.$lastDownloadedPage);
 
+      this.initHandlers();
+
       $(window).on('scroll', this.onScroll)
    }
 
+   initHandlers = () => {
+
+      this.$newsContainer.closest('.news-section').on('click', '.repeat-btn', this.repeatDownload)
+
+   }
+
+   repeatDownload = (e) => {
+      e.preventDefault;
+
+      this.$newsContainer.next('.repeat-btn').remove();
+
+      this.getNews(this.$lastDownloadedPage + 1);
+
+      this.$lastDownloadedPage += 1;
+   }
+
    onScroll = () => {
-      if  ($(window).scrollTop() == $(document).height() - $(window).height() - 200) {
-         this.getNews(this.$lastDownloadedPage + 1);
+      if  ($(window).scrollTop() === $(document).height() - $(window).height()) {
+         if (!this.$isLast && !this.$isLoading) {
+            this.getNews(this.$lastDownloadedPage + 1);
+
+            this.$lastDownloadedPage += 1;
+         }
+
       }
 
    }
@@ -31,36 +56,45 @@ export class NewsLoad {
    getNews = async (pageNumber) => {
       this.toggleLoader();
 
-
       let newsArray = await this.getNewsPage(pageNumber);
-      let template = this.getNewsTemplate(newsArray);
 
-      this.appendNews(template);
+      if (newsArray && newsArray.length > 0) {
+         setTimeout(() => {
 
-      this.toggleLoader();
+            let template = this.getNewsTemplate(newsArray);
+
+            this.appendNews(template);
+
+            this.toggleLoader();
+
+         }, 2000)
+      } else {
+         this.$isLast = true;
+
+         this.toggleLoader();
+      }
    }
-
-
 
    appendNews = (template) => {
       this.$newsContainer.append(template)
    }
 
    toggleLoader = () => {
-      if (this.$newsContainer.find('loader').length > 0) {
-         this.$newsContainer.find('loader').remove();
+      if (this.$newsContainer.next('.loader').length > 0) {
+         this.$isLoading = false;
+         this.$newsContainer.next('.loader').remove();
       } else {
-         this.$newsContainer.append('<div class="loader"></div>')
+         this.$isLoading = true;
+         this.$newsContainer.after('<div class="loader"></div>')
       }
    }
 
-   getNewsPage = async (pageNumber) => {
-      let data = [];
-      setTimeout(() => {
-         data = getMockupNews(pageNumber);
-      }, 3000)
+   onError = () => {
+      this.$newsContainer.after('<div class="repeat-btn">Повторить загрузку</div>')
+   }
 
-      return data;
+   getNewsPage = async (pageNumber) => {
+      return getMockupNews(pageNumber);
    }
 
    getNewsTemplate = (newsArray) => {
@@ -80,8 +114,7 @@ export class NewsLoad {
    getNewsItemTemplate = (item, isFirst) => {
       const isFirstClassName = isFirst ? ' item-first' : '';
 
-      return `      
-         <a href=${item.link}  class="item ${isFirstClassName}">
+      return `<a href=${item.link}  class="item ${isFirstClassName}">
                     <div class="bg-wrap">
                         <div class="bg" style="background-image: url(${item.image})"></div>
                     </div>
@@ -99,5 +132,4 @@ export class NewsLoad {
                 </a>
       `
    }
-
 }

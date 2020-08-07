@@ -132,6 +132,15 @@
     width: 100%;
     height: 230px;
     position: relative;
+    &_date {
+        position: absolute;
+        left: 15%;
+        bottom: 150px;
+        font-size: 18px;
+        color: $colorWhite;
+        line-height: 1.21;
+        margin-bottom: 30px;
+    }
     &_bg {
         position: absolute;
         top: 0;
@@ -161,6 +170,7 @@
         bottom: 30px;
         left: 15%;
         text-transform: uppercase;
+        max-height: 120px;
     }
 
     @include mobile {
@@ -170,6 +180,14 @@
             top: auto;
             left: auto;
             height: 82px;
+        }
+        &_date {
+            position: relative;
+            bottom: auto;
+            left: auto;
+            margin-top: 20px;
+            color: $colorText !important;
+            text-align: center;
         }
         &_title {
             position: relative;
@@ -417,3 +435,5 @@
         }
     }
 }
+
+
