@@ -31,6 +31,7 @@ export class CareerForm {
    downloadFile = () => {
       this.$fileInput.click();
    }
+
    fileInputChange = (e) => {
       let file = e.target.value;
       let fileName = file.split("\\");
@@ -77,7 +78,7 @@ export class CareerForm {
 
       this.$formMessage.find('.message-icon.error').addClass('hide');
       this.$formMessage.find('.message-title').text('Отлично!');
-      this.$formMessage.find('.message-subtitle').text('Ваше собщение успешно отправлено');
+      this.$formMessage.find('.message-subtitle').text('Ваши данные успешно отправлены');
 
 
       this.$form.addClass('form-hide');

@@ -23,107 +23,7 @@
 }
 
 
-.field {
-    position: relative;
-    display: block;
-    margin: 16px 0;
-    padding: 1px 0 0 0;
-    cursor: pointer;
-    .label {
-        display: inline-block;
-        width: 100%;
-        position: absolute;
-        z-index: 20;
-        margin-top: 0;
-        font-weight: 500;
-        font-size: 12px;
-        color: $colorText;
-        left: 15px;
-        top: 7px;
-        line-height: 1;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        -webkit-transition: all 0.2s ease;
-        -o-transition: all 0.2s ease;
-        transition: all 0.2s ease;
-    }
-    &.empty {
-        .label {
-            top: 14px;
-            left: 15px;
-            font-size: 18px;
-            line-height: 26px;
-            color: $colorText;
-        }
-        .input-text {
-            &::-webkit-input-placeholder {
-                opacity: 0;
-            }
-            &:-ms-input-placeholder {
-                opacity: 0;
-            }
-            &::-moz-placeholder {
-                opacity: 0;
-            }
-            &:-moz-placeholder {
-                opacity: 0;
-            }
-        }
-    }
-    .input-text, .input-fill-control {
-        display: flex;
-        width: 100%;
-        height: 52px;
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 26px;
-        color: $colorText;
-        padding: 20px 15px 4px;
-        border: 1px solid $colorGrayMiddle;
-        box-sizing: border-box;
-        border-radius: 5px;
-        &:-webkit-autofill {
-            -webkit-animation-name: autofill;
-            -webkit-animation-fill-mode: both;
-        }
-        &:focus {
-           border: 1px solid $colorGrayLight;
 
-        }
-
-    }
-    @include desktop {
-        &:hover {
-            .input-text, .input-fill-control {
-                border: 1px solid $colorGrayLight;
-            }
-
-        }
-    }
-    textarea.input-text {
-        height: 96px;
-        resize: none;
-    }
-    .error-message {
-        display: none;
-        margin: 5px 0 0 0;
-        font-size: 14px;
-        line-height: 18px;
-        font-weight: 400;
-        color: $colorError;
-    }
-    &.error {
-        input {
-            color: $colorText;
-            border-color: $colorError;
-        }
-        .error-message {
-            display: block;
-        }
-    }
-}
 
 .form {
     position: relative;
@@ -134,11 +34,117 @@
         .field {
             width: 49%;
         }
+        @include mobile {
+            flex-wrap: wrap;
+            .field {
+                width: 100%;
+            }
+        }
     }
     .field {
+        position: relative;
+        display: block;
+        margin: 16px 0;
+        padding: 1px 0 0 0;
+        cursor: pointer;
         z-index: 999;
         overflow: hidden;
+        .label {
+            display: inline-block;
+            width: 100%;
+            position: absolute;
+            z-index: 20;
+            margin-top: 0;
+            font-weight: 500;
+            font-size: 12px;
+            color: $colorText;
+            left: 15px;
+            top: 7px;
+            line-height: 1;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-transition: all 0.2s ease;
+            -o-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+        }
+        &.empty {
+            .label {
+                top: 14px;
+                left: 15px;
+                font-size: 18px;
+                line-height: 26px;
+                color: $colorText;
+            }
+            .input-text {
+                &::-webkit-input-placeholder {
+                    opacity: 0;
+                }
+                &:-ms-input-placeholder {
+                    opacity: 0;
+                }
+                &::-moz-placeholder {
+                    opacity: 0;
+                }
+                &:-moz-placeholder {
+                    opacity: 0;
+                }
+            }
+        }
+        .input-text, .input-fill-control {
+            display: flex;
+            width: 100%;
+            height: 52px;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 26px;
+            color: $colorText;
+            padding: 20px 15px 4px;
+            border: 1px solid $colorGrayMiddle;
+            box-sizing: border-box;
+            border-radius: 5px;
+            &:-webkit-autofill {
+                -webkit-animation-name: autofill;
+                -webkit-animation-fill-mode: both;
+            }
+            &:focus {
+                border: 1px solid $colorGrayLight;
+
+            }
+
+        }
+        @include desktop {
+            &:hover {
+                .input-text, .input-fill-control {
+                    border: 1px solid $colorGrayLight;
+                }
+
+            }
+        }
+        textarea.input-text {
+            height: 96px;
+            resize: none;
+        }
+        .error-message {
+            display: none;
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            line-height: 18px;
+            font-weight: 400;
+            color: $colorError;
+        }
+        &.error {
+            input {
+                color: $colorText;
+                border-color: $colorError;
+            }
+            .error-message {
+                display: block;
+            }
+        }
     }
+
     * {
         position: relative;
         transition: .3s linear;
@@ -165,51 +171,39 @@
         }
         .message-icon {
             display: flex;
-            width: 32px;
-            height: 32px;
+            width: 45px;
+            height: 45px;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
             margin: 0 auto;
-            transition-delay: 0.7s;
-            i {
-                font-size: 12px;
-            }
-            &.success {
-                border: 2px solid $colorGreen;
-                i {
-                    color: $colorGreen;
-                }
-            }
-            &.error {
-                border: 2px solid $colorMain;
-                i {
-                    color: $colorMain;
-                }
+            img {
+                width: 100%;
+                height: auto;
+                max-width: 100%;
             }
         }
         .message-title {
             font-weight: bold;
-            font-size: 20px;
+            font-size: 25px;
             line-height: 26px;
             text-align: center;
             color: $colorText;
             transition-delay: 0.8s;
             margin-top: 10px;
-            margin-bottom: 0;
+            margin-bottom: 3px;
         }
         .message-subtitle {
             font-weight: 500;
-            font-size: 14px;
+            font-size: 18px;
             line-height: 26px;
             text-align: center;
-            color: $colorGray;
+            color: $colorText;
             transition-delay: 0.9s;
             margin-top: 0;
         }
     }
     &.form-hide {
-        .field, .form-bottom, .h5, .modal-caption-with-close, .button {
+        .field, .form-bottom, .h5, .modal-caption-with-close, .button, .career_file {
             transform: translateY(-100%);
             opacity: 0;
             pointer-events: none;
@@ -250,6 +244,15 @@
                 &:hover {
                     border: 1px solid $colorGrayLight;
                 }
+            }
+            @include mobile {
+                margin: 16px 0;
+                font-size: 18px;
+                padding: 14px 20px;
+            }
+            @include only-mobile {
+                font-size: 16px;
+                padding: 10px 15px;
             }
         }
     }
