@@ -1,0 +1,134 @@
+<% var data = {
+title: "Новости | AGC Glass Russia",
+url: "news.html",
+header: "white",
+footer: "black"
+}; %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+
+<div class="page-header">
+    <div class="page-header_bg" style="background-image: url('./img/news/news-bg.jpg')"></div>
+    <div class="page-header_overlay"></div>
+    <h1 class="h1 page-header_title color-white">Новости</h1>
+</div>
+
+<section class="section no-padding-top no-padding-bottom">
+    <div class="section-content">
+        <div class="container">
+            <div class="page-filter page-filter-links">
+                <div class="page-filter-wrap padding-top">
+                    <div class="page-filter_toggle hide-desktop">
+                        <span>Фильтр</span>
+                        <img src="./img/agc/filter-collapse-icon.svg" alt="arrow">
+                    </div>
+                </div>
+
+
+                <div class="page-filter_list">
+
+                    <div class="page-filter_row">
+                        <a href="#" class="page-filter_item active">Все новости</a>
+                        <a href="#" class="page-filter_item">Официальные новости</a>
+                        <a href="#" class="page-filter_item">Блог компании</a>
+                        <a href="#" class="page-filter_item">События</a>
+                        <a href="#" class="page-filter_item">СМИ об AGC</a>
+                        <a href="#" class="page-filter_item">Фотоотчеты</a>
+                        <a href="#" class="page-filter_item">Видео отчеты</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--<div class="loader"></div>
+            <div class="repeat-btn">Повторить загрузку</div>-->
+            <div class="news-list" id="news-list">
+                <!--<a href="#"  class="item item-first">
+                    <div class="bg-wrap">
+                        <div class="bg" style="background-image: url('./img/news/1.jpg')"></div>
+                    </div>
+
+                    <div class="item-info">
+                        <div class="text">
+                            <div class="title">Тариф выходного дня на услуги миксования</div>
+                            <div class="date">14 июля 2020</div>
+                        </div>
+                        <div class="btn">
+                            <img src="./img/agc/newsitem-read-more.svg" alt="">
+                            <span>Подробнее</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#"  class="item">
+                    <div class="bg-wrap">
+                        <div class="bg" style="background-image: url('./img/news/2.jpg')"></div>
+                    </div>
+
+                    <div class="item-info">
+                        <div class="text">
+                            <div class="title">Matelac Silver Crystalvision: новый декоративный продукт AGC</div>
+                            <div class="date">15 июля 2020</div>
+                        </div>
+                        <div class="btn">
+                            <img src="./img/agc/newsitem-read-more.svg" alt="">
+                            <span>Подробнее</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#"  class="item">
+                    <div class="bg-wrap">
+                        <div class="bg" style="background-image: url('./img/news/3.jpg')"></div>
+                    </div>
+
+                    <div class="item-info">
+                        <div class="text">
+                            <div class="title">Matelac Silver Crystalvision: новый декоративный продукт AGC</div>
+                            <div class="date">15 июля 2020</div>
+                        </div>
+                        <div class="btn">
+                            <img src="./img/agc/newsitem-read-more.svg" alt="">
+                            <span>Подробнее</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#"  class="item">
+                    <div class="bg-wrap">
+                        <div class="bg" style="background-image: url('./img/news/4.jpg')"></div>
+                    </div>
+                    <div class="item-info">
+                        <div class="text">
+                            <div class="title">Matelac Silver Crystalvision: новый декоративный продукт AGC</div>
+                            <div class="date">15 июля 2020</div>
+                        </div>
+                        <div class="btn">
+                            <img src="./img/agc/newsitem-read-more.svg" alt="">
+                            <span>Подробнее</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#"  class="item">
+                    <div class="bg-wrap">
+                        <div class="bg" style="background-image: url('./img/news/5.jpg')"></div>
+                    </div>
+
+
+                    <div class="item-info">
+                        <div class="text">
+                            <div class="title">Matelac Silver Crystalvision: новый декоративный продукт AGC</div>
+                            <div class="date">15 июля 2020</div>
+                        </div>
+                        <div class="btn">
+                            <img src="./img/agc/newsitem-read-more.svg" alt="">
+                            <span>Подробнее</span>
+                        </div>
+                    </div>
+                </a>-->
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>

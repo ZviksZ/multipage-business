@@ -1,0 +1,159 @@
+.news-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin: 25px -1%;
+    .item {
+        display: block;
+        flex: 1 1 31%;
+        margin: 0 1% 30px 1%;
+        position: relative;
+        overflow: hidden;
+        &:before {
+            display: block;
+            content: '';
+            float: left;
+            padding-top: 104%;
+        }
+        .bg-wrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 77%;
+            overflow: hidden;
+            .bg {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                background-position: center center;
+                background-repeat: no-repeat;
+                -webkit-background-size: cover;
+                background-size: cover;
+                transition: .2s;
+            }
+        }
+        .item-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: transparent;
+            width: 100%;
+            height: 23%;
+            overflow: hidden;
+            display: flex;
+            align-items: stretch;
+            justify-content: flex-start;
+            z-index: 8;
+            transition: .2s;
+            .text {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-end;
+                width: 70%;
+                background: #ffffff;
+                transition: .2s;
+                .title {
+                    width: 100%;
+                    font-weight: 600;
+                    font-size: 27px;
+                    line-height: 27px;
+                    color: $colorText;
+                    height: 55px;
+                    overflow: hidden;
+                    -webkit-line-clamp: 2;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    white-space: normal;
+                    text-overflow: ellipsis;
+                }
+                .date {
+                    font-size: 21px;
+                    line-height: 21px;
+                    color: $colorText;
+                    margin-top: 15px;
+                }
+            }
+            .btn {
+                width: 15%;
+                padding: 0 15px;
+                height: 100%;
+                background: $colorBlueDarken;
+                transform: translateX(-5%);
+                transition: .2s;
+                font-size: 21px;
+                color: $colorWhite;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                span {
+                    font-size: 0;
+                    width: 0;
+                    overflow: hidden;
+                }
+                img {
+                    width: auto;
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+        &.item-first {
+            flex: 2 1 64%;
+            &:before {
+                display: block;
+                content: '';
+                float: left;
+                padding-top: 51%;
+            }
+            .bg-wrap {
+                height: 100%;
+            }
+            .item-info {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+
+            }
+
+        }
+
+        @include desktop {
+            &:hover {
+                .bg-wrap {
+                    .bg {
+                        transform: scale(1.1);
+                    }
+                }
+
+                .item-info {
+                    transition: .2s;
+
+                    .text {
+                        .title {
+                            color: $colorBlueDarken;
+                        }
+                    }
+
+                    .btn {
+                        width: 30%;
+                        background: $colorBlueDarken;
+                        transform: translateX(0);
+                        span {
+                            font-size: 21px;
+                            width: auto;
+                        }
+                        img {
+                            opacity: 0;
+                            width: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+}

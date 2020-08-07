@@ -8,6 +8,7 @@ import {HeaderMenu}                                  from './components/header-m
 import {ModalWindowFullScreen}                       from './components/modal-window-fullscreen';
 import {PageFilter}                                  from './components/page-filter';
 import {ProductsModal, ProductsSlider, ProductsTabs} from './components/products';
+import {NewsLoad} from './components/news';
 
 $(function () {
 
@@ -40,6 +41,9 @@ $(function () {
 
    // инициализация функционала работы формы на странице Карьера
    new CareerForm()
+
+   // инициализация функционала загрузки новостей
+   new NewsLoad()
 
 
    // Инициализация плейсхолдеров и масок

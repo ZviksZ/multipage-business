@@ -219,6 +219,7 @@
     transform: translateX(100%);
     padding: 50px 60px;
     overflow-y: auto;
+    will-change: transform;
     &::-webkit-scrollbar { width: 0; }
     & { -ms-overflow-style: none; }
     & { overflow: -moz-scrollbars-none; }

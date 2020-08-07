@@ -3,7 +3,9 @@ import * as $                    from 'jquery';
 export class ProductsTabs {
    constructor() {
       this.$tabs = $('.products-detail .products-detail_tabs .tab');
-
+      if (!this.$tabs.length) {
+         return false
+      }
       this.init();
    }
 
