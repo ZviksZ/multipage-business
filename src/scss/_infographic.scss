@@ -437,3 +437,12 @@
 }
 
 
+
+.tabs-block .tab {
+    display: none;
+}
+.tabs-block .tab.active {
+    display: block;
+}
+
+

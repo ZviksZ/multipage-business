@@ -1,0 +1,111 @@
+<% var data = {
+title: "Медиа | AGC Glass Russia",
+url: "media.html",
+header: "white",
+footer: "black"
+}; %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+
+<div class="page-header">
+    <div class="page-header_bg" style="background-image: url('./img/media/bg.jpg')"></div>
+    <div class="page-header_overlay"></div>
+    <h1 class="h1 page-header_title color-white">МЕДИА</h1>
+</div>
+
+<section class="section no-padding-top media-section">
+    <div class="section-content">
+        <div class="container">
+            <div class="page-filter page-filter-links">
+                <div class="page-filter-wrap padding-top">
+                    <div class="page-filter_toggle hide-desktop">
+                        <span>Фильтр</span>
+                        <img src="./img/agc/filter-collapse-icon.svg" alt="arrow">
+                    </div>
+                </div>
+
+
+                <div class="page-filter_list">
+
+                    <div class="page-filter_row">
+                        <a href="#" class="page-filter_item active">Все</a>
+                        <a href="#" class="page-filter_item">Рекламные материалы</a>
+                        <a href="#" class="page-filter_item">Руководства</a>
+                        <a href="#" class="page-filter_item">Для СМИ</a>
+                        <a href="#" class="page-filter_item">Мультимедиа</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="media-list">
+                <a href="#"  class="item">
+                    <div class="bg-wrap">
+                        <div class="bg" style="background-image: url('./img/media/1.jpg')"></div>
+                        <div class="overlay">
+                            <img src="./img/agc/icon-watch.svg" alt="watch">
+                            <span>Смотреть</span>
+                        </div>
+                    </div>
+
+                    <div class="item-info">
+                        <div class="text">
+                            <div class="title">Matelac Silver Crystalvision: новый декоративный продукт AGC</div>
+                            <div class="type">15 июля 2020</div>
+                        </div>
+                        <div class="btn">
+                            <img src="./img/agc/icon-download.svg" alt="">
+                            <span>Скачать</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#"  class="item">
+                    <div class="bg-wrap">
+                        <div class="bg" style="background-image: url('./img/media/2.jpg')"></div>
+                        <div class="overlay">
+                            <img src="./img/agc/icon-watch.svg" alt="watch">
+                            <span>Смотреть</span>
+                        </div>
+                    </div>
+
+                    <div class="item-info">
+                        <div class="text">
+                            <div class="title">Matelac Silver Crystalvision: новый декоративный продукт AGC</div>
+                            <div class="type">15 июля 2020</div>
+                        </div>
+                        <div class="btn">
+                            <img src="./img/agc/icon-download.svg" alt="">
+                            <span>Скачать</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#"  class="item">
+                    <div class="bg-wrap">
+                        <div class="bg" style="background-image: url('./img/media/3.jpg')"></div>
+                        <div class="overlay">
+                            <img src="./img/agc/icon-watch.svg" alt="watch">
+                            <span>Смотреть</span>
+                        </div>
+                    </div>
+
+                    <div class="item-info">
+                        <div class="text">
+                            <div class="title">Matelac Silver Crystalvision: новый декоративный продукт AGC</div>
+                            <div class="type">15 июля 2020</div>
+                        </div>
+                        <div class="btn">
+                            <img src="./img/agc/icon-download.svg" alt="">
+                            <span>Скачать</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>
