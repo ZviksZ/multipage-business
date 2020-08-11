@@ -65,7 +65,7 @@ export class ModalWindowFullScreen {
 
     resizeModals() {
         if ($('.modal-window:visible').length) {
-            var viewportHeight = +$(window).height(),
+           /* var viewportHeight = +$(window).height(),
                $modal = $('.modal-window:visible'),
                $modalContent = $modal.find('.modal-content'),
                modalHeight = $modalContent.height() * 1 + 60;
@@ -78,7 +78,26 @@ export class ModalWindowFullScreen {
 
             $modalContent.css({
                 'marginTop': marginModal
-            });
+            });*/
+
+            var viewportHeight = +$(window).height(),
+               $modal = $('.modal-window:visible')
+
+
+            $modal.each(function () {
+                let $modalContent = $(this).find('.modal-content');
+                let modalHeight = $modalContent.height() * 1;
+                let marginModal = 30;
+
+                let diff = viewportHeight - modalHeight;
+                if (diff > 60) {
+                    marginModal = diff / 2;
+                }
+
+                $modalContent.css({
+                    'marginTop': marginModal
+                });
+            })
         }
     }
 }

@@ -12,15 +12,19 @@
             margin: 0 1% 30px 1%;
             position: relative;
             overflow: hidden;
+            &:before {
+                display: block;
+                content: '';
+                float: left;
+                padding-top: 104%;
+            }
             .bg-wrap {
+                display: block;
+                position: relative;
                 width: 100%;
                 overflow: hidden;
-                &:before {
-                    display: block;
-                    content: '';
-                    float: left;
-                    padding-top: 81%;
-                }
+                height: 77%;
+                text-decoration: none;
                 .bg {
                     position: absolute;
                     top: 0;
@@ -32,47 +36,78 @@
                     background-repeat: no-repeat;
                     -webkit-background-size: cover;
                     background-size: cover;
-                    transition: .2s;
+                    transition: .3s;
+                    -webkit-backface-visibility: hidden;
+                    -moz-backface-visibility:    hidden;
+                    -ms-backface-visibility:     hidden;
                 }
                 .overlay {
                     position: absolute;
                     top: 0;
                     left: 0;
+                    width: 100%;
+                    height: 100%;
                     opacity: 0;
                     background-color: #151515;
-                    transition: .2s;
+                    transition: .3s;
+                }
+                .info {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 7;
+                    opacity: 0;
+                    transition: .3s;
+                    color: $colorWhite;
+                    span {
+                        display: inline-block;
+                        margin-top: 4px;
+                    }
+                    img {
+                        width: 40px;
+                        height: 40px;
+                    }
                 }
                 @include desktop {
                     &:hover {
                         .bg {
-                            transform: scale(1.1) translateZ(0);
+                            transform: scale(1.05) translateZ(0);
                         }
                         .overlay {
                             opacity: .5;
+                        }
+                        .info {
+                            opacity: 1;
                         }
                     }
                 }
             }
             .item-info {
-                background: transparent;
+                background: $colorWhite;
                 width: 100%;
                 height: 23%;
                 overflow: hidden;
                 display: flex;
                 align-items: stretch;
-                justify-content: flex-start;
+                justify-content: space-between;
                 z-index: 8;
                 transition: .2s;
                 .text {
                     display: flex;
-                    flex-wrap: wrap;
                     flex-direction: column;
                     align-items: flex-start;
                     justify-content: flex-end;
-                    width: 70%;
                     background: #ffffff;
                     transition: .2s;
+                    width: 75%;
                     .title {
+                        display: inline-block;
                         width: 100%;
                         font-weight: 600;
                         font-size: 27px;
@@ -85,10 +120,15 @@
                         -webkit-box-orient: vertical;
                         white-space: normal;
                         text-overflow: ellipsis;
+                        text-decoration: none;
+                        @include desktop {
+                            &:hover {
+                                color: $colorBlueDarken;
+                            }
+                        }
                     }
-                    .date {
-                        font-size: 21px;
-                        line-height: 21px;
+                    .type {
+                        font-size: 15px;
                         color: $colorText;
                         margin-top: 15px;
                     }
@@ -98,13 +138,14 @@
                     padding: 0 5px;
                     height: 100%;
                     background: $colorBlueDarken;
-                    transform: translateX(-5%);
                     transition: .2s;
                     font-size: 19px;
                     color: $colorWhite;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    margin-left: auto;
+                    text-decoration: none;
                     span {
                         font-size: 0;
                         width: 0;
@@ -112,32 +153,10 @@
                     }
                     img {
                         width: auto;
-                        transform: rotate(-90deg);
                     }
-                }
-            }
-
-            @include desktop {
-                &:hover {
-                    .bg-wrap {
-                        .bg {
-                            transform: scale(1.1);
-                        }
-                    }
-
-                    .item-info {
-                        transition: .2s;
-
-                        .text {
-                            .title {
-                                color: $colorBlueDarken;
-                            }
-                        }
-
-                        .btn {
-                            width: 30%;
-                            background: $colorBlueDarken;
-                            transform: translateX(0);
+                    @include desktop {
+                        &:hover {
+                            width: 25%;
                             span {
                                 font-size: 19px;
                                 width: auto;
@@ -151,11 +170,23 @@
                 }
             }
 
+            &.item-with-video {
+                .item-info {
+                    .text {
+                        pointer-events: none;
+                    }
+                    .btn {
+                        display: none;
+                    }
+                }
+            }
             @include desktop-small {
                 width: 48%;
-
+                .bg-wrap {
+                    height: 75%;
+                }
                 .item-info {
-                    height: 23%;
+                    height: 25%;
                     .text {
                         width: 75%;
                         .title {
@@ -183,21 +214,16 @@
                     }
                 }
 
-
-                &:hover {
-                    .item-info {
-                        .btn {
-                            width: 25%;
-                            span {
-                                font-size: 15px;
-                            }
-                        }
-                    }
-                }
             }
 
             @include mobile {
                 width: 48%;
+                &:before {
+                    display: block;
+                    content: '';
+                    float: left;
+                    padding-top: 90%;
+                }
                 .bg-wrap {
                     height: 70%;
                 }
@@ -210,13 +236,10 @@
                             font-size: 20px;
                             line-height: 20px;
                         }
-                        .date {
-                            font-size: 14px;
+                        .type {
+                            font-size: 13px;
                             margin-top: 12px;
                         }
-                    }
-                    .btn {
-                        display: none;
                     }
                 }
             }
@@ -227,7 +250,7 @@
                     display: block;
                     content: '';
                     float: left;
-                    padding-top: 84%;
+                    padding-top: 70%;
                 }
                 .bg-wrap {
                     height: 70%;
@@ -236,13 +259,29 @@
                     height: 30%;
                     .text {
                         .title {
-                            height: 40px;
-                            font-size: 20px;
-                            line-height: 20px;
+                            height: 50px;
+                            font-size: 22px;
+                            line-height: 23px;
                         }
-                        .date {
+                        .type {
                             font-size: 14px;
-                            margin-top: 12px;
+                            margin-top: 15px;
+                        }
+                    }
+                }
+            }
+            @include mobile-small {
+                .item-info {
+                    height: 30%;
+                    .text {
+                        .title {
+                            height: 38px;
+                            font-size: 18px;
+                            line-height: 19px;
+                        }
+                        .type {
+                            font-size: 11px;
+                            margin-top: 8px;
                         }
                     }
                 }
@@ -253,3 +292,45 @@
 
     }
 }
+
+.media-video-modal {
+    .modal-content {
+        background: transparent;
+        max-width: 80%;
+        @include mobile {
+            max-width: 100%;
+            margin-right: 0;
+            margin-left: 0;
+        }
+    }
+    .close {
+        position: absolute;
+        right: 25px;
+        top: 25px;
+        width: 35px;
+        height: 45px;
+        &:before,
+        &:after {
+            height: 40px;
+            background: $colorWhite;
+        }
+    }
+    .thumb-wrap {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+    }
+    .thumb-wrap iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-width: 0;
+        outline-width: 0;
+    }
+}
+
+
+

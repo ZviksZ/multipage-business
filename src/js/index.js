@@ -7,8 +7,10 @@ import {Header}                                      from './components/header';
 import {HeaderMenu}                                  from './components/header-menu';
 import {ModalWindowFullScreen}                       from './components/modal-window-fullscreen';
 import {PageFilter}                                  from './components/page-filter';
+import {InitPartnersPage}                            from "./components/partners";
 import {ProductsModal, ProductsSlider, ProductsTabs} from './components/products';
-import {NewsLoad} from './components/news';
+import {NewsLoad}                                    from './components/news';
+import {MediaVideo}                                  from './components/media-video';
 
 $(function () {
 
@@ -44,6 +46,12 @@ $(function () {
 
    // инициализация функционала загрузки новостей
    new NewsLoad()
+
+   // инициализация функционала модального окна с видео
+   new MediaVideo()
+
+   // инициализация функционала страницы Партнеры
+   new InitPartnersPage()
 
 
    // Инициализация плейсхолдеров и масок

@@ -1,0 +1,49 @@
+<% var data = {
+title: "Партнеры | AGC Glass Russia",
+url: "partners.html",
+header: "white",
+footer: "white"
+}; %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+
+<div class="page-header">
+    <div class="page-header_bg" style="background-image: url('./img/agc/partners_bg.jpg')"></div>
+    <div class="page-header_overlay"></div>
+    <h1 class="h1 page-header_title color-white">Партнеры</h1>
+</div>
+
+
+<section class="section no-padding-top no-padding-bottom">
+    <div class="partners" id="partners">
+        <div class="partners-types">
+            <div class="partners-types_list" id="partners-types_list">
+
+            </div>
+        </div>
+        <div class="partners-info">
+            <div class="partners-info_top">
+                <span>Вид:</span>
+                <a href="#" class="partners-tab" data-tab="list">
+                    <img src="" alt="">
+                    <span>Список</span>
+                </a>
+                <a href="#" class="partners-tab" data-tab="map">
+                    <img src="" alt="">
+                    <span>Карта</span>
+                </a>
+            </div>
+            <div id="partners-companies" class="partners-companies hide">
+                <div class="partners-companies_list">
+
+                </div>
+                <div class="partners-companies_desc">
+
+                </div>
+            </div>
+            <div id="partners-map" class="partners-map"></div>
+        </div>
+    </div>
+</section>
+
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>
