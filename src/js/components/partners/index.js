@@ -1,8 +1,8 @@
-import * as $     from 'jquery';
-import {partners} from "./mockup-data.js";
+import * as $                           from 'jquery';
+import {partners}                       from "./mockup-data.js";
 
 export class InitPartnersPage {
-   constructor() {
+   constructor(modal) {
       this.$container = $('#partners');
       this.$typesList = $('#partners-types_list');
       this.$mapContainer = $('#partners-map');
@@ -10,6 +10,7 @@ export class InitPartnersPage {
       this.$companiesContainerList = this.$companiesContainer.find('.partners-companies_list');
       this.$companiesContainerDesc = this.$companiesContainer.find('.partners-companies_desc');
       this.$tabs = this.$container.find('.partners-tab');
+      this.$modal = modal;
 
       this.$data = {};
       this.$gmarkersArray = [];
@@ -395,17 +396,23 @@ export class InitPartnersPage {
 
             this.$gmarkersArray = [...this.$gmarkersArray, marker]
 
-            marker.addListener('click', function () {
-              /* var template = partnersBaloonModalTemplate(partner);
 
-               $('#map_modal').find('.modal-body').html(template);
-               $('#map_modal').modal();*/
+
+            marker.addListener('click', () => {
+               let template = this.getPartnerDetailTemplate(partner);
+
+
+               this.$modal.open('partners-modal', 'open-modal-fade-effect');
+
+
+               $('#partners-modal').find('.modal-info').html(template);
             });
 
          }
       }
 
       this.$typesList.find('a[data-id="all"]').addClass('active');
+      this.$container.find('.partners-tab[data-tab="map"]').addClass('active');
    }
 
    getData = () => {
@@ -425,9 +432,16 @@ export class InitPartnersPage {
       $('.partners-type_list a').removeClass('active');
 
       let id = $(e.currentTarget).attr('data-id');
+
+      let item = this.$data[this.$currentType].partners.find(i => i.id === id);
+      let template = this.getPartnerDetailTemplate(item);
+
+
+
       $(e.currentTarget).addClass('active');
 
-      this.$companiesContainerDesc.html(this.getPartnerDetailTemplate(this.$data[this.$currentType].partners[id]));
+
+      this.$companiesContainerDesc.html(template);
    }
 
    changeView = (e) => {
@@ -445,6 +459,9 @@ export class InitPartnersPage {
          this.$mapContainer.removeClass('hide');
          this.$companiesContainer.addClass('hide');
       }
+
+      this.$tabs.removeClass('active');
+      $(e.currentTarget).addClass('active');
    }
 
    changeType = (e) => {
@@ -517,38 +534,48 @@ export class InitPartnersPage {
    }
 
    getPartnerDetailTemplate = (partnerItem) => {
-      let secondAddress = partnerItem.address && partnerItem.address.split(';').length > 1 && partnerItem.address.split(';')[1] || false;
-      let secondPhone = partnerItem.phone && partnerItem.phone.split(';').length > 1 && partnerItem.phone.split(';')[1] || false;
+      let img = partnerItem?.image || null;
+      let title = partnerItem?.title || null;
+      let description = partnerItem?.description || null;
+      let officeFirst = partnerItem?.address && partnerItem?.address.split(';')[0] || null;
+      let officeSecond = partnerItem?.address && partnerItem?.address.split(';')[1] || null;
+      let phoneFirst = partnerItem?.phone && partnerItem?.phone.split(';')[0] || null;
+      let phoneSecond = partnerItem?.phone && partnerItem?.phone.split(';')[1] || null;
+      let email = partnerItem?.email || null;
+      let link = partnerItem?.link || null;
 
       return `
-         <img ${!partnerItem?.image && 'hidden'} alt="${partnerItem?.title} Logo" src="${partnerItem.image}" />
-                    <h3 ${!partnerItem?.title && 'hidden'}>${partnerItem?.title}</h3>
-                    <span ${!partnerItem?.description && 'hidden'}>${partnerItem?.description}</span>
-                    <div class="infoDescription_contacts">
-                        <span ${!partnerItem?.address && 'hidden'}>
-                        Офис: ${partnerItem.address && partnerItem.address.split(';')[0]}
-                        </span>
-                        <span ${secondAddress === false && !partnerItem?.address.split(';')[1] && 'hidden'}>
-                        Офис: ${partnerItem.address && secondAddress}
-                        </span>
+        <div class="partners-company_detail">
+         <img class=${!img ? 'hide' : ''} alt="${title} Logo" src="${img}" />
+           <h3 class=${!title ? 'title hide' : 'title'}>${title}</h3>
+           <span class=${!description ? 'hide' : ''}>${description}</span>
+           <div class="company-contacts">
+               <span class=${!officeFirst ? 'hide' : ''}>
+               Офис: ${officeFirst}
+               </span>
+               <span class=${!officeSecond ? 'hide' : ''}>
+               Офис: ${officeSecond}
+               </span>
 
-                        <span ${!partnerItem?.phone && 'hidden'}>
-                        Телефон: <a href="tel:${partnerItem?.phone && partnerItem.phone.split(';')[0]}" target="_blank">
-                        ${partnerItem?.phone && partnerItem.phone.split(';')[0]}
-                    </a>
-                        </span>
-                        <span ${secondPhone === false && 'hidden'}>
-                        Телефон: <a href="tel:${partnerItem?.phone && partnerItem.phone.split(';')[1]}" target="_blank">
-                        ${partnerItem?.phone && secondPhone}
-                    </a>
-                        </span>
-                        <span ${!partnerItem?.email && 'hidden'}>
-                        Email: <a href="mailto:${partnerItem.email}" target="_blank">${partnerItem.email}</a>
-                        </span>
-                        <span ${!partnerItem?.link && 'hidden'}>
-                        Сайт: <a href="http://${partnerItem.link}" target="_blank">${partnerItem.link}</a>
-                        </span>
-                    </div>
+               <span class=${!phoneFirst ? 'hide' : ''}>
+               Телефон: <a href="tel:${phoneFirst}" target="_blank">
+               ${phoneFirst}
+           </a>
+               </span>
+               <span class=${!phoneSecond ? 'hide' : ''}>
+               Телефон: <a href="tel:${phoneSecond}" target="_blank">
+               ${phoneSecond}
+           </a>
+               </span>
+               <span class=${!email ? 'hide' : ''}>
+               Email: <a href="mailto:${email}" target="_blank">${email}</a>
+               </span>
+               <span class=${!link ? 'hide' : ''}>
+               Сайт: <a href="http://${link}" target="_blank">${link}</a>
+               </span>
+           </div>
+         </div>
+        
       
       `;
    }

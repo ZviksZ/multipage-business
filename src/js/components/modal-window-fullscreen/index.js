@@ -40,7 +40,7 @@ export class ModalWindowFullScreen {
         setTimeout(() => {
             $('html').addClass(effectClass);
             $(`[data-modal="${name}"]`).addClass(showClass);
-
+            this.resizeModals();
         }, 5);
     }
 

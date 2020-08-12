@@ -52,6 +52,18 @@
                 font-size: 15px;
                 margin-left: 15px;
                 color: $colorText;
+                display: flex;
+                align-items: center;
+                span {
+                    display: inline-block;
+                }
+                .glyphicon {
+                    margin-top: 1px;
+                    margin-right: 4px;
+                }
+                &:not(.active) {
+                    opacity: .7;
+                }
             }
         }
         .partners-companies {
@@ -67,7 +79,7 @@
                 height: 100%;
                 padding: 30px 20px;
                 overflow: scroll;
-                border-right: 1px solid $colorGrayLight;
+                border-right: 2px solid $colorGrayLight;
                 &::-webkit-scrollbar { width: 3px; height: 3px;}
                 &::-webkit-scrollbar-button {  height: 0; }
                 &::-webkit-scrollbar-track {  background-color: #999;}
@@ -105,6 +117,15 @@
             .partners-companies_desc {
                 width: 50%;
                 height: 100%;
+                overflow: scroll;
+                border-right: 2px solid $colorGrayLight;
+                &::-webkit-scrollbar { width: 3px; height: 3px;}
+                &::-webkit-scrollbar-button {  height: 0; }
+                &::-webkit-scrollbar-track {  background-color: #999;}
+                &::-webkit-scrollbar-track-piece { background-color: #ffffff;}
+                &::-webkit-scrollbar-thumb { height: 50px; background-color: $colorGrayLight; border-radius: 3px;}
+                &::-webkit-scrollbar-corner { background-color: #999;}
+                &::-webkit-resizer { background-color: #666;}
             }
         }
         .partners-map {
@@ -120,4 +141,38 @@
         display: none;
         visibility: hidden;
     }
+}
+
+.partners-company_detail {
+    padding-top: 30px;
+    padding-left: 50px;
+    img {
+        height: 100px;
+    }
+    .title {
+        margin: 15px 0 0;
+    }
+    span {
+        margin: 10px 0 0;
+        padding-right: 15px;
+        display: block;
+        font-size: 15px;
+    }
+    .company-contacts {
+        margin: 10px 0 0;
+        padding-left: 15px;
+    }
+
+    .company-contacts span {
+        display: block;
+        padding-top: 5px;
+    }
+
+    .company-contacts span a {
+        text-decoration: none !important;
+        text-transform: lowercase !important;
+        color: #3b437a !important;
+        font-size: 15px;
+    }
+
 }

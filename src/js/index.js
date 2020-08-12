@@ -36,7 +36,7 @@ $(function () {
    new ProductsModal()
 
    // инициализация функционала модальных окон
-   new ModalWindowFullScreen()
+   let modal = new ModalWindowFullScreen()
 
    // инициализация функционала работы инпута в футере
    new FooterSearch()
@@ -51,7 +51,7 @@ $(function () {
    new MediaVideo()
 
    // инициализация функционала страницы Партнеры
-   new InitPartnersPage()
+   new InitPartnersPage(modal)
 
 
    // Инициализация плейсхолдеров и масок
