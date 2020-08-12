@@ -3,6 +3,7 @@ import {partners}                       from "./mockup-data.js";
 
 export class InitPartnersPage {
    constructor(modal) {
+      this.$modal = modal;
       this.$container = $('#partners');
       this.$typesList = $('#partners-types_list');
       this.$mapContainer = $('#partners-map');
@@ -10,13 +11,14 @@ export class InitPartnersPage {
       this.$companiesContainerList = this.$companiesContainer.find('.partners-companies_list');
       this.$companiesContainerDesc = this.$companiesContainer.find('.partners-companies_desc');
       this.$tabs = this.$container.find('.partners-tab');
-      this.$modal = modal;
+
 
       this.$data = {};
       this.$gmarkersArray = [];
       this.$firstChange = false;
 
       this.$currentType = 'all';
+      this.$currentView = 'map';
 
       if (!this.$container.length) {
          return false
@@ -436,12 +438,15 @@ export class InitPartnersPage {
       let item = this.$data[this.$currentType].partners.find(i => i.id === id);
       let template = this.getPartnerDetailTemplate(item);
 
-
-
       $(e.currentTarget).addClass('active');
 
-
       this.$companiesContainerDesc.html(template);
+
+      if (window.innerWidth < 1000) {
+         $('html, body').animate({
+            scrollTop: this.$companiesContainerDesc.offset().top
+         }, 50);
+      }
    }
 
    changeView = (e) => {
@@ -455,9 +460,15 @@ export class InitPartnersPage {
          }
          this.$mapContainer.addClass('hide');
          this.$companiesContainer.removeClass('hide');
+
+         this.$currentView = 'list';
       } else {
          this.$mapContainer.removeClass('hide');
          this.$companiesContainer.addClass('hide');
+
+         this.partnersMapFilter(this.$currentType);
+
+         this.$currentView = 'map';
       }
 
       this.$tabs.removeClass('active');
@@ -471,7 +482,9 @@ export class InitPartnersPage {
 
       this.setCompaniesList();
 
-      this.partnersMapFilter(this.$currentType);
+      if (this.$currentView === 'map') {
+         this.partnersMapFilter(this.$currentType);
+      }
 
       this.setActiveType();
 
@@ -579,22 +592,5 @@ export class InitPartnersPage {
       
       `;
    }
-
-
-
-   openModal = (e) => {
-      e.preventDefault();
-
-      let videoId = $(e.currentTarget).attr('data-video');
-
-      let videoTemplate = '<div class="thumb-wrap"><iframe width="560" height="315" src="https://www.youtube.com/embed/'+ videoId + '" frameborder="0" allowfullscreen></iframe></div>';
-
-      this.$modal.find('.modal-content').html(videoTemplate);
-   }
-
-   closeModal = (e) => {
-      this.$modal.find('.modal-content').html('');
-   }
-
 
 }

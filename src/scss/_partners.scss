@@ -141,11 +141,60 @@
         display: none;
         visibility: hidden;
     }
+
+    @include desktop-smaller {
+        .partners-types {
+            padding-left: 10px;
+        }
+    }
+
+    @include mobile {
+        margin-top: 20px;
+        flex-wrap: wrap;
+        .partners-types {
+            width: 100%;
+            padding: 30px;
+        }
+        .partners-info {
+            width: 100%;
+            min-height: calc(100vh - 230px);
+        }
+    }
+    @include only-mobile {
+        min-height: auto;
+        .partners-types {
+            width: 100%;
+            padding: 10px;
+        }
+        .partners-info {
+            width: 100%;
+            .partners-companies {
+                position: relative;
+                top: auto;
+                flex-wrap: wrap;
+                overflow: scroll;
+                &::-webkit-scrollbar { width: 3px; height: 3px;}
+                &::-webkit-scrollbar-button {  height: 0; }
+                &::-webkit-scrollbar-track {  background-color: #999;}
+                &::-webkit-scrollbar-track-piece { background-color: #ffffff;}
+                &::-webkit-scrollbar-thumb { height: 50px; background-color: $colorGrayLight; border-radius: 3px;}
+                &::-webkit-scrollbar-corner { background-color: #999;}
+                &::-webkit-resizer { background-color: #666;}
+                .partners-companies_list {
+                    width: 100%;
+                }
+                .partners-companies_desc {
+                    width: 100%;
+                }
+            }
+
+        }
+
+    }
 }
 
 .partners-company_detail {
-    padding-top: 30px;
-    padding-left: 50px;
+    padding: 30px 10px 30px 30px;
     img {
         height: 100px;
     }
@@ -175,4 +224,29 @@
         font-size: 15px;
     }
 
+}
+
+#partners-modal  {
+    .modal-content {
+        max-height: 80%;
+        overflow-y: auto;
+        &::-webkit-scrollbar { width: 3px; height: 3px;}
+        &::-webkit-scrollbar-button {  height: 0; }
+        &::-webkit-scrollbar-track {  background-color: #999;}
+        &::-webkit-scrollbar-track-piece { background-color: #ffffff;}
+        &::-webkit-scrollbar-thumb { height: 50px; background-color: $colorGrayLight; border-radius: 3px;}
+        &::-webkit-scrollbar-corner { background-color: #999;}
+        &::-webkit-resizer { background-color: #666;}
+    }
+
+    @include only-mobile {
+        .modal-content {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .modal-info {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    }
 }

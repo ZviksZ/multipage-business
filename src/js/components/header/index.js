@@ -22,7 +22,7 @@ export class Header {
                 this.$header.classList.remove(this.headerClassName);
             }
         } else {
-            if (pageYOffset > 100) {
+            if (pageYOffset > 40) {
                 this.$header.classList.add(this.headerClassName);
             } else {
                 this.$header.classList.remove(this.headerClassName);
