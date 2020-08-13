@@ -1,16 +1,19 @@
 import * as $                                        from 'jquery';
-import {CareerForm}                                  from './components/career-form';
-import {FooterSearch}                                from './components/footer-search';
-import {initMaskedInput, initPlaceholders}           from './components/form'
-import {FullscreenScroll}                            from './components/fullscreen-scroll';
-import {Header}                                      from './components/header';
-import {HeaderMenu}                                  from './components/header-menu';
-import {ModalWindowFullScreen}                       from './components/modal-window-fullscreen';
-import {PageFilter}                                  from './components/page-filter';
-import {InitPartnersPage}                            from "./components/partners";
-import {ProductsModal, ProductsSlider, ProductsTabs} from './components/products';
-import {NewsLoad}                                    from './components/news';
-import {MediaVideo}                                  from './components/media-video';
+import {CareerForm}                                    from './components/career-form';
+import {FooterSearch}                                  from './components/footer-search';
+import {initMaskedInput, initPlaceholders}             from './components/form'
+import {FullscreenScroll}                              from './components/fullscreen-scroll';
+import {Header}                                        from './components/header';
+import {HeaderMenu}                                    from './components/header-menu';
+import {MatelacJuxtapose, MatelacGallery, MatelacForm} from "./components/matelac";
+import {ModalWindowFullScreen}                         from './components/modal-window-fullscreen';
+import {PageFilter}                                    from './components/page-filter';
+import {InitPartnersPage}                              from "./components/partners";
+import {ProductsModal, ProductsSlider, ProductsTabs}   from './components/products';
+import {NewsLoad}                                      from './components/news';
+import {MediaVideo}                                    from './components/media-video';
+import {SearchPage}                                  from "./components/search-page";
+import {WidgetTabs}                                  from "./components/widgets-tabs";
 
 $(function () {
 
@@ -52,6 +55,17 @@ $(function () {
 
    // инициализация функционала страницы Партнеры
    new InitPartnersPage(modal)
+
+   // инициализация функционала страницы Виджеты
+   new WidgetTabs()
+
+   // инициализация функционала страницы Поиска по сайту
+   new SearchPage()
+
+   //Matelac Crystal Page
+   new MatelacJuxtapose();
+   new MatelacGallery();
+   new MatelacForm();
 
 
    // Инициализация плейсхолдеров и масок

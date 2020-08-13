@@ -113,10 +113,11 @@ export class NewsLoad {
 
    getNewsItemTemplate = (item, isFirst) => {
       const isFirstClassName = isFirst ? ' item-first' : '';
+      const img = item?.image || './img/news/empty-news.jpg';
 
       return `<a href=${item.link}  class="item ${isFirstClassName}">
                     <div class="bg-wrap">
-                        <div class="bg" style="background-image: url(${item.image})"></div>
+                        <div class="bg" style="background-image: url(${img})"></div>
                     </div>
 
                     <div class="item-info">

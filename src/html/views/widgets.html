@@ -1,0 +1,213 @@
+<% var data = {
+title: "Виджеты | AGC Glass Russia",
+url: "widgets.html",
+header: "white",
+footer: "black"
+}; %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+
+<div class="page-header">
+    <div class="page-header_bg" style="background-image: url('./img/widgets/bg.jpg')"></div>
+    <div class="page-header_overlay"></div>
+    <h1 class="h1 page-header_title color-white">Виджеты</h1>
+</div>
+
+
+<section class="section widgets padding-top">
+    <div class="page-filter page-filter-links">
+        <div class="page-filter-wrap padding-top">
+            <div class="page-filter_toggle hide-desktop">
+                <span>Фильтр</span>
+                <img src="./img/agc/filter-collapse-icon.svg" alt="arrow">
+            </div>
+        </div>
+
+
+        <div class="page-filter_list">
+            <div class="page-filter_row switchers">
+                <a href="#" class="page-filter_item switch" data-tab="1">
+                    Architectural Glass Visualiser
+                </a>
+                <a href="#" class="page-filter_item switch" data-tab="2">
+                    Deco Glass Visualiser
+                </a>
+                <a href="#" class="page-filter_item switch" data-tab="3">
+                    Glass Configurator
+                </a>
+                <a href="#" class="page-filter_item switch" data-tab="4">
+                    Product Finder
+                </a>
+                <a href="#" class="page-filter_item switch" data-tab="5">
+                    CE-Marking
+                </a>
+                <a href="#" class="page-filter_item switch" data-tab="6">
+                    Product Catalogue
+                </a>
+                <a href="#" class="page-filter_item switch" data-tab="7">
+                    Инструкции по переработке
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+
+
+
+        <div class="widgets-tabs">
+            <div class="item" data-tab="1">
+                <div class="desc">
+                    <div class="title">Architectural Glass Visualiser</div>
+                    <p>
+                        Теперь вы можете увидеть свой проект в компьютерной реальности с помощью программы архитектурной визуализации от компании AGC.
+                    </p>
+                    <p>
+                        Для этого вам необходимо зарегистрироваться с использованием ваших персональных данных, далее внести основные технические характеристики и необходимые показатели, чтобы воссоздать ваш проект в виде рендеров. После этого вы выбираете необходимый продукт AGC, подбирая интересные вам варианты стекол или их комбинации. Вы можете сохранить несколько рендеров и сравнить полученные результаты, после чего выбрать наиболее привлекательный вариант. Вам останется лишь заказать необходимый для вашего проекта продукт AGC и воплотить визуализацию в реальность.
+                    </p>
+                </div>
+                <div class="image-link">
+                    <a href="https://www.yourglass.com/archiglassvisualiser/#!Login!init" target="_blank">
+                        <img src="./img/widgets/widget_1.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="item" data-tab="2">
+                <div class="desc">
+                    <div class="title">Deco Glass Visualiser</div>
+
+
+                    <p>
+                        Попробуйте новые цвета серии Lacobel и Matelac 2020 благодаря нашему стеклянному визуализатору Deco.
+                    </p>
+                    <p>Теперь ощутить себя дизайнером может каждый!</p>
+                    <p>
+                        Просто выполните 3 шага:
+                    </p>
+                    <p>
+                        - Выберите основную зону, щелкнув по ней.
+                    </p>
+                    <p>
+                        - Нажмите на одно из крестов, чтобы выбрать конкретное место.
+                    </p>
+                    <p>
+                        - Выберите глянцевое (Lacobel) или матовое (Matelac) окрашенное стекло.
+                    </p>
+                    <p>
+                        Опции:
+                    </p>
+                    <p>
+                        - Просмотрите результат при дневном свете.
+                    </p>
+                    <p>
+                        - Просмотрите результат при вечернем свете.
+                    </p>
+                    <p>
+                        - Создайте анимационное видео.
+                    </p>
+                    <p>
+                        - Отправьте созданное изображение другу.
+                    </p>
+                    <p>
+                        - Поделитесь результатом в социальных сетях.
+                    </p>
+                </div>
+                <div class="image-link">
+                    <a href="https://www.yourglass.com/decoglassvisualiser/"  target="_blank">
+                        <img src="./img/widgets/widget_2.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="item" data-tab="3">
+                <div class="desc">
+                    <div class="title">Glass Configurator</div>
+                    <p>
+                        Этот метод расчета позволяет рассчитать светотехнические, тепловые и шумозащитные характеристики любого отдельного продукта AGC, или комбинации различных типов стекла, разного размера, толщины в однокамерных или двухкамерных стеклопакетах.
+                    </p>
+                    <p>
+                        Данный метод основан на расчетах технических экспертов в области стекольной промышленности. И позволяет с точностью до 90%* рассчитать необходимость тех или иных характеристик для проекта.
+                    </p>
+                    <p>
+                        *AGC Glass Russia не несет ответственности за расхождения между опубликованными данными и фактическими расчетными данными, выполненными иными строительными программами. Этот метод является информативным, но не считается основным при проектировании зданий и расчете физических нагрузок, технических и иных характеристик для строительства зданий и сооружений.
+                    </p>
+                </div>
+                <div class="image-link">
+                    <a href="https://www.yourglass.com/configurator/gb/ru/toolbox/configurator/main.html"  target="_blank">
+                        <img src="./img/widgets/widget_3.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="item" data-tab="4">
+                <div class="desc">
+                    <div class="title">Product Finder</div>
+                    <p>
+                        Удобная в использование поисковая система среди общего ассортимента продуктов AGC, обеспечит каждого клиента надежным фундаментом в подборке необходимого стекла. Простота использования системы и достаточное количество технических характеристик дают возможность подобрать продукт, необходимый исключительно для ваших заданных целей.
+                    </p>
+                    <p>
+                        Выберите и заполните одну или несколько характеристик стекла для поиска, и  получите полный список соответствующих поисковому запросу типов стекла с их детальным описанием.
+                    </p>
+                </div>
+                <div class="image-link">
+                    <a href="https://www.yourglass.com/configurator/gb/ru/toolbox/productfinder.html"  target="_blank">
+                        <img src="./img/widgets/widget_4.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="item" data-tab="5">
+                <div class="desc">
+                    <div class="title">CE-Marking</div>
+                    <p>
+                        Стекло AGC отвечает европейским требованиям CE.
+                    </p>
+                    <p>
+                        Система маркировки CE была создана для унификации и стандартизации европейского коммерческого рынка. Изделия из стекла, например, изготовленные AGC, регулируются Европейской директивой по строительным продуктам 89/106 / EEC.
+                    </p>
+                    <p>
+                        Теперь вы можете увидеть свой проект в компьютерной реальности с помощью программы архитектурной визуализации от компании AGC.
+                    </p>
+                    <p>
+                        Все изделия с маркировкой СЕ демонстрируют соответствие европейским стандартам. Нанесением СЕ маркировки на свою продукцию производитель заявляет, что изделие соответствует основным требованиям соответствующих европейских директив ЕС, а соответственно является качественным, а также безопасным для потребителя.
+                    </p>
+                </div>
+                <div class="image-link">
+                    <a href="https://www.agc-yourglass.com/gb/ru/toolbox/ce_marking" target="_blank">
+                        <img src="./img/widgets/widget_5.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="item" data-tab="6">
+                <div class="desc">
+                    <div class="title">Product Catalogue</div>
+                    <p>
+                        Узнать больше об интересующем вас продукте, можно в электронном каталоге продуктов AGC. Подробные технические данные, а также расширенная информация о способах применения каждого типа стекла. Дополнительным плюсом электронных каталогов продукции является информативная, яркая графика и иллюстрации, которое дают возможность оценить визуальные возможности стекла через экран компьютера.
+                    </p>
+                    <p>
+                </div>
+                <div class="image-link">
+                    <a href="https://www.yourglass.com/agc-glass-europe/gb/ru/toolbox/availabilities.html" target="_blank">
+                        <img src="./img/widgets/widget_6.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="item" data-tab="7">
+                <div class="desc">
+                    <div class="title">Инструкции по переработке</div>
+                    <p>
+                        Руководство по переработке позволяет ознакомиться с каждой стадией по переработке стекла. В инструкции доступен список обязательных манипуляций, формы защиты, сроки хранения листов стандартного формата, а также описаны стандарты хранения нарезанных листов.
+                    </p>
+                    <p>
+                        Нормы и ограничения по срокам и условиям доставки, транспортировке, вскрытию упаковки и срокам обязательного использования также можно прочитать в инструкции.
+                    </p>
+                </div>
+                <div class="image-link">
+                    <a href="#" target="_blank">
+                        <img src="./img/widgets/widget_7.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>

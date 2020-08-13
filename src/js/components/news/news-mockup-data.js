@@ -24,7 +24,7 @@ export const mockUpNews = {
          },
          {
             id: 4,
-            image: './img/news/4.jpg',
+            image: null,
             title: 'Matelac Silver Crystalvision: новый декоративный продукт AGC',
             date: '15 июля 2020',
             link: 'url4'

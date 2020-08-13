@@ -19,16 +19,3 @@ export default class Selects {
         return new Choices($element, options);
     }
 }
-
-//     if ($('select.select').length) {
-//     customSelectInit();
-// }
-//
-// //Инициализация селектов
-// function customSelectInit() {
-//     const element = document.querySelector('select.select');
-//     const choices = new Choices(element, {
-//         searchEnabled: false,
-//         itemSelectText: ''
-//     });
-// }

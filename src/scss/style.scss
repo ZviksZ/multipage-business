@@ -84,6 +84,21 @@
 // страница Медиа
 @import 'partners';
 
+// страница Виджеты
+@import 'widgets';
+
+// страница Результатов поиска по сайту
+@import 'search';
+
+
+@import '/node_modules/juxtaposejs/build/css/juxtapose.css';
+// страница Matelac crystal
+@import 'matelac';
+
+
+
+
+
 //Стили для постраничной прокрутки
 @import 'fullscreen-page';
 

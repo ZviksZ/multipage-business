@@ -1,0 +1,45 @@
+<% var data = {
+title: "Поиск по сайту | AGC Glass Russia",
+url: "search-results.html",
+header: "white",
+footer: "black"
+}; %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+
+<div class="page-header">
+    <div class="page-header_bg" style="background-image: url('./img/search/bg.jpg')"></div>
+    <div class="page-header_overlay"></div>
+    <h1 class="h1 page-header_title color-white">ПОИСК ПО САЙТУ</h1>
+</div>
+
+
+<section class="section search">
+    <div class="container container-sm">
+        <div class="search-field form" id="search-field">
+            <label class="field field-input item delay-200">
+                <input class="input-text placeholder validate" placeholder="Поиск" data-placeholder="Введите запрос" data-validate="required"
+                       name="search" id="search-input" type="text">
+                <p class="error-message"></p>
+            </label>
+            <button class="button big" id="search-btn">Найти</button>
+        </div>
+
+        <div class="search-results" id="search-results">
+            <p class="search-query hide">
+                Результаты поиска по запросу: <span class="query"></span>
+            </p>
+
+            <p class="search-noresult hide">
+                К сожалению, по вашему запросу "<span class="query"></span>" ничего не найдено. Попробуйте уточнить запрос.
+            </p>
+
+            <div class="search-items hide" id="search-items">
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>

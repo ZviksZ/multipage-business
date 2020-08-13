@@ -115,23 +115,216 @@
     </div>
 </div>
 
+<div class="modal-window fade-in gallery-modal" data-modal="gallery-modal" id="gallery-modal">
+    <a href="#" class="close close-small" data-close-modal-button="gallery-modal" data-effect-type="open-modal-fade-effect"></a>
+    <div class="modal-content">
+        <div class="gallery-slider" id="gallery-slider">
+            <div class="swiper-wrapper"></div>
+        </div>
+        <div class="swiper-button swiper-button-prev">
+            <img src="./img/agc/newsitem-read-more.svg" alt="">
+        </div>
+        <div class="swiper-button swiper-button-next">
+            <img src="./img/agc/newsitem-read-more.svg" alt="">
+        </div>
+    </div>
+</div>
+
 
 <div class="modal-window fade-in partners-modal" data-modal="partners-modal" id="partners-modal">
     <div class="modal-content">
-
-
-        <div class="modal-info">
-
-        </div>
-
-
+        <div class="modal-info"></div>
         <div class="modal-footer">
             <a href="#" class="close-btn" data-close-modal-button="partners-modal" data-effect-type="open-modal-fade-effect">
                 Закрыть
             </a>
         </div>
+    </div>
+</div>
 
 
+
+<div class="modal-window fade-in matelac-modal" data-modal="sample-form">
+    <div class="modal-content">
+        <form action="takeSample" class="form sample-form">
+            <div class="title">
+                <span>Заказать образец</span>
+                <div class="close-btn" data-close-modal-button="sample-form" data-effect-type="open-modal-fade-effect"></div>
+            </div>
+            <div class="form-fields">
+                <label class="field field-input item delay-200">
+                    <input class="input-text placeholder validate" data-placeholder="Контактное лицо" data-validate="required"
+                           name="feedback_name" type="text">
+                    <p class="error-message"></p>
+                </label>
+                <label class="field field-input item delay-200">
+                    <input class="input-text placeholder validate" data-placeholder="Компания" data-validate="required"
+                           name="company" type="text">
+                    <p class="error-message"></p>
+                </label>
+                <label class="field field-input item delay-200">
+                    <input class="input-text placeholder validate" data-placeholder="Электронная почта" data-validate="email-required"
+                           name="feedback_email" type="text">
+                    <p class="error-message"></p>
+                </label>
+                <label class="field field-input item delay-200">
+                    <input class="input-text placeholder validate input-mask" data-placeholder="Телефон для связи" data-validate="number_phone-required" data-mask_tpl="phone_plus7"
+                           name="feedback_phone" type="text">
+                    <p class="error-message"></p>
+                </label>
+                <label class="field field-input item delay-200">
+                    <select name="countSamples" class="input-text">
+                        <option value="" disabled selected>Количество образцов*</option>
+                        <option value="1" >1</option>
+                        <option value="2" >2</option>
+                        <option value="3" >3</option>
+                        <option value="4" >4</option>
+                        <option value="5" >5</option>
+                        <option value="6" >6</option>
+                        <option value="7" >7</option>
+                        <option value="8" >8</option>
+                        <option value="9" >9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <p class="error-message"></p>
+                </label>
+
+              <!--  <div class="form-item">
+                    <div id="sample-captcha" class="g-recaptcha" vc-recaptcha key="'6LdtPYwUAAAAACGTHrgZ-rApF44C_ydzPs_9gl0s'"></div>
+                </div>-->
+
+                <div class="form-footer">
+                        <input type="checkbox" name="policy" id="sample-form_policy"  class="">
+                    <label for="sample-form_policy" class=""><span>Даю согласие на обработку персональных данных</span></label>
+
+                    <button type="submit" href="#" class="button no-margin-top no-margin-bottom">Отправить заявку</button>
+                </div>
+                <div class="form-message">
+                    <div class="form-info">
+                        <span class="message-icon success"><img src="./img/success.svg" alt="success"></span>
+                        <span class="message-icon error"><img src="./img/error.svg" alt="error"></span>
+                        <p class="message-title"></p>
+                        <p class="message-subtitle"></p>
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+
+
+</div>
+<div class="modal-window fade-in matelac-modal" data-modal="manager-form">
+    <div class="modal-content">
+        <form action="callback" class="form manager-form">
+            <div class="title">
+                <span>Заказать образец</span>
+                <div class="close-btn" data-close-modal-button="manager-form" data-effect-type="open-modal-fade-effect"></div>
+            </div>
+            <div class="form-fields">
+                <label class="field field-input item delay-200">
+                    <input class="input-text placeholder validate" data-placeholder="Контактное лицо" data-validate="required"
+                           name="feedback_name" type="text">
+                    <p class="error-message"></p>
+                </label>
+                <label class="field field-input item delay-200">
+                    <input class="input-text placeholder validate" data-placeholder="Компания" data-validate="required"
+                           name="company" type="text">
+                    <p class="error-message"></p>
+                </label>
+                <label class="field field-input item delay-200">
+                    <input class="input-text placeholder validate input-mask" data-placeholder="Телефон для связи" data-validate="number_phone-required" data-mask_tpl="phone_plus7"
+                           name="feedback_phone" type="text">
+                    <p class="error-message"></p>
+                </label>
+
+                <label class="field field-input item delay-200">
+                    <input class="input-text placeholder validate input-mask" data-placeholder="Удобное время для звонка" data-validate="required" data-mask_tpl="phone_plus7"
+                           name="feedback_phone" type="text">
+                    <p class="error-message"></p>
+                </label>
+                <!--  <div class="form-item">
+                      <div id="sample-captcha" class="g-recaptcha" vc-recaptcha key="'6LdtPYwUAAAAACGTHrgZ-rApF44C_ydzPs_9gl0s'"></div>
+                  </div>-->
+
+                <div class="form-footer">
+                    <input type="checkbox" name="policy" id="manager-form_policy"  class="">
+                    <label for="manager-form_policy" class=""><span>Даю согласие на обработку персональных данных</span></label>
+
+                    <button type="submit" href="#" class="button no-margin-top no-margin-bottom">Отправить заявку</button>
+                </div>
+                <div class="form-message">
+                    <div class="form-info">
+                        <span class="message-icon success"><img src="./img/success.svg" alt="success"></span>
+                        <span class="message-icon error"><img src="./img/error.svg" alt="error"></span>
+                        <p class="message-title"></p>
+                        <p class="message-subtitle"></p>
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+
+
+</div>
+
+<div class="modal-window fade-in matelac-modal" data-modal="question-form">
+    <div class="modal-content">
+        <form action="callback" class="form question-form">
+            <div class="title">
+                <span>Заказать образец</span>
+                <div class="close-btn" data-close-modal-button="question-form" data-effect-type="open-modal-fade-effect"></div>
+            </div>
+            <div class="form-fields">
+                <label class="field field-input item delay-200">
+                    <input class="input-text placeholder validate" data-placeholder="Контактное лицо" data-validate="required"
+                           name="feedback_name" type="text">
+                    <p class="error-message"></p>
+                </label>
+                <label class="field field-input item delay-200">
+                    <input class="input-text placeholder validate" data-placeholder="Компания" data-validate="required"
+                           name="company" type="text">
+                    <p class="error-message"></p>
+                </label>
+                <label class="field field-input item delay-200">
+                    <input class="input-text placeholder validate" data-placeholder="Электронная почта" data-validate="email-required"
+                           name="feedback_email" type="text">
+                    <p class="error-message"></p>
+                </label>
+                <label class="field field-input item delay-200">
+                    <input class="input-text placeholder validate input-mask" data-placeholder="Телефон для связи" data-validate="number_phone-required" data-mask_tpl="phone_plus7"
+                           name="feedback_phone" type="text">
+                    <p class="error-message"></p>
+                </label>
+                <label class="field field-fullwidth field-input item delay-200">
+                    <textarea class="input-text validate placeholder" data-placeholder="Напишите ваш вопрос" data-validate="required" name="feedback_text"
+                    ></textarea>
+                    <p class="error-message"></p>
+                </label>
+
+                <!--  <div class="form-item">
+                      <div id="sample-captcha" class="g-recaptcha" vc-recaptcha key="'6LdtPYwUAAAAACGTHrgZ-rApF44C_ydzPs_9gl0s'"></div>
+                  </div>-->
+
+                <div class="form-footer">
+                    <input type="checkbox" name="policy" id="question-form_policy" class="">
+                    <label for="question-form_policy" class=""><span>Даю согласие на обработку персональных данных</span></label>
+
+                    <button type="submit" href="#" class="button no-margin-top no-margin-bottom">Отправить заявку</button>
+                </div>
+                <div class="form-message">
+                    <div class="form-info">
+                        <span class="message-icon success"><img src="./img/success.svg" alt="success"></span>
+                        <span class="message-icon error"><img src="./img/error.svg" alt="error"></span>
+                        <p class="message-title"></p>
+                        <p class="message-subtitle"></p>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 

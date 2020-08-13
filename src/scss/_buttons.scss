@@ -19,11 +19,11 @@
     }
     &.big {
         font-size: 20px;
-        padding: 16px 40px;
-        @include only-mobile {
+        padding: 14px 40px;
+        /*@include only-mobile {
             font-size: 18px;
             padding: 12px 30px;
-        }
+        }*/
     }
     span {
         display: block;

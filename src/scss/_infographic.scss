@@ -318,13 +318,8 @@
             color: $colorText;
             border-color: #e8e8e8;
         }
+
     }
-
-
-
-
-
-
     &.page-filter-links {
         max-width: 100%;
         flex-wrap: wrap;
@@ -332,6 +327,18 @@
             width: auto;
             padding: 15px;
             margin: 10px;
+            @include desktop-small {
+                font-size: 18px;
+                padding: 10px;
+            }
+            @include mobile {
+                font-size: 18px;
+                padding: 10px;
+            }
+            @include only-mobile {
+                font-size: 15px;
+                padding: 8px;
+            }
         }
         .page-filter_list {
             opacity: 1;

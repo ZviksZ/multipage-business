@@ -1,0 +1,120 @@
+.widgets {
+    padding-left: 10px;
+    padding-right: 10px;
+    .switchers {
+        flex-wrap: nowrap !important;
+        .switch {
+            white-space: normal !important;
+        }
+        @include desktop-smaller {
+            flex-wrap: wrap !important;
+            .switch {
+                white-space: nowrap !important;
+            }
+        }
+        @include mobile {
+            flex-wrap: wrap !important;
+            .switch {
+                white-space: nowrap !important;
+            }
+        }
+    }
+    .widgets-tabs {
+        margin-top: 50px;
+        .item {
+            display: none;
+            overflow: hidden;
+            align-items: flex-start;
+            transition: .3s;
+            &.active {
+                display: flex;
+            }
+            .desc {
+                width: 50%;
+                padding-right: 50px;
+                padding-left: 50px;
+                .title {
+                    font-size: 22px;
+                    font-weight: 600;
+                    letter-spacing: 0.5px;
+                    line-height: 1;
+                    margin-bottom: 1em;
+                    position: relative;
+                    padding-left: 13%;
+                    color: $colorText;
+                    &:before {
+                        content: '';
+                        width: 20%;
+                        height: 2px;
+                        display: block;
+                        position: absolute;
+                        left: -9%;
+                        top: 50%;
+                        margin-top: -1px;
+                        background-color: $colorText;
+                    }
+                }
+                p {
+                    font-size: 18px;
+                }
+            }
+
+            .image-link {
+                width: 50%;
+                position: relative;
+                a {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    background-color: $colorRedMiddle;
+                    transition: .2s;
+                    @include desktop {
+                        &:hover {
+                            background-color: $colorBlue;
+                        }
+                    }
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+
+            @include mobile {
+                flex-wrap: wrap;
+                .desc {
+                    width: 100%;
+                    padding-left: 25px;
+                    padding-right: 25px;
+                    .title {
+                        padding-left: 0;
+                        &:before {
+                            display: none;
+                        }
+                    }
+                }
+                .image-link {
+                    width: 100%;
+                    margin-top: 30px;
+                }
+            }
+            @include only-mobile {
+                .desc {
+                    width: 100%;
+                    padding-left: 0;
+                    padding-right: 0;
+
+                }
+                .image-link {
+                    width: 100%;
+                }
+            }
+        }
+        @include mobile {
+            margin-top: 30px;
+        }
+        @include only-mobile {
+            margin-top: 20px;
+        }
+    }
+}

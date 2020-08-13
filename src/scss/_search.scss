@@ -1,0 +1,157 @@
+.search {
+    .search-field {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        .field {
+            margin-right: 15px;
+            width: 100%;
+        }
+        .button {
+            margin: 0;
+        }
+        @include only-mobile {
+            flex-wrap: wrap;
+        }
+    }
+
+    .search-results {
+        .search-query {
+            font-size: 24px;
+            font-weight: 600;
+            color: #000000;
+            @include mobile {
+                font-size: 20px;
+            }
+        }
+        .search-noresult {
+            font-size: 20px;
+            line-height: 1.2;
+            margin-top: 30px;
+            @include mobile {
+                font-size: 16px;
+                margin-top: 15px;
+            }
+        }
+        .search-items {
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+            @include mobile {
+                margin-top: 25px;
+            }
+
+            .item {
+                display: flex;
+                align-items: stretch;
+                margin-bottom: 30px;
+                .bg {
+                    display: flex;
+                    position: relative;
+                    width: 25%;
+                    height: 100%;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    -webkit-background-size: cover;
+                    background-size: cover;
+                    &:before {
+                        display: block;
+                        content: '';
+                        float: left;
+                        padding-top: 70%;
+                    }
+                    .tag {
+                        height: 17px;
+                        border-radius: 5px;
+                        background-color: $colorRedMiddle;
+                        display: flex;
+                        align-items: center;
+                        align-content: center;
+                        justify-content: center;
+                        padding-left: 8px;
+                        padding-right: 8px;
+                        position: absolute;
+                        left: 10px;
+                        top: 10px;
+                        font-size: 12px;
+                        font-weight: 600;
+                        text-align: center;
+                        color: $colorWhite;
+                    }
+                }
+                .info {
+                    width: 75%;
+                    padding-left: 25px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    .title {
+                        margin-bottom: 8px;
+                        display: block;
+                        display: -webkit-box;
+                        max-height: 46px;
+                        font-size: 20px;
+                        line-height: 1.2;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    .text {
+                        display: block;
+                        display: -webkit-box;
+                        max-height: 70.24px;
+                        margin: 0 auto;
+                        font-size: 14px;
+                        line-height: 1.29;
+                        -webkit-line-clamp: 4;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    .more-btn {
+                        display: inline-block;
+                        padding: 5px 20px;
+                        text-align: center;
+                        color: #ffffff;
+                        background-color: $colorBlue;
+                        text-decoration: none;
+                        margin-top: auto;
+                        margin-left: auto;
+                        @include desktop {
+                            &:hover {
+                                background-color: darken($colorBlue, 10%);
+                            }
+                        }
+                    }
+                }
+
+                @include only-mobile {
+                    flex-wrap: wrap;
+                    .bg {
+                        width: 100%;
+                        background-image: none !important;
+                        &:before {
+                            display: none;
+                        }
+
+                        .tag {
+                            position: relative;
+                            top: auto;
+                            left: auto;
+                        }
+                    }
+                    .info {
+                        width: 100%;
+                        margin-top: 10px;
+                        padding-left: 0;
+                        .text {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
