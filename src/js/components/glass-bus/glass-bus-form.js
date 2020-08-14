@@ -1,5 +1,5 @@
-import * as $                 from 'jquery';
-import {initFormWithValidate} from "../form";
+import * as $                               from 'jquery';
+import {initFormWithValidate, validateForm} from "../form";
 
 export class GlassBusForm {
    constructor() {
@@ -7,6 +7,7 @@ export class GlassBusForm {
 
       if (!this.$form.length) return false;
 
+      this.$currentStep = '1';
 
       this.init();
    }
@@ -19,27 +20,28 @@ export class GlassBusForm {
 
    initHandlers = () => {
       this.$form.on('submit', this.onSubmit);
-
-
-      console.log(this.$form.find('.step-btn').length)
-      this.$form.find('.step-btn').on('click', this.changeStep)
-      this.$form.find('[name="isWorker"]').on('click', this.toggleStepFields)
+      this.$form.find('.step-btn').on('click', this.changeStep);
+      this.$form.find('[name="isWorker"]').on('click', this.toggleStepFields);
+      this.$form.find('.glass-unit-types .type input').on('change', this.glassUnitsTypes);
    }
 
    changeStep = (e) => {
       e.preventDefault();
       let nextStep;
 
-
-      this.$form.find('[data-step]').addClass('hide');
-
       if ($(e.currentTarget).attr('data-next')) {
          nextStep = $(e.currentTarget).attr('data-next');
+
+         validateForm(this.$form);
       } else {
          nextStep = $(e.currentTarget).attr('data-prev');
       }
 
-      this.$form.find('[data-step="' + nextStep + '"]').removeClass('hide')
+      if (!this.$form.find('[data-step="' + this.$currentStep + '"]').find('.field.error').length) {
+         this.$form.find('[data-step]').addClass('hide');
+         this.$form.find('[data-step="' + nextStep + '"]').removeClass('hide');
+         this.$form.find('.field.error').removeClass('error');
+      }
    }
 
    toggleStepFields = (e) => {
@@ -48,6 +50,18 @@ export class GlassBusForm {
       } else {
          this.$form.find('.glass-bus-form-worker').removeClass('disabled-fields').find('.field input').addClass('validate');
       }
+   }
+
+   glassUnitsTypes = (e) => {
+      let isChecked = $(e.currentTarget).prop('checked');
+      let type = $(e.currentTarget).attr('id');
+
+      if (isChecked) {
+         this.$form.find('.glass-unit-items .item[data-type="' + type +'"]').removeClass('hide');
+      } else {
+         this.$form.find('.glass-unit-items .item[data-type="' + type +'"]').addClass('hide');
+      }
+
    }
 
    onSubmit = (e) => {

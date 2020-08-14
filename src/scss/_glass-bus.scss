@@ -39,6 +39,15 @@
         padding-bottom: 30px;
         background-color: #fbf4f4;
 
+        .form-footer {
+            justify-content: flex-end !important;
+        }
+        .form-fields.no-padding-horizontal {
+            .form-footer {
+                padding-left: 43px;
+                padding-right: 43px;
+            }
+        }
         .title {
             background: $colorBlueDarken;
             justify-content: center;
@@ -50,6 +59,21 @@
             .input-text {
                 background: $colorWhite;
             }
+        }
+
+        .title-small {
+            width: 100%;
+        }
+
+        .small-text {
+            font-size: 14px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.5;
+            letter-spacing: normal;
+            color: $colorText;
+            padding: 0 43px;
         }
 
         .glass-bus-form-time {
@@ -87,6 +111,81 @@
             }
         }
 
+        .glass-call-me {
+            width: 100%;
+            background-color: #dddddf;
+            border-top: 1px solid #979797;
+            border-bottom: 1px solid #979797;
+            padding: 14px 43px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .text {
+                font-size: 16px;
+                text-transform: uppercase;
+                color: $colorText;
+            }
+            .button {
+                margin: 0;
+            }
+        }
 
+        .glass-unit-types {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #979797;
+            padding: 15px 43px;
+            .type-title {
+                width: 100%;
+                font-size: 16px;
+                text-transform: uppercase;
+                color: $colorText;
+                margin-bottom: 15px;
+            }
+            .type {
+                width: 25%;
+                padding: 0 10px 0 0;
+                label {
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .glass-unit-items {
+            width: 100%;
+            border-bottom: 1px solid #979797;
+            padding: 14px 43px;
+            .item {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                color: $colorText;
+                margin-bottom: 15px;
+                .item-title {
+                    width: 100%;
+                    margin-bottom: 10px;
+                    font-size: 14px;
+                }
+                .type {
+                    display: flex;
+                    align-items: center;
+                    width: 25%;
+                    padding-right: 20px;
+                    margin-bottom: 10px;
+                    .link {
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+
+        input[type=checkbox] + label {
+            font-size: 16px;
+            span {
+                font-size: 16px;
+            }
+        }
     }
 }

@@ -3,6 +3,7 @@
     width: auto;
     padding: 10px 23px;
     background: $colorRed;
+    border: 1px solid $colorRed;
     transition: 0.2s ease;
     text-decoration: none;
     font-size: 16px;
@@ -10,11 +11,11 @@
     margin: 50px 0;
     cursor: pointer;
     text-align: center;
-    border: 0;
     outline: none;
     @include desktop {
         &:hover {
             background: $colorRedDarken;
+            border: 1px solid $colorRedDarken;
         }
     }
     &.big {
@@ -33,6 +34,17 @@
     &:disabled {
         pointer-events: none;
         opacity: .5;
+    }
+
+    &.btn-secondary {
+        border: 1px solid $colorGrayLight !important;
+        color: $colorGrayLight !important;
+        background: transparent !important;
+        @include desktop {
+            &:hover {
+                background: #d2d2d2 !important;
+            }
+        }
     }
 }
 

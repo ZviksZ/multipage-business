@@ -25,7 +25,7 @@ footer: "black"
         </p>
 
         <div class="text-align-center">
-            <a href="" class="button big margin-top">Заказать Glass Bus</a>
+            <a href="#glass-bus-form" class="button big margin-top">Заказать Glass Bus</a>
         </div>
 
 
@@ -218,20 +218,30 @@ footer: "black"
 
 
             </div>
-            <div class="step hide"  data-step="2">
+            <div class="step hide" data-step="2">
                 <div class="title">
                     <span>ШАГ 2 - КОНТАКТЫ И АДРЕС ПОДАЧИ GLASS BUS</span>
                 </div>
 
                 <div class="form-fields">
                     <label class="field field-input item delay-200">
-                        <input class="input-text placeholder validate" data-placeholder="Контактное лицо" data-validate="required"
+                        <input class="input-text placeholder validate" data-placeholder="ФИО" data-validate="required"
                                name="feedback_name" type="text">
                         <p class="error-message"></p>
                     </label>
                     <label class="field field-input item delay-200">
-                        <input class="input-text placeholder validate" data-placeholder="Компания" data-validate="required"
+                        <input class="input-text placeholder validate" data-placeholder="Название проекта" data-validate="required"
                                name="company" type="text">
+                        <p class="error-message"></p>
+                    </label>
+                    <label class="field field-input item delay-200">
+                        <input class="input-text placeholder validate" data-placeholder="Компания клиента" data-validate="required"
+                               name="feedback_email" type="text">
+                        <p class="error-message"></p>
+                    </label>
+                    <label class="field field-input item delay-200">
+                        <input class="input-text placeholder validate" data-placeholder="Контактное лицо(ФИО)" data-validate="required"
+                               name="feedback_phone" type="text">
                         <p class="error-message"></p>
                     </label>
                     <label class="field field-input item delay-200">
@@ -245,33 +255,151 @@ footer: "black"
                         <p class="error-message"></p>
                     </label>
 
-                    <p>КУДА ПОДАТЬ GLASS BUS?</p>
+
+                    <p class="title-small">КУДА ПОДАТЬ GLASS BUS?</p>
 
                     <label class="field field-input item delay-200">
-                        <input class="input-text placeholder validate" data-placeholder="Компания" data-validate="required"
+                        <input class="input-text placeholder validate" data-placeholder="Страна" data-validate="required"
                                name="company" type="text">
                         <p class="error-message"></p>
                     </label>
                     <label class="field field-input item delay-200">
-                        <input class="input-text placeholder validate" data-placeholder="Электронная почта" data-validate="email-required"
+                        <input class="input-text placeholder validate" data-placeholder="Город" data-validate="required"
                                name="feedback_email" type="text">
                         <p class="error-message"></p>
                     </label>
                     <label class="field field-input item delay-200">
-                        <input class="input-text placeholder validate input-mask" data-placeholder="Телефон для связи" data-validate="number_phone-required" data-mask_tpl="phone_plus7"
+                        <input class="input-text placeholder validate" data-placeholder="Адрес" data-validate="required"
                                name="feedback_phone" type="text">
                         <p class="error-message"></p>
                     </label>
 
 
                     <div class="form-footer">
-                        <button class="button no-margin-top no-margin-bottom step-btn" data-prev="1">Назад</button>
-                        <button class="button no-margin-top no-margin-bottom step-btn" data-next="3">Далее</button>
+                        <button class="button btn-secondary no-margin-top no-margin-bottom step-btn" data-prev="1">Назад</button>
+                        <button class="button no-margin-top no-margin-bottom step-btn margin-left-x2" data-next="3">Далее</button>
                     </div>
                 </div>
 
             </div>
-            <div class="step hide" data-step="3"></div>
+            <div class="step hide" data-step="3">
+                <div class="title">
+                    <span>ШАГ 3 - ВЫБОР СТЕЛОПАКЕТОВ</span>
+                </div>
+
+                <div class="form-fields no-padding-horizontal">
+                    <p class="small-text">
+                        Образцы стеклопакетов представленные в Glass Bus имеют стандартную формулу : 8мм-16мм-6мм. Размер образцов стеклопакетов светопрозрачной зоны 800мм х 800мм. Размер образцов стеклопакетов для зоны стемалита 800мм х 500мм.
+                    </p>
+
+                    <p class="small-text">
+                        К каждому типу стекла, в Glass Bus будут присутствовать зоны стемалита с следующими цветами RAL: 5024, 6019, 6027, 6034, 7001, 7004, 7005, 7010, 7016, 7022, 7030, 7031, 7032, 7033, 7035, 7036, 7040, 7047, 8001, 8014, 8017, 8022, 8023, 9002, 9006, 9023
+                    </p>
+
+                    <div class="glass-call-me">
+                        <p class="text">НЕ МОГУ ОПРЕДЕЛИТЬСЯ С ВЫБОРОМ. МНЕ НУЖНА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА ОТ AGC</p>
+                        <button class="button">Позвоните мне</button>
+                    </div>
+
+                    <div class="glass-unit-types">
+                        <div class="type-title">ВЫБЕРИТЕ НУЖНЫЕ ТИПЫ СТЕКЛОПАКЕТОВ:</div>
+
+                        <div class="type">
+                            <input type="checkbox" name="policy" id="type-1" checked>
+                            <label for="type-1" class=""><span>МУЛЬТИФУНКЦИОНАЛЬНОЕ</span></label>
+                        </div>
+                        <div class="type">
+                            <input type="checkbox" name="policy" id="type-2" checked>
+                            <label for="type-2" class=""><span>ПРОСВЕТЛЕННОЕ </span></label>
+                        </div>
+                        <div class="type">
+                            <input type="checkbox" name="policy" id="type-3" checked>
+                            <label for="type-3" class=""><span>СОЛНЦЕЗАЩИТНОЕ </span></label>
+                        </div>
+                        <div class="type">
+                            <input type="checkbox" name="policy" id="type-4" checked>
+                            <label for="type-4" class=""><span>ТОНИРОВАННОЕ В МАССЕ</span></label>
+                        </div>
+                    </div>
+
+                    <div class="glass-unit-items">
+                        <div class="item" data-type="type-1">
+                            <div class="item-title">МУЛЬТИФУНКЦИОНАЛЬНОЕ</div>
+                            <div class="type">
+                                <input type="checkbox" name="policy" id="glass-type-1">
+                                <label for="glass-type-1" class=""><span>Energy Light</span></label>
+                                <a href="#" class="link">
+                                    <img src="./img/agc/info-2.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="type">
+                                <input type="checkbox" name="policy" id="glass-type-5">
+                                <label for="glass-type-5" class=""><span>Energy Light</span></label>
+                                <a href="#" class="link">
+                                    <img src="./img/agc/info-2.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="type">
+                                <input type="checkbox" name="policy" id="glass-type-6">
+                                <label for="glass-type-6" class=""><span>Energy Light</span></label>
+                                <a href="#" class="link">
+                                    <img src="./img/agc/info-2.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="type">
+                                <input type="checkbox" name="policy" id="glass-type-7">
+                                <label for="glass-type-7" class=""><span>Energy Light</span></label>
+                                <a href="#" class="link">
+                                    <img src="./img/agc/info-2.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="type">
+                                <input type="checkbox" name="policy" id="glass-type-8">
+                                <label for="glass-type-8" class=""><span>Energy Light</span></label>
+                                <a href="#" class="link">
+                                    <img src="./img/agc/info-2.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item" data-type="type-2">
+                            <div class="item-title">ПРОСВЕТЛЕННОЕ</div>
+                            <div class="type">
+                                <input type="checkbox" name="policy" id="glass-type-2">
+                                <label for="glass-type-2" class=""><span>Energy Light</span></label>
+                                <a href="#" class="link">
+                                    <img src="./img/agc/info-2.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item" data-type="type-3">
+                            <div class="item-title">СОЛНЦЕЗАЩИТНОЕ</div>
+                            <div class="type">
+                                <input type="checkbox" name="policy" id="glass-type-3">
+                                <label for="glass-type-3" class=""><span>Energy Light</span></label>
+                                <a href="#" class="link">
+                                    <img src="./img/agc/info-2.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item" data-type="type-4">
+                            <div class="item-title">ТОНИРОВАННОЕ В МАССЕ</div>
+                            <div class="type">
+                                <input type="checkbox" name="policy" id="glass-type-4">
+                                <label for="glass-type-4" class=""><span>Energy Light</span></label>
+                                <a href="#" class="link">
+                                    <img src="./img/agc/info-2.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-footer">
+                        .
+                        <button class="button btn-secondary no-margin-top no-margin-bottom step-btn" data-prev="2">Назад</button>
+                        <button type="submit" class="button no-margin-top no-margin-bottom margin-left-x2">Отправить заявку</button>
+                    </div>
+                </div>
+            </div>
 
             <div class="form-message">
                 <div class="form-info">
