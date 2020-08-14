@@ -35,6 +35,11 @@
     &.swiper-button-disabled {
         opacity: .8;
     }
+
+    @include only-mobile {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 

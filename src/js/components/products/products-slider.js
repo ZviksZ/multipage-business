@@ -4,7 +4,7 @@ import Swiper from 'swiper/js/swiper.min';
 export class ProductsSlider {
    constructor() {
       this.$slider = $('#products-detail_slider');
-      if (!this.$slider) return false;
+      if (!this.$slider.length) return false;
       this.$tabs = $('#slider-colors');
 
 

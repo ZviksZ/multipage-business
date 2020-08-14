@@ -1,0 +1,289 @@
+<% var data = {
+title: "Glass Bus | AGC Glass Russia",
+url: "matelac-silver-crystalvision.html",
+header: "white",
+footer: "black"
+}; %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+
+<div class="page-header">
+    <div class="page-header_bg" style="background-image: url('./img/glass-bus/bg.jpg')"></div>
+    <div class="page-header_overlay"></div>
+    <h1 class="h1 page-header_title color-white">GLASS BUS</h1>
+</div>
+
+
+<section class="section glass-bus-info padding-top">
+    <div class="container container-sm">
+        <div class="caption-with-line caption-black caption-no-overflow margin-bottom-x3 margin-top-x2">
+            <h2 class="h2 color-text">
+                Glass Bus от AGC — будущее, которое всегда в пути
+            </h2>
+        </div>
+        <p>
+            Соединение знаний и передовых технологий — одна из главных миссий группы AGC, и в этом стремлении создаются инновационные и технологичные сервисы для клиентов и партнеров компании.
+        </p>
+
+        <div class="text-align-center">
+            <a href="" class="button big margin-top">Заказать Glass Bus</a>
+        </div>
+
+
+        <div class="glass-bus__slider-wrap">
+            <div class="glass-bus__slider" id="glass-bus__slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slide" style="background-image: url('./img/glass-bus/1.jpg')"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide" style="background-image: url('./img/glass-bus/2.jpg')"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide" style="background-image: url('./img/glass-bus/3.jpg')"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide" style="background-image: url('./img/glass-bus/4.jpg')"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-arrows">
+                <div class="swiper-button swiper-button-prev">
+                    <img src="./img/agc/newsitem-read-more.svg" alt="">
+                </div>
+                <div class="swiper-button swiper-button-next">
+                    <img src="./img/agc/newsitem-read-more.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <p>
+            Новый маркетинговый инструмент Glass Bus — это микс мобильного офиса и выставочного зала, созданный в образе передвижного автобуса.
+        </p>
+        <p>
+            Концепция проекта — стать ближе к клиентам и упростить знакомство с продуктами AGC.
+        </p>
+        <p>
+            Чтобы увидеть интересующие образцы стекла, больше не нужно ехать в офис компании, достаточно забронировать нужную дату в календаре, выбрать нужные типы стекла и стеклянный “дом на колесах”
+            приедет в назначенное время.
+        </p>
+        <p>
+            Традиционный кузов меняется за одну минуту и превращается в стеклянный фасад, стоит лишь поднять борт фургона.
+        </p>
+        <p>
+            Внутри движимого инновационного объекта современная переговорная комната, созданная для встреч. Интерьер этого пространства выполнен с применением декоративных продуктов AGC, что позволяет
+            увидеть, как стекло интегрируется в интерьере.
+        </p>
+        <p>
+            Также во всем многообразии представлены демонстрационные образцы стекла: от термополированного и просветленного до солнцезащитного и мультифункционального.
+        </p>
+        <p>
+            AGC всегда находится в стремлении вперед, и теперь команда еще на один шаг ближе к своим клиентам и партнерам, благодаря новому маркетинговому инструменту в необычном, но эффективном
+            исполнении.
+        </p>
+    </div>
+</section>
+
+
+<section class="section glass-bus-form custom-form">
+    <div class="container">
+        <form action="/" class="form" id="glass-bus-form">
+            <div class="step" data-step="1">
+                <div class="title">
+                    <span>ШАГ 1 - ИНФОРМАЦИЯ О ЗАКАЗЕ</span>
+                </div>
+
+                <div class="form-fields">
+                    <div class="glass-bus-form-time">
+
+                        <label class="field field-input item delay-200">
+                            <input class="input-text placeholder validate" data-placeholder="Дата начала" data-validate="required"
+                                   name="date-start" type="date">
+                            <p class="error-message"></p>
+                        </label>
+
+                        <label class="field field-input item delay-200">
+                            <select name="timeBefin" class="input-text validate" data-validate="required">
+                                <option value="" disabled selected>Время начала</option>
+                                <option value="number:1" >01:00</option>
+                                <option value="number:2" >02:00</option>
+                                <option value="number:3" >03:00</option>
+                                <option value="number:4" >04:00</option>
+                                <option value="number:5" >05:00</option>
+                                <option value="number:6" >06:00</option>
+                                <option value="number:7" >07:00</option>
+                                <option value="number:8" >08:00</option>
+                                <option value="number:9" >09:00</option>
+                                <option value="number:10">10:00</option>
+                                <option value="number:11">11:00</option>
+                                <option value="number:12">12:00</option>
+                                <option value="number:13">13:00</option>
+                                <option value="number:14">14:00</option>
+                                <option value="number:15">15:00</option>
+                                <option value="number:16">16:00</option>
+                                <option value="number:17">17:00</option>
+                                <option value="number:18">18:00</option>
+                                <option value="number:19">19:00</option>
+                                <option value="number:20">20:00</option>
+                                <option value="number:21">21:00</option>
+                                <option value="number:22">22:00</option>
+                                <option value="number:23">23:00</option>
+                            </select>
+                            <p class="error-message"></p>
+                        </label>
+
+                        <label class="field field-input item delay-200">
+                            <input class="input-text placeholder validate" data-placeholder="Дата завершения" data-validate="required"
+                                   name="date-end" type="date">
+                            <p class="error-message"></p>
+                        </label>
+
+                        <label class="field field-input item delay-200">
+                            <select name="timeEnd" class="input-text validate" data-validate="required">
+                                <option value="" disabled selected>Время завершения</option>
+                                <option value="number:1" >01:00</option>
+                                <option value="number:2" >02:00</option>
+                                <option value="number:3" >03:00</option>
+                                <option value="number:4" >04:00</option>
+                                <option value="number:5" >05:00</option>
+                                <option value="number:6" >06:00</option>
+                                <option value="number:7" >07:00</option>
+                                <option value="number:8" >08:00</option>
+                                <option value="number:9" >09:00</option>
+                                <option value="number:10">10:00</option>
+                                <option value="number:11">11:00</option>
+                                <option value="number:12">12:00</option>
+                                <option value="number:13">13:00</option>
+                                <option value="number:14">14:00</option>
+                                <option value="number:15">15:00</option>
+                                <option value="number:16">16:00</option>
+                                <option value="number:17">17:00</option>
+                                <option value="number:18">18:00</option>
+                                <option value="number:19">19:00</option>
+                                <option value="number:20">20:00</option>
+                                <option value="number:21">21:00</option>
+                                <option value="number:22">22:00</option>
+                                <option value="number:23">23:00</option>
+                            </select>
+                            <p class="error-message"></p>
+                        </label>
+
+                    </div>
+
+
+                    <div class="glass-bus-form-worker">
+                        <p class="worker-title">Являетесь ли вы сотрудником AGC?</p>
+                        <div class="worker-radio">
+                            <input type="radio" id="isWorkerFalse"
+                                   name="isWorker" value="false" checked>
+                            <label for="isWorkerFalse" class="worker-label">Нет</label>
+
+                            <input type="radio" id="isWorkerTrue"
+                                   name="isWorker" value="true">
+                            <label for="isWorkerTrue" class="worker-label">Да</label>
+                        </div>
+
+
+                        <label class="field field-input item delay-200">
+                            <input class="input-text placeholder validate" data-placeholder="Контактное лицо" data-validate="required"
+                                   name="feedback_name" type="text">
+                            <p class="error-message"></p>
+                        </label>
+                        <label class="field field-input item delay-200">
+                            <input class="input-text placeholder validate" data-placeholder="Компания" data-validate="required"
+                                   name="company" type="text">
+                            <p class="error-message"></p>
+                        </label>
+                        <label class="field field-input item delay-200">
+                            <input class="input-text placeholder validate" data-placeholder="Электронная почта" data-validate="email-required"
+                                   name="feedback_email" type="text">
+                            <p class="error-message"></p>
+                        </label>
+                        <label class="field field-input item delay-200">
+                            <input class="input-text placeholder validate input-mask" data-placeholder="Телефон для связи" data-validate="number_phone-required" data-mask_tpl="phone_plus7"
+                                   name="feedback_phone" type="text">
+                            <p class="error-message"></p>
+                        </label>
+                    </div>
+
+
+                    <!--  <div class="form-item">
+                          <div id="sample-captcha" class="g-recaptcha" vc-recaptcha key="'6LdtPYwUAAAAACGTHrgZ-rApF44C_ydzPs_9gl0s'"></div>
+                      </div>-->
+
+                    <div class="form-footer">
+                        <button class="button no-margin-top no-margin-bottom step-btn" data-next="2">Далее</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="step hide"  data-step="2">
+                <div class="title">
+                    <span>ШАГ 2 - КОНТАКТЫ И АДРЕС ПОДАЧИ GLASS BUS</span>
+                </div>
+
+                <div class="form-fields">
+                    <label class="field field-input item delay-200">
+                        <input class="input-text placeholder validate" data-placeholder="Контактное лицо" data-validate="required"
+                               name="feedback_name" type="text">
+                        <p class="error-message"></p>
+                    </label>
+                    <label class="field field-input item delay-200">
+                        <input class="input-text placeholder validate" data-placeholder="Компания" data-validate="required"
+                               name="company" type="text">
+                        <p class="error-message"></p>
+                    </label>
+                    <label class="field field-input item delay-200">
+                        <input class="input-text placeholder validate" data-placeholder="Электронная почта" data-validate="email-required"
+                               name="feedback_email" type="text">
+                        <p class="error-message"></p>
+                    </label>
+                    <label class="field field-input item delay-200">
+                        <input class="input-text placeholder validate input-mask" data-placeholder="Телефон для связи" data-validate="number_phone-required" data-mask_tpl="phone_plus7"
+                               name="feedback_phone" type="text">
+                        <p class="error-message"></p>
+                    </label>
+
+                    <p>КУДА ПОДАТЬ GLASS BUS?</p>
+
+                    <label class="field field-input item delay-200">
+                        <input class="input-text placeholder validate" data-placeholder="Компания" data-validate="required"
+                               name="company" type="text">
+                        <p class="error-message"></p>
+                    </label>
+                    <label class="field field-input item delay-200">
+                        <input class="input-text placeholder validate" data-placeholder="Электронная почта" data-validate="email-required"
+                               name="feedback_email" type="text">
+                        <p class="error-message"></p>
+                    </label>
+                    <label class="field field-input item delay-200">
+                        <input class="input-text placeholder validate input-mask" data-placeholder="Телефон для связи" data-validate="number_phone-required" data-mask_tpl="phone_plus7"
+                               name="feedback_phone" type="text">
+                        <p class="error-message"></p>
+                    </label>
+
+
+                    <div class="form-footer">
+                        <button class="button no-margin-top no-margin-bottom step-btn" data-prev="1">Назад</button>
+                        <button class="button no-margin-top no-margin-bottom step-btn" data-next="3">Далее</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="step hide" data-step="3"></div>
+
+            <div class="form-message">
+                <div class="form-info">
+                    <span class="message-icon success"><img src="./img/success.svg" alt="success"></span>
+                    <span class="message-icon error"><img src="./img/error.svg" alt="error"></span>
+                    <p class="message-title"></p>
+                    <p class="message-subtitle"></p>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>

@@ -76,7 +76,6 @@ export class FullscreenScroll {
          this.viewportHeight = window.innerHeight;
          this.translateY = 0;
          this.wrapperHeight = this.container.offsetHeight - window.innerHeight;
-         console.log(this.wrapperHeight)
          this.lastBlockHeight = 0;
          this.currentSection = 1;
          window.scrollY = 0;

@@ -1,0 +1,92 @@
+.glass-bus-info {
+    .glass-bus__slider-wrap {
+        position: relative;
+        .swiper-arrows {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .glass-bus__slider {
+            .swiper-slide-next,
+            .swiper-slide-prev {
+                opacity: 0;
+            }
+            .slide {
+                display: flex;
+                width: 100%;
+                background-repeat: no-repeat;
+                background-position: center center;
+                -webkit-background-size: cover;
+                background-size: cover;
+                &:before {
+                    display: block;
+                    float: left;
+                    content: '';
+                    padding-top: 55%;
+                }
+            }
+        }
+    }
+}
+
+
+.glass-bus-form {
+    .form {
+        margin-top: 56px;
+        margin-bottom: 100px;
+        border: 1px solid #979797;
+        border-radius: 3px;
+        padding-bottom: 30px;
+        background-color: #fbf4f4;
+
+        .title {
+            background: $colorBlueDarken;
+            justify-content: center;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        .field {
+            .input-text {
+                background: $colorWhite;
+            }
+        }
+
+        .glass-bus-form-time {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .glass-bus-form-worker {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .worker-title {
+                width: 100%;
+            }
+            .worker-title,
+            .worker-label {
+                font-size: 15px;
+            }
+            .worker-radio {
+                width: 100%;
+                display: flex;
+                align-items: center;
+            }
+            .worker-label ~ .worker-label {
+                margin-left: 10px;
+            }
+            &.disabled-fields {
+                .field {
+                    opacity: .5;
+                    pointer-events: none;
+                }
+            }
+        }
+
+
+    }
+}

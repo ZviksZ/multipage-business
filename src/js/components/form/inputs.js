@@ -22,7 +22,7 @@ function initMaskedInput() {
 
         switch (maskTpl) {
             case 'phone_plus7':
-                mask = '+7 999 999 99 99';
+                mask = '+7 (999) 999 99 99';
                 break;
 
             case 'phone':

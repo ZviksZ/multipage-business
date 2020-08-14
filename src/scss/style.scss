@@ -91,9 +91,14 @@
 @import 'search';
 
 
-@import '/node_modules/juxtaposejs/build/css/juxtapose.css';
+@import 'juxtapose';
+
+
 // страница Matelac crystal
 @import 'matelac';
+
+// страница Glass Bus
+@import 'glass-bus';
 
 
 

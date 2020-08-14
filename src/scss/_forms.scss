@@ -157,8 +157,10 @@
         }
     }
     input[type=checkbox]{display: none;}
+    input[type=radio]{display: none;}
 
-    input[type=checkbox] + label:before {
+    input[type=checkbox] + label:before,
+    input[type=radio] + label:before {
         content: "\2713";
         color: transparent;
         display: inline-block;
@@ -175,10 +177,22 @@
         transition: color .3s ease;
     }
 
-    input[type=checkbox]:checked + label:before {
-        color: $colorRedDarken;
+    input[type=checkbox]:checked + label:before,
+    input[type=radio]:checked + label:before {
+        color: #43aa8b;
+        border: 1px solid #43aa8b;
     }
-    input[type=checkbox] + label {
+    input[type=checkbox] + label,
+    input[type=radio] + label {
+        cursor: pointer;
+        &.error {
+            &:before {
+                border: 1px solid red;
+            }
+            span {
+                color: red;
+            }
+        }
         span {
             font-size: 12px;
         }
@@ -241,7 +255,13 @@
         }
     }
     &.form-hide {
-        .field, .form-bottom, .h5, .modal-caption-with-close, .button, .career_file {
+        .field,
+        .form-bottom,
+        .h5,
+        .modal-caption-with-close,
+        .button,
+        .career_file,
+        .form-footer {
             transform: translateY(-100%);
             opacity: 0;
             pointer-events: none;

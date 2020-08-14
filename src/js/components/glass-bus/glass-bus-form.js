@@ -1,29 +1,53 @@
 import * as $                 from 'jquery';
 import {initFormWithValidate} from "../form";
 
-export class MatelacForm {
+export class GlassBusForm {
    constructor() {
-      this.$forms = $('.modal-window.custom-form .form');
+      this.$form = $('#glass-bus-form');
 
-      if (!this.$forms.length) return false;
+      if (!this.$form.length) return false;
+
 
       this.init();
    }
 
    init = () => {
-      this.initValidation();
+      initFormWithValidate(this.$form);
 
       this.initHandlers();
    }
 
    initHandlers = () => {
-      this.$forms.on('submit', this.onSubmit);
+      this.$form.on('submit', this.onSubmit);
+
+
+      console.log(this.$form.find('.step-btn').length)
+      this.$form.find('.step-btn').on('click', this.changeStep)
+      this.$form.find('[name="isWorker"]').on('click', this.toggleStepFields)
    }
 
-   initValidation = () => {
-      this.$forms.each(function () {
-         initFormWithValidate($(this));
-      })
+   changeStep = (e) => {
+      e.preventDefault();
+      let nextStep;
+
+
+      this.$form.find('[data-step]').addClass('hide');
+
+      if ($(e.currentTarget).attr('data-next')) {
+         nextStep = $(e.currentTarget).attr('data-next');
+      } else {
+         nextStep = $(e.currentTarget).attr('data-prev');
+      }
+
+      this.$form.find('[data-step="' + nextStep + '"]').removeClass('hide')
+   }
+
+   toggleStepFields = (e) => {
+      if ($(e.currentTarget).val() === 'true') {
+         this.$form.find('.glass-bus-form-worker').addClass('disabled-fields').find('.field input').removeClass('validate');
+      } else {
+         this.$form.find('.glass-bus-form-worker').removeClass('disabled-fields').find('.field input').addClass('validate');
+      }
    }
 
    onSubmit = (e) => {

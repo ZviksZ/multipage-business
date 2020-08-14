@@ -40,6 +40,13 @@ function validateField($field, showError = true) {
 	if (!$field.hasClass('validate')) return true;
 	if ($field.hasClass('validate-disabled')) return true;
 
+	if ($field.attr('type') == 'checkbox' && $field.attr('data-validate') == 'required') {
+		if (!$field.prop('checked')) {
+			return false
+		} else { return true }
+
+	}
+
 	const $fieldBlock = $field.parents('.field');
 	const $errorMessage = $fieldBlock.find('.error-message');
 
@@ -262,6 +269,8 @@ function initFormWithValidate($form) {
 		 .on('change', function () {
 			 validateForm($form, false);
 			 validateField($(this));
+
+			 checkDisabledSubmit();
 		 });
 
 	// чекбоксы/радио

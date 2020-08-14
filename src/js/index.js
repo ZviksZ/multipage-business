@@ -1,8 +1,9 @@
-import * as $                                        from 'jquery';
+import * as $                                          from 'jquery';
 import {CareerForm}                                    from './components/career-form';
 import {FooterSearch}                                  from './components/footer-search';
 import {initMaskedInput, initPlaceholders}             from './components/form'
 import {FullscreenScroll}                              from './components/fullscreen-scroll';
+import {GlassBusForm, GlassBusSlider}                  from "./components/glass-bus";
 import {Header}                                        from './components/header';
 import {HeaderMenu}                                    from './components/header-menu';
 import {MatelacJuxtapose, MatelacGallery, MatelacForm} from "./components/matelac";
@@ -66,6 +67,11 @@ $(function () {
    new MatelacJuxtapose();
    new MatelacGallery();
    new MatelacForm();
+
+
+   //Glass Bus Page
+   new GlassBusSlider();
+   new GlassBusForm();
 
 
    // Инициализация плейсхолдеров и масок

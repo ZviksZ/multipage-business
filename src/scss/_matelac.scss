@@ -218,7 +218,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            transition: .3s linear;
+            transition: .1s linear;
             transform: translateY(100%);
             opacity: 0;
             background: linear-gradient(0deg, rgba(0, 31, 107, 0.8), rgba(0, 31, 107, 0.8));
@@ -451,7 +451,7 @@ div.jx-credit, .jx-knightlab {
 .oveflow-hidden {
     overflow: hidden;
 }
-/*.matelac-modal {
+/*.custom-form {
     position: fixed;
     z-index: 999;
     top: 0;
@@ -468,17 +468,17 @@ div.jx-credit, .jx-knightlab {
 }*/
 
 
-.matelac-modal .modal-content {
+.custom-form .modal-content {
     max-width: 850px;
 }
-.modal-open.matelac-modal {
+.modal-open.custom-form {
     transform: translateY(0);
     opacity: 1;
 }
-.modal-open.matelac-modal .form{
+.modal-open.custom-form .form{
     opacity: 1;
 }
-.matelac-modal .form .title {
+.custom-form .form .title {
     position: relative;
     font-weight: bold;
     font-size: 30px;
@@ -491,7 +491,7 @@ div.jx-credit, .jx-knightlab {
 }
 
 
-.matelac-modal .form .close-btn {
+.custom-form .form .close-btn {
     position: relative;
     width: 26px;
     height: 26px;
@@ -500,10 +500,10 @@ div.jx-credit, .jx-knightlab {
     padding: 0;
     background: transparent;
 }
-.matelac-modal .form .close-btn:hover {
+.custom-form .form .close-btn:hover {
     opacity: 0.6;
 }
-.matelac-modal .form .close-btn:before, .matelac-modal .form .close-btn:after {
+.custom-form .form .close-btn:before, .custom-form .form .close-btn:after {
     position: absolute;
     left: 15px;
     content: ' ';
@@ -511,22 +511,22 @@ div.jx-credit, .jx-knightlab {
     width: 2px;
     background: #FFFFFF;
 }
-.matelac-modal .form .close-btn:before {
+.custom-form .form .close-btn:before {
     transform: rotate(45deg);
 }
-.matelac-modal .form .close-btn:after {
+.custom-form .form .close-btn:after {
     transform: rotate(-45deg);
 }
-.matelac-modal .form.sample-form .title {
+.custom-form .form.sample-form .title {
     background: #93A9B0;
 }
-.matelac-modal .form.manager-form .title {
+.custom-form .form.manager-form .title {
     background: #4067A5;
 }
-.matelac-modal .form.question-form .title {
+.custom-form .form.question-form .title {
     background: #001F6B;
 }
-.matelac-modal .form .form-fields .form-footer {
+.custom-form .form .form-fields .form-footer {
     width: 100%;
     padding-top: 30px;
     border-top: 1px solid #C4C4C4;
@@ -537,7 +537,7 @@ div.jx-credit, .jx-knightlab {
 }
 
 
-.matelac-modal .form .form-fields {
+.custom-form .form .form-fields {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -759,18 +759,18 @@ div.jx-credit, .jx-knightlab {
         font-size: 16px;
         line-height: 25px;
     }
-    .matelac-modal {
+    .custom-form {
         align-items: flex-start;
         overflow-y: scroll;
     }
-    .matelac-modal .form .form-fields {
+    .custom-form .form .form-fields {
         padding: 25px;
     }
-    .matelac-modal .form .form-fields .form-item {
+    .custom-form .form .form-fields .form-item {
         width: 100%;
         margin-bottom: 15px;
     }
-    .matelac-modal .form .form-fields .form-footer {
+    .custom-form .form .form-fields .form-footer {
         flex-wrap: wrap;
         label {
             margin-bottom: 15px;

@@ -144,7 +144,7 @@
 
 
 
-<div class="modal-window fade-in matelac-modal" data-modal="sample-form">
+<div class="modal-window fade-in custom-form" data-modal="sample-form">
     <div class="modal-content">
         <form action="takeSample" class="form sample-form">
             <div class="title">
@@ -173,7 +173,7 @@
                     <p class="error-message"></p>
                 </label>
                 <label class="field field-input item delay-200">
-                    <select name="countSamples" class="input-text">
+                    <select name="countSamples" class="input-text validate" data-validate="required">
                         <option value="" disabled selected>Количество образцов*</option>
                         <option value="1" >1</option>
                         <option value="2" >2</option>
@@ -189,15 +189,18 @@
                     <p class="error-message"></p>
                 </label>
 
+
+
+
               <!--  <div class="form-item">
                     <div id="sample-captcha" class="g-recaptcha" vc-recaptcha key="'6LdtPYwUAAAAACGTHrgZ-rApF44C_ydzPs_9gl0s'"></div>
                 </div>-->
 
                 <div class="form-footer">
-                        <input type="checkbox" name="policy" id="sample-form_policy"  class="">
+                        <input type="checkbox"  name="policy" id="sample-form_policy"  data-validate="required" class="validate">
                     <label for="sample-form_policy" class=""><span>Даю согласие на обработку персональных данных</span></label>
 
-                    <button type="submit" href="#" class="button no-margin-top no-margin-bottom">Отправить заявку</button>
+                    <button type="submit" class="button no-margin-top no-margin-bottom">Отправить заявку</button>
                 </div>
                 <div class="form-message">
                     <div class="form-info">
@@ -215,11 +218,11 @@
 
 
 </div>
-<div class="modal-window fade-in matelac-modal" data-modal="manager-form">
+<div class="modal-window fade-in custom-form" data-modal="manager-form">
     <div class="modal-content">
         <form action="callback" class="form manager-form">
             <div class="title">
-                <span>Заказать образец</span>
+                <span>Связаться с менеджером</span>
                 <div class="close-btn" data-close-modal-button="manager-form" data-effect-type="open-modal-fade-effect"></div>
             </div>
             <div class="form-fields">
@@ -240,7 +243,7 @@
                 </label>
 
                 <label class="field field-input item delay-200">
-                    <input class="input-text placeholder validate input-mask" data-placeholder="Удобное время для звонка" data-validate="required" data-mask_tpl="phone_plus7"
+                    <input class="input-text placeholder validate input-mask" data-placeholder="Удобное время для звонка" data-validate="required"
                            name="feedback_phone" type="text">
                     <p class="error-message"></p>
                 </label>
@@ -249,10 +252,10 @@
                   </div>-->
 
                 <div class="form-footer">
-                    <input type="checkbox" name="policy" id="manager-form_policy"  class="">
+                    <input type="checkbox" name="policy" id="manager-form_policy" data-validate="required" class="validate">
                     <label for="manager-form_policy" class=""><span>Даю согласие на обработку персональных данных</span></label>
 
-                    <button type="submit" href="#" class="button no-margin-top no-margin-bottom">Отправить заявку</button>
+                    <button type="submit"  class="button no-margin-top no-margin-bottom">Отправить заявку</button>
                 </div>
                 <div class="form-message">
                     <div class="form-info">
@@ -271,11 +274,11 @@
 
 </div>
 
-<div class="modal-window fade-in matelac-modal" data-modal="question-form">
+<div class="modal-window fade-in custom-form" data-modal="question-form">
     <div class="modal-content">
         <form action="callback" class="form question-form">
             <div class="title">
-                <span>Заказать образец</span>
+                <span>Задать вопрос</span>
                 <div class="close-btn" data-close-modal-button="question-form" data-effect-type="open-modal-fade-effect"></div>
             </div>
             <div class="form-fields">
@@ -310,10 +313,10 @@
                   </div>-->
 
                 <div class="form-footer">
-                    <input type="checkbox" name="policy" id="question-form_policy" class="">
+                    <input type="checkbox" name="policy" id="question-form_policy" data-validate="required" class="validate">
                     <label for="question-form_policy" class=""><span>Даю согласие на обработку персональных данных</span></label>
 
-                    <button type="submit" href="#" class="button no-margin-top no-margin-bottom">Отправить заявку</button>
+                    <button type="submit" class="button no-margin-top no-margin-bottom">Отправить заявку</button>
                 </div>
                 <div class="form-message">
                     <div class="form-info">
