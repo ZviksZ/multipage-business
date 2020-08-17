@@ -6,7 +6,7 @@ export class NewsLoad {
    constructor() {
       this.$newsContainer = $('#news-list');
 
-      if (!this.$newsContainer) {
+      if (!this.$newsContainer.length) {
          return false
       }
 
@@ -42,7 +42,7 @@ export class NewsLoad {
    }
 
    onScroll = () => {
-      if  ($(window).scrollTop() >= $(document).height() - $(window).height() - 100) {
+      if ($(window).scrollTop() >= $(document).height() - $(window).height() - 100) {
          if (!this.$isLast && !this.$isLoading) {
             this.getNews(this.$lastDownloadedPage + 1);
 
@@ -85,16 +85,32 @@ export class NewsLoad {
          this.$newsContainer.next('.loader').remove();
       } else {
          this.$isLoading = true;
-         this.$newsContainer.after('<div class="loader"></div>')
+         this.$newsContainer.after('<div class="loader"></div>');
       }
    }
 
    onError = () => {
-      this.$newsContainer.after('<div class="repeat-btn">Повторить загрузку</div>')
+      this.$newsContainer.after('<div class="repeat-btn">Повторить загрузку</div>');
    }
 
    getNewsPage = async (pageNumber) => {
-      return getMockupNews(pageNumber);
+      let returnArray = getMockupNews(pageNumber);
+
+      $.ajax({
+         url: '/getNews',
+         type: 'POST',
+         dataType: 'text',
+         data: {pageNumber},
+         success: (res) => {
+            returnArray = getMockupNews(pageNumber);
+         },
+         error: (res) => {
+            returnArray = getMockupNews(pageNumber);
+         },
+         timeout: 30000
+      });
+
+      return returnArray;
    }
 
    getNewsTemplate = (newsArray) => {

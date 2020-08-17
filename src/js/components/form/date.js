@@ -1,3 +1,9 @@
+import 'jquery-ui/themes/base/core.css';
+import 'jquery-ui/themes/base/theme.css';
+import 'jquery-ui/themes/base/selectable.css';
+import 'jquery-ui/ui/core';
+import 'jquery-ui/ui/widgets/datepicker';
+
 /*
 
 const dateMin = new Date();
@@ -18,7 +24,7 @@ const $dateFrom = $form.find('#date_from');
  * @param {Date} minDate объект минимальной даты для выбора
  * @param {Date} maxDate объект максимальной даты для выбора
  */
-function initRangePicker($startInput, $endInput, {
+export function initRangePicker($startInput, $endInput, {
     minDate,
     maxDate
 } = {}) {

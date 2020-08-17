@@ -48,7 +48,6 @@
         padding: 1px 0 0 0;
         cursor: pointer;
         z-index: 999;
-        overflow: hidden;
         .label {
             display: inline-block;
             width: 100%;
@@ -115,14 +114,6 @@
 
         }
 
-        select.input-text {
-            padding-top: 4px;
-            font-weight: 400;
-            option:first {
-                color: $colorText;
-            }
-        }
-
 
 
 
@@ -145,6 +136,9 @@
             line-height: 18px;
             font-weight: 400;
             color: $colorError;
+            position: absolute;
+            top: 52px;
+            left: 0;
         }
         &.error {
             input {

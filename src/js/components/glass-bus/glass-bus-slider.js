@@ -54,7 +54,6 @@ export class GlassBusSlider {
 
    initSlider = () => {
       this.$sliderInstance = new Swiper(this.$slider, {
-         effect: 'slide',
          loop: false,
          preloadImages: false,
          lazy: true,

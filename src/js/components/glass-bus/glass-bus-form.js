@@ -1,5 +1,5 @@
-import * as $                               from 'jquery';
-import {initFormWithValidate, validateForm} from "../form";
+import * as $                                                from 'jquery';
+import {initFormWithValidate, initRangePicker, validateForm} from "../form";
 
 export class GlassBusForm {
    constructor() {
@@ -14,8 +14,24 @@ export class GlassBusForm {
 
    init = () => {
       initFormWithValidate(this.$form);
+      this.initDateFields();
 
       this.initHandlers();
+   }
+
+   initDateFields = () => {
+      const $dateFrom = this.$form.find('#date-from');
+      const $dateTo = this.$form.find('#date-to');
+
+      const dateMin = new Date();
+      dateMin.setDate(dateMin.getDate() + 3);
+
+
+      initRangePicker($dateFrom, $dateTo, {
+         minDate: dateMin
+      });
+
+
    }
 
    initHandlers = () => {
@@ -37,16 +53,19 @@ export class GlassBusForm {
          nextStep = $(e.currentTarget).attr('data-prev');
       }
 
-      if (!this.$form.find('[data-step="' + this.$currentStep + '"]').find('.field.error').length) {
+      if (this.$form.find('[data-step="' + this.$currentStep + '"]').find('.field.error').length === 0) {
          this.$form.find('[data-step]').addClass('hide');
          this.$form.find('[data-step="' + nextStep + '"]').removeClass('hide');
          this.$form.find('.field.error').removeClass('error');
+
+         this.$currentStep = nextStep;
       }
+
    }
 
    toggleStepFields = (e) => {
       if ($(e.currentTarget).val() === 'true') {
-         this.$form.find('.glass-bus-form-worker').addClass('disabled-fields').find('.field input').removeClass('validate');
+         this.$form.find('.glass-bus-form-worker').addClass('disabled-fields').find('.field').removeClass('error').find('input').removeClass('validate');
       } else {
          this.$form.find('.glass-bus-form-worker').removeClass('disabled-fields').find('.field input').addClass('validate');
       }

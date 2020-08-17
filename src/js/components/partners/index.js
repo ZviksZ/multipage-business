@@ -1,5 +1,6 @@
-import * as $                           from 'jquery';
-import {partners}                       from "./mockup-data.js";
+import * as $          from 'jquery';
+import {getMockupNews} from "../news/news-mockup-data.js";
+import {partners}      from "./mockup-data.js";
 
 export class InitPartnersPage {
    constructor(modal) {
@@ -418,7 +419,22 @@ export class InitPartnersPage {
    }
 
    getData = () => {
-      return partners.groups;
+      let groups = partners.groups;
+
+      $.ajax({
+         url: '/getPartners',
+         type: 'GET',
+         dataType: 'text',
+         success: (res) => {
+            groups = partners.groups;
+         },
+         error: (res) => {
+            groups = partners.groups;
+         },
+         timeout: 30000
+      });
+
+      return groups;
    }
 
    initHandlers = () => {

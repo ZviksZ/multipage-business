@@ -1,5 +1,6 @@
-import * as $   from 'jquery';
-import {result} from "./search-mockup-data.js";
+import * as $          from 'jquery';
+import {getMockupNews} from "../news/news-mockup-data.js";
+import {result}        from "./search-mockup-data.js";
 
 export class SearchPage {
    constructor() {
@@ -62,6 +63,20 @@ export class SearchPage {
           res = data
       });
       return res*/
+
+      $.ajax({
+         url: '/getSearch',
+         type: 'POST',
+         dataType: 'text',
+         data: {query},
+         success: (res) => {
+            console.log('success')
+         },
+         error: (res) => {
+            console.log('error')
+         },
+         timeout: 30000
+      });
 
       return result;
    }

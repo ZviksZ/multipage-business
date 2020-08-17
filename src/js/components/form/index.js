@@ -14,6 +14,7 @@ import {
 } from './validator';
 
 import Selects from "./selects";
+import {initRangePicker} from "./date.js";
 
 export {
     initMaskedInput,
@@ -25,5 +26,6 @@ export {
     validateField,
     initFormWithValidate,
     initPlaceholders,
-    Selects
+    Selects,
+    initRangePicker
 };

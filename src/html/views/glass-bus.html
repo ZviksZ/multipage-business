@@ -96,14 +96,14 @@ footer: "black"
                     <div class="glass-bus-form-time">
 
                         <label class="field field-input item delay-200">
-                            <input class="input-text placeholder validate" data-placeholder="Дата начала" data-validate="required"
-                                   name="date-start" type="date">
+                            <input class="input-text placeholder validate" id="data-from" data-placeholder="Дата начала" data-validate="required"
+                                   name="date-start" type="text">
                             <p class="error-message"></p>
                         </label>
 
                         <label class="field field-input item delay-200">
-                            <select name="timeBefin" class="input-text validate" data-validate="required">
-                                <option value="" disabled selected>Время начала</option>
+                            <select name="timeBefin" class="input-text placeholder validate" data-placeholder="Время начала" data-validate="required">
+                                <option value="" ></option>
                                 <option value="number:1" >01:00</option>
                                 <option value="number:2" >02:00</option>
                                 <option value="number:3" >03:00</option>
@@ -132,14 +132,14 @@ footer: "black"
                         </label>
 
                         <label class="field field-input item delay-200">
-                            <input class="input-text placeholder validate" data-placeholder="Дата завершения" data-validate="required"
-                                   name="date-end" type="date">
+                            <input class="input-text placeholder validate" id="data-to" data-placeholder="Дата завершения" data-validate="required"
+                                   name="date-end" type="text">
                             <p class="error-message"></p>
                         </label>
 
                         <label class="field field-input item delay-200">
-                            <select name="timeEnd" class="input-text validate" data-validate="required">
-                                <option value="" disabled selected>Время завершения</option>
+                            <select name="timeEnd" class="input-text placeholder validate" data-placeholder="Время завершения" data-validate="required">
+                                <option value="" ></option>
                                 <option value="number:1" >01:00</option>
                                 <option value="number:2" >02:00</option>
                                 <option value="number:3" >03:00</option>

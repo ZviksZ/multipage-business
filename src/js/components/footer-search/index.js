@@ -1,10 +1,12 @@
+import * as $         from 'jquery';
+
 export class FooterSearch {
    constructor() {
-      this.$footerSearch = document.querySelector('.footer-search');
-      this.$input = document.querySelector('.footer-search .footer-search_input');
-      this.$btn = document.querySelector('.footer-search .footer-search_btn');
-      this.$iconSearch = document.querySelector('.footer-search .footer-search_icon-search');
-      this.$iconClean = document.querySelector('.footer-search .footer-search_icon-clean');
+      this.$footerSearch = $('.footer-search');
+      this.$input = this.$footerSearch.find('.footer-search_input');
+      this.$btn = this.$footerSearch.find('.footer-search_btn');
+      this.$iconSearch = this.$footerSearch.find('.footer-search_icon-search');
+      this.$iconClean = this.$footerSearch.find('.footer-search_icon-clean');
 
 
 
@@ -13,27 +15,27 @@ export class FooterSearch {
    }
 
    init = () => {
-      this.$iconSearch.addEventListener('click', this.activateSearch);
-      this.$iconClean.addEventListener('click', this.deactivateSearch);
-      this.$input.addEventListener('focus', this.openBtnOnInputChange);
+      this.$iconSearch.on('click', this.activateSearch);
+      this.$iconClean.on('click', this.deactivateSearch);
+      this.$input.on('focus', this.openBtnOnInputChange);
    }
 
    activateSearch = (e) => {
       e.preventDefault();
 
-      this.$footerSearch.classList.add('footer-search__active');
+      this.$footerSearch.addClass('footer-search__active');
       this.$input.focus();
    }
 
    deactivateSearch = (e) => {
       e.preventDefault();
 
-      this.$footerSearch.classList.remove('footer-search__active');
+      this.$footerSearch.removeClass('footer-search__active');
       this.$input.value = '';
    }
 
    openBtnOnInputChange = () => {
-      this.$footerSearch.classList.add('footer-search__active');
+      this.$footerSearch.addClass('footer-search__active');
    }
 
 }
