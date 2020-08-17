@@ -1,4 +1,5 @@
 import * as $                                          from 'jquery';
+global.jQuery = require('jquery');
 import {CareerForm}                                    from './components/career-form';
 import {FooterSearch}                                  from './components/footer-search';
 import {initMaskedInput, initPlaceholders}             from './components/form'

@@ -161,7 +161,7 @@ function validateField($field, showError = true) {
 			break;
 
 		//дата рождения
-		case 'date_birthday':
+		case 'date':
 			if (val.search(regDate) === -1) {
 				error++;
 				message = 'Дата в формате дд.мм.гггг';
@@ -177,13 +177,10 @@ function validateField($field, showError = true) {
 				const dateNow = moment();
 
 				//проверка на корректность даты
-				if (dateCur.isValid() == 'Invalid date' || dateCur.isValid() == false || dateCur > dateNow) {
+				if (dateCur.isValid() == 'Invalid date' || dateCur.isValid() == false) {
 					error++;
 					message = 'Укажите верную дату';
 
-				} else if (dateNow.diff(dateCur, 'years') < 18) {
-					error++;
-					message = 'Возраст не менее 18 лет';
 				}
 			}
 

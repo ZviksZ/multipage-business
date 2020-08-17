@@ -1,6 +1,7 @@
 .glass-bus-info {
     .glass-bus__slider-wrap {
         position: relative;
+        overflow: hidden;
         .swiper-arrows {
             position: absolute;
             bottom: 0;
@@ -124,6 +125,7 @@
                 font-size: 16px;
                 text-transform: uppercase;
                 color: $colorText;
+                margin-bottom: 0;
             }
             .button {
                 margin: 0;
@@ -154,7 +156,6 @@
 
         .glass-unit-items {
             width: 100%;
-            border-bottom: 1px solid #979797;
             padding: 14px 43px;
             .item {
                 width: 100%;
@@ -181,11 +182,59 @@
             }
         }
 
+
+        .select-types-info {
+            font-size: 16px;
+            letter-spacing: 0.8px;
+            color: $colorText;
+            margin-right: auto;
+        }
         input[type=checkbox] + label {
             font-size: 16px;
             span {
                 font-size: 16px;
             }
         }
+
+        .form-fields.no-padding-horizontal {
+            padding-bottom: 0;
+        }
+
+
+        .form-message {
+            background-color: #fbf4f4;
+        }
+
+        &.form-hide {
+            .glass-unit-items,
+            .glass-call-me,
+            .glass-unit-types,
+            .glass-unit-items,
+            .small-text,
+            .title {
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+            }
+
+
+        }
+    }
+
+
+}
+
+.ui-datepicker {
+    width: auto !important;
+    font-size: 2em !important;
+    .ui-state-highlight {
+        background: $colorRed !important;
+        border-color: $colorRed !important;
+        color: $colorWhite;
+    }
+    .ui-state-active {
+        background: $colorBlueDarken !important;
+        border-color: $colorBlueDarken !important;
     }
 }
+

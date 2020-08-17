@@ -97,6 +97,12 @@
 // страница Matelac crystal
 @import 'matelac';
 
+@import '/node_modules/jquery-ui/themes/base/all.css';
+@import '/node_modules/jquery-ui/themes/base/theme.css';
+@import '/node_modules/jquery-ui/themes/base/core.css';
+@import '/node_modules/jquery-ui/themes/base/datepicker.css';
+
+
 // страница Glass Bus
 @import 'glass-bus';
 
@@ -106,5 +112,7 @@
 
 //Стили для постраничной прокрутки
 @import 'fullscreen-page';
+
+
 
 

@@ -1,21 +1,30 @@
-import 'jquery-ui/themes/base/core.css';
-import 'jquery-ui/themes/base/theme.css';
-import 'jquery-ui/themes/base/selectable.css';
-import 'jquery-ui/ui/core';
-import 'jquery-ui/ui/widgets/datepicker';
+import * as $ from 'jquery';
+import 'jquery-ui';
+import 'jquery-ui/ui/widgets/datepicker.js';
 
-/*
 
-const dateMin = new Date();
-   dateMin.setDate(dateMin.getDate() + 3);
-   initRangePicker($dateFrom, $dateTo, {
-      minDate: dateMin
-   });
+$.datepicker.regional['ru'] = {
+    closeText: 'Закрыть',
+    prevText: 'Пред',
+    nextText: 'След',
+    currentText: 'Сегодня',
+    monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь',
+        'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+    monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн',
+        'Июл','Авг','Сен','Окт','Ноя','Дек'],
+    dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+    dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
+    dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+    weekHeader: 'Нед',
+    dateFormat: 'dd.mm.yy',
+    firstDay: 1,
+    isRTL: false,
+    showMonthAfterYear: false,
+    yearSuffix: ''};
+$.datepicker.setDefaults($.datepicker.regional['ru']);
 
-const $dateFrom = $form.find('#date_from');
-   const $dateTo = $form.find('#date_to');
-*/
 
+import {validateField} from "./validator.js";
 
 /**
  * Инициализация выбора периода
@@ -43,18 +52,25 @@ export function initRangePicker($startInput, $endInput, {
 
     const defaultSettingsDatepicker = {
         minDate: minDate,
-        maxDate: maxDate
+        maxDate: maxDate,
+        dateFormat: 'dd.mm.yy'
     };
 
     const $pickerStart = $startInput.datepicker(defaultSettingsDatepicker);
     const $pickerEnd = $endInput.datepicker(defaultSettingsDatepicker);
 
+
+
     $startInput.on('change', function () {
         checkRange('start');
+        $(this).closest('.field').removeClass('empty');
     });
+
+
 
     $endInput.on('change', function () {
         checkRange('end');
+        $(this).closest('.field').removeClass('empty');
     });
 
     /**
