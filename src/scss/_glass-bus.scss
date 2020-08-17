@@ -47,6 +47,14 @@
             .form-footer {
                 padding-left: 43px;
                 padding-right: 43px;
+                @include mobile {
+                    padding-left: 30px;
+                    padding-right: 30px;
+                }
+                @include only-mobile {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
             }
         }
         .title {
@@ -75,6 +83,14 @@
             letter-spacing: normal;
             color: $colorText;
             padding: 0 43px;
+            @include mobile {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            @include only-mobile {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
         }
 
         .glass-bus-form-time {
@@ -121,11 +137,25 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            @include mobile {
+                padding: 14px 30px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            @include only-mobile {
+                padding: 14px 10px;
+            }
             .text {
                 font-size: 16px;
                 text-transform: uppercase;
                 color: $colorText;
                 margin-bottom: 0;
+                @include mobile {
+                    width: 100%;
+                    text-align: center;
+                    margin-bottom: 10px;
+                    font-size: 14px;
+                }
             }
             .button {
                 margin: 0;
@@ -138,6 +168,12 @@
             flex-wrap: wrap;
             border-bottom: 1px solid #979797;
             padding: 15px 43px;
+            @include mobile {
+                padding: 14px 30px;
+            }
+            @include only-mobile {
+                padding: 14px 10px;
+            }
             .type-title {
                 width: 100%;
                 font-size: 16px;
@@ -148,8 +184,15 @@
             .type {
                 width: 25%;
                 padding: 0 10px 0 0;
+                margin-bottom: 15px;
                 label {
                     text-transform: uppercase;
+                }
+                @include mobile {
+                    width: 50%;
+                }
+                @include only-mobile {
+                    width: 100%;
                 }
             }
         }
@@ -157,6 +200,12 @@
         .glass-unit-items {
             width: 100%;
             padding: 14px 43px;
+            @include mobile {
+                padding: 14px 30px;
+            }
+            @include only-mobile {
+                padding: 14px 10px;
+            }
             .item {
                 width: 100%;
                 display: flex;
@@ -178,6 +227,13 @@
                     .link {
                         margin-left: auto;
                     }
+                    @include mobile {
+                        width: 50%;
+                        margin-bottom: 20px;
+                    }
+                    @include only-mobile {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -188,6 +244,12 @@
             letter-spacing: 0.8px;
             color: $colorText;
             margin-right: auto;
+            @include mobile {
+                width: 100%;
+                margin-bottom: 15px;
+                font-size: 14px;
+            }
+
         }
         input[type=checkbox] + label {
             font-size: 16px;
@@ -205,19 +267,29 @@
             background-color: #fbf4f4;
         }
 
+        .title {
+            @include mobile {
+                padding: 20px 24px;
+                font-size: 16px;
+            }
+            @include only-mobile {
+                padding: 14px 20px;
+                font-size: 14px;
+            }
+        }
+
         &.form-hide {
             .glass-unit-items,
             .glass-call-me,
             .glass-unit-types,
             .glass-unit-items,
             .small-text,
-            .title {
+            .title,
+            .step {
                 transform: translateY(-100%);
                 opacity: 0;
                 pointer-events: none;
             }
-
-
         }
     }
 

@@ -1,0 +1,52 @@
+<% var data = {
+title: "КОНЦЕРТНЫЙ ЗАЛ И ГОРОДСКАЯ ПЛОЩАДЬ | AGC Glass Russia",
+url: "realized-projects-detail.html",
+header: "white",
+footer: "white"
+}; %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+
+
+
+
+<section class="section no-padding-top no-padding-bottom ro-top">
+    <div class="ro-top__left">
+
+    </div>
+    <div class="ro-top__content">
+        <div class="info">
+            <h1 class="h1 title color-white">КОНЦЕРТНЫЙ ЗАЛ И ГОРОДСКАЯ ПЛОЩАДЬ</h1>
+
+            <p class="address">РФ, Москва, Пресненская набережная, 12</p>
+
+            <div class="tags">
+                <span class="text">Стекло:</span>
+                <span class="tag">TOP N+T</span>
+                <span class="tag">PLANIBEL COLORED ARCHITECTURAL</span>
+            </div>
+
+            <a href="#" class="back-btn">Вернуться в каталог</a>
+        </div>
+
+        <div class="ro-top__slider" id="ro_slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image: url(./img/projects/1.jpg)"></div>
+                <div class="swiper-slide" style="background-image: url(./img/projects/2.jpg)"></div>
+            </div>
+        </div>
+
+        <div class="ro-top__slider-controls">
+            <div class="swiper-arrows">
+                <div class="swiper-button swiper-button-prev">
+                    <img src="./img/agc/newsitem-read-more.svg" alt="">
+                </div>
+                <div class="swiper-button swiper-button-next">
+                    <img src="./img/agc/newsitem-read-more.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>

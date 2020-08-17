@@ -45,7 +45,7 @@
                 width: 100%;
                 height: 100%;
                 transition: .3s ease;
-                background-color: #151515;
+                background-color: $colorBlackLight;
                 opacity: 0.35;
             }
 
@@ -236,4 +236,237 @@
             }
         }
     }
+
+
+    &.realized-projects__page {
+        display: flex;
+        background: $colorBlackLight;
+        @include mobile {
+            flex-wrap: wrap;
+        }
+        .realized-projects__left {
+            width: 550px;
+            padding: 50px 35px 40px 50px;
+            color: #676767;
+            @include desktop-smaller {
+                width: 50%;
+            }
+            @include mobile {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                padding: 30px;
+            }
+            @include only-mobile {
+                padding: 30px 15px;
+            }
+            .realized-projects__links {
+                display: flex;
+                flex-direction: column;
+                @include mobile {
+                    width: 100%;
+                    flex-direction: row;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                }
+                a {
+                    position: relative;
+                    display: block;
+                    margin-bottom: 15px;
+                    color: #676767;
+                    font-size: 20px;
+                    margin-left: 80px;
+                    letter-spacing: 0.25px;
+                    transition: .2s ease;
+                    @include desktop {
+                        &:hover {
+                            color: $colorWhite;
+                        }
+                    }
+                    @include mobile {
+                        margin: 0 15px 20px;
+                        font-size: 18px;
+                    }
+
+                    &.active {
+                        color: $colorWhite;
+                        margin-left: 120px;
+                        &:before {
+                            position: absolute;
+                            display: block;
+                            content: '';
+                            opacity: 1;
+                            background: #fff;
+                            margin-left: -20px;
+                            top: calc(50% - 1px);
+                            left: 0;
+                            width: 236px;
+                            height: 2px;
+                            -webkit-transform: translate(-100%, -50%);
+                            -ms-transform: translate(-100%, -50%);
+                            transform: translate(-100%, -50%);
+                            -webkit-transition: inherit;
+                            -o-transition: inherit;
+                            transition: inherit;
+                        }
+                        @include mobile {
+                            margin-left: 0;
+                            &:before {
+                                display: none;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .realized-projects__view {
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                font-size: 18px;
+                margin: 20px 0 30px;
+                span {
+                    display: inline-block;
+                    color: #676767;
+                    transition: .3s;
+                }
+                .text {
+                    margin-right: 20px;
+                }
+                .realized-projects-tab {
+                    font-size: 15px;
+                    margin-right: 10px;
+                    @include desktop {
+                        &:hover {
+                            color: $colorWhite;
+                            span {
+                                color: $colorWhite;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .realized-projects__text {
+                font-size: 16px;
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+
+            .realized-projects__subtitle {
+                text-transform: uppercase;
+                color: $colorWhite;
+                font-size: 14px;
+            }
+            .button {
+                margin: 20px 0;
+            }
+        }
+        .realized-projects_list {
+            width: 100%;
+            padding: 0;
+            @include desktop-smaller {
+                width: 50%;
+            }
+            .item {
+                display: block;
+                position: relative;
+                width: 50%;
+                margin: 0;
+
+                .bg {
+                    &:before {
+                        padding-top: 58%;
+                    }
+                }
+                .content {
+                    .title {
+                        margin-bottom: 5px;
+                        @include desktop-big {
+                            font-size: 31px;
+                        }
+                    }
+                    .tags {
+                        position: absolute;
+                        bottom: 20px;
+                        left: 20px;
+                        opacity: 1;
+                        span {
+                            font-size: 12px;
+                            color: $colorWhite;
+                        }
+                        &:before {
+                            display: none;
+                        }
+                        @include desktop-big {
+                            span {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                    .desc {
+                        position: relative;
+                        &:before {
+                            position: absolute;
+                            left: 0;
+                            top: -12px;
+                            display: block;
+                            content:'';
+                            width: 38px;
+                            height: 2px;
+                            background: $colorWhite;
+                            @include desktop-big {
+                                top: -16px;
+                            }
+                            @include desktop-smaller {
+                                display: none;
+                            }
+                            @include mobile {
+                                display: none;
+                            }
+
+                        }
+                        @include desktop-big {
+                            font-size: 24px;
+                        }
+                    }
+                }
+
+                @include desktop-smaller {
+                    width: 100%;
+                }
+                @include mobile {
+                    width: 100%;
+                    .bg {
+                        &:before {
+                            padding-top: 45%;
+                        }
+                    }
+                }
+                @include only-mobile {
+                    width: 100%;
+                    .bg {
+                        &:before {
+                            padding-top: 55%;
+                        }
+                    }
+
+                    .content {
+                        padding: 15px 10px;
+                        .tags {
+                            position: absolute;
+                            bottom: 15px;
+                            left: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
+
+

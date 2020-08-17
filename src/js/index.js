@@ -8,12 +8,13 @@ import {GlassBusForm, GlassBusSlider}                  from "./components/glass-
 import {Header}                                        from './components/header';
 import {HeaderMenu}                                    from './components/header-menu';
 import {MatelacJuxtapose, MatelacGallery, MatelacForm} from "./components/matelac";
-import {ModalWindowFullScreen}                         from './components/modal-window-fullscreen';
-import {PageFilter}                                    from './components/page-filter';
-import {InitPartnersPage}                              from "./components/partners";
-import {ProductsModal, ProductsSlider, ProductsTabs}   from './components/products';
-import {NewsLoad}                                      from './components/news';
-import {MediaVideo}                                    from './components/media-video';
+import {ModalWindowFullScreen}                       from './components/modal-window-fullscreen';
+import {PageFilter}                                  from './components/page-filter';
+import {InitPartnersPage}                            from "./components/partners";
+import {ProductsModal, ProductsSlider, ProductsTabs} from './components/products';
+import {NewsLoad}                                    from './components/news';
+import {MediaVideo}                                  from './components/media-video';
+import {ProjectSlider}                               from "./components/projects";
 import {SearchPage}                                  from "./components/search-page";
 import {WidgetTabs}                                  from "./components/widgets-tabs";
 
@@ -26,43 +27,43 @@ $(function () {
    new HeaderMenu();
 
    // инициализация функционала постраничной прокрутки
-   new FullscreenScroll()
+   new FullscreenScroll();
 
    // инициализация функционала фильтра на страницах
-   new PageFilter()
+   new PageFilter();
 
    // инициализация функционала табов на детальной странице Продукции
-   new ProductsTabs()
+   new ProductsTabs();
 
    // инициализация функционала слайдера на детальной странице Продукции
-   new ProductsSlider()
+   new ProductsSlider();
 
    // инициализация функционала модалки на детальной странице Продукции
-   new ProductsModal()
+   new ProductsModal();
 
    // инициализация функционала модальных окон
-   let modal = new ModalWindowFullScreen()
+   let modal = new ModalWindowFullScreen();
 
    // инициализация функционала работы инпута в футере
-   new FooterSearch()
+   new FooterSearch();
 
    // инициализация функционала работы формы на странице Карьера
-   new CareerForm()
+   new CareerForm();
 
    // инициализация функционала загрузки новостей
-   new NewsLoad()
+   new NewsLoad();
 
    // инициализация функционала модального окна с видео
-   new MediaVideo()
+   new MediaVideo();
 
    // инициализация функционала страницы Партнеры
-   new InitPartnersPage(modal)
+   new InitPartnersPage(modal);
 
    // инициализация функционала страницы Виджеты
-   new WidgetTabs()
+   new WidgetTabs();
 
    // инициализация функционала страницы Поиска по сайту
-   new SearchPage()
+   new SearchPage();
 
    //Matelac Crystal Page
    new MatelacJuxtapose();
@@ -73,6 +74,9 @@ $(function () {
    //Glass Bus Page
    new GlassBusSlider();
    new GlassBusForm();
+
+   //Слайдер на детальной странице проектов
+   new ProjectSlider();
 
 
    // Инициализация плейсхолдеров и масок

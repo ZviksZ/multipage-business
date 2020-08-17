@@ -1,0 +1,44 @@
+.ro-top {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    .ro-top__left {
+        width: 7%;
+        height: 100%;
+        background: $colorBlackLight;
+    }
+    .ro-top__content {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        .info {
+            position: absolute;
+        }
+        .ro-top__slider {
+            .swiper-slide {
+                width: 100%;
+                background-repeat: no-repeat;
+                -webkit-background-size: cover;
+                background-size: cover;
+                background-position: center center;
+                &:before {
+                    display: block;
+                    content: '';
+                    float: left;
+                    padding-top: 100%;
+                }
+            }
+            &:after {
+                position: absolute;
+                content: '';
+                background: rgba(0, 0, 0, 0.4);
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 9;
+            }
+        }
+    }
+
+}

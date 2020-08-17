@@ -13,7 +13,7 @@ footer: "black"
 </div>
 
 
-<section class="section glass-bus-info padding-top">
+<section class="section glass-bus-info padding-top no-padding-bottom">
     <div class="container container-sm">
         <div class="caption-with-line caption-black caption-no-overflow margin-bottom-x3 margin-top-x2">
             <h2 class="h2 color-text">
@@ -102,7 +102,7 @@ footer: "black"
                         </label>
 
                         <label class="field field-input item delay-200">
-                            <select name="timeBefin" class="input-text placeholder validate" data-placeholder="Время начала" data-validate="required">
+                            <select name="timeBegin" class="input-text placeholder validate" data-placeholder="Время начала" data-validate="required">
                                 <option value="" ></option>
                                 <option value="number:1" >01:00</option>
                                 <option value="number:2" >02:00</option>
@@ -190,7 +190,7 @@ footer: "black"
                         </label>
                         <label class="field field-input item delay-200">
                             <input class="input-text placeholder validate" data-placeholder="Компания" data-validate="required"
-                                   name="company" type="text">
+                                   name="feedback_company" type="text">
                             <p class="error-message"></p>
                         </label>
                         <label class="field field-input item delay-200">
@@ -226,32 +226,32 @@ footer: "black"
                 <div class="form-fields">
                     <label class="field field-input item delay-200">
                         <input class="input-text placeholder validate" data-placeholder="ФИО" data-validate="required"
-                               name="feedback_name" type="text">
+                               name="feedback_clientName" type="text">
                         <p class="error-message"></p>
                     </label>
                     <label class="field field-input item delay-200">
                         <input class="input-text placeholder validate" data-placeholder="Название проекта" data-validate="required"
-                               name="company" type="text">
+                               name="feedback_projectName" type="text">
                         <p class="error-message"></p>
                     </label>
                     <label class="field field-input item delay-200">
                         <input class="input-text placeholder validate" data-placeholder="Компания клиента" data-validate="required"
-                               name="feedback_email" type="text">
+                               name="feedback_clientCompany" type="text">
                         <p class="error-message"></p>
                     </label>
                     <label class="field field-input item delay-200">
                         <input class="input-text placeholder validate" data-placeholder="Контактное лицо(ФИО)" data-validate="required"
-                               name="feedback_phone" type="text">
+                               name="feedback_contactName" type="text">
                         <p class="error-message"></p>
                     </label>
                     <label class="field field-input item delay-200">
                         <input class="input-text placeholder validate" data-placeholder="Электронная почта" data-validate="email-required"
-                               name="feedback_email" type="text">
+                               name="feedback_clientEmail" type="text">
                         <p class="error-message"></p>
                     </label>
                     <label class="field field-input item delay-200">
                         <input class="input-text placeholder validate input-mask" data-placeholder="Телефон для связи" data-validate="number_phone-required" data-mask_tpl="phone_plus7"
-                               name="feedback_phone" type="text">
+                               name="feedback_clientPhone" type="text">
                         <p class="error-message"></p>
                     </label>
 
@@ -260,17 +260,17 @@ footer: "black"
 
                     <label class="field field-input item delay-200">
                         <input class="input-text placeholder validate" data-placeholder="Страна" data-validate="required"
-                               name="company" type="text">
+                               name="feedback_country" type="text">
                         <p class="error-message"></p>
                     </label>
                     <label class="field field-input item delay-200">
                         <input class="input-text placeholder validate" data-placeholder="Город" data-validate="required"
-                               name="feedback_email" type="text">
+                               name="feedback_city" type="text">
                         <p class="error-message"></p>
                     </label>
                     <label class="field field-input item delay-200">
                         <input class="input-text placeholder validate" data-placeholder="Адрес" data-validate="required"
-                               name="feedback_phone" type="text">
+                               name="feedback_address" type="text">
                         <p class="error-message"></p>
                     </label>
 
