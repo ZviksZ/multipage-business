@@ -196,6 +196,7 @@
             margin-top: 20px;
             color: $colorText !important;
             text-align: center;
+            margin-bottom: 10px;
         }
         &_overlay {
             height: 82px;
@@ -453,3 +454,31 @@
 }
 
 
+.policy-table {
+    th {
+        padding-left: 3px !important;
+        padding-right: 3px !important;
+        border-bottom: 1px solid $colorText !important;
+    }
+    td {
+        border: 1px solid $colorText;
+        padding: 8px 3px !important;
+    }
+    @include mobile {
+
+        tr:last-child td {
+            border: 1px solid $colorText !important;
+        }
+    }
+}
+
+
+.section-404 {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .page-no-found {
+        text-align: center;
+    }
+}

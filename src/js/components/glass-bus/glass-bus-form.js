@@ -42,7 +42,7 @@ export class GlassBusForm {
 
             this.allTypes += 1
          }
-         this.$unitItems.find('[data-type="type-' + types[i].id + '"').append(itemsTemplate);
+         this.$unitItems.find('[data-type="type-' + types[i].id + '"]').append(itemsTemplate);
 
       }
 
@@ -194,8 +194,6 @@ export class GlassBusForm {
       currentForm.find('input, textarea, select').each(function () {
          $formData[this.name] = $(this).val();
       });
-
-      console.log($formData)
 
       let data = {
          sub: 49,

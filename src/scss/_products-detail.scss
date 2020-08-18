@@ -334,6 +334,11 @@
         .products-detail_slider-wrap {
             position: relative;
             margin-top: 50px;
+
+            .swiper-slide-next,
+            .swiper-slide-prev {
+                opacity: 0;
+            }
         }
         .swiper-arrows {
             width: auto;

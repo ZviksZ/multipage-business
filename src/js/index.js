@@ -82,6 +82,17 @@ $(function () {
    // Инициализация плейсхолдеров и масок
    initMaskedInput();
    initPlaceholders();
+
+
+   //плавный скролл к якорю
+   /*$('a[href*="#"]').click(function() {
+      let $page = $('html, body');
+
+      $page.animate({
+         scrollTop: $($.attr(this, 'href')).offset().top - 45
+      }, 500);
+      return false;
+   });*/
 })
 
 

@@ -23,8 +23,12 @@ export class ProjectSlider {
          slidesPerView: 1,
          //spaceBetween: 32,
          navigation: {
-            nextEl: '.swiper-arrows .swiper-button-next',
-            prevEl: '.swiper-arrows .swiper-button-prev'
+            nextEl: '.ro-top__slider-controls .swiper-button-next',
+            prevEl: '.ro-top__slider-controls .swiper-button-prev'
+         },
+         pagination: {
+            el: '.ro-top__slider-controls .swiper-pagination',
+            type: 'fraction',
          },
          on: {
             slideChange: () => {

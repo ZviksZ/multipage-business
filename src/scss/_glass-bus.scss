@@ -244,6 +244,11 @@
             letter-spacing: 0.8px;
             color: $colorText;
             margin-right: auto;
+            a {
+                font-size: 16px;
+                color: $colorText;
+                text-decoration: underline;
+            }
             @include mobile {
                 width: 100%;
                 margin-bottom: 15px;

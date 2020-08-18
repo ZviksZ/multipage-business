@@ -555,7 +555,7 @@ export class InitPartnersPage {
    }
 
    getTypeTemplate = (id, title) => {
-      return `<a href="" class="partners-types_item" data-id=${id}>${title}</a>`;
+      return `<a href="#" class="partners-types_item" data-id=${id}>${title}</a>`;
    }
 
    getPartnerTemplate = (id, title) => {

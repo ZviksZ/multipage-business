@@ -141,7 +141,7 @@
             left: 0;
         }
         &.error {
-            input {
+            input, select, textarea {
                 color: $colorText;
                 border-color: $colorError;
             }
