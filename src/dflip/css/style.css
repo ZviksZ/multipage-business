@@ -1,0 +1,58 @@
+
+._df_book {
+    display: none;
+}
+.df-fullscreen._df_book {
+    display: block;
+}
+._df_thumb ._df_book-tag {
+    display: none;
+}
+
+.pdf-section .pdf_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    margin: 50px 0 150px;
+}
+.pdf-section .pdf_list .item {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ebebeb;
+}
+.pdf-section .pdf_list .item .subtitle{
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.pdf-section .pdf_list .item .btns-list{
+    display: flex;
+    flex-direction: column;
+}
+.pdf-section .pdf_list .item .btns-list a{
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    color: #000;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 1px solid #FF1353;
+    margin-right: 15px;
+    padding: 7px 12px;
+    transition: .3s ease;
+    margin-bottom: 5px;
+}
+.pdf-section .pdf_list .item .btns-list a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: #FF1353;
+}

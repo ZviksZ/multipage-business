@@ -20,8 +20,6 @@ import {WidgetTabs}                                  from "./components/widgets-
 
 
 
-
-
 $(function () {
 
    // инициализация функционала хедера
