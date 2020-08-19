@@ -128,6 +128,14 @@ const config = {
       {
         from: './src/documents',
         to: './documents'
+      },
+      {
+        from: './src/pdf',
+        to: './pdf'
+      },
+      {
+        from: './src/dflip',
+        to: './dflip'
       }
     ])
   ].concat(htmlPlugins)
