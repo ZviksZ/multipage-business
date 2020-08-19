@@ -1,5 +1,5 @@
 import * as $                                          from 'jquery';
-global.jQuery = require('jquery');
+window.jQuery = require('jquery');
 import {CareerForm}                                    from './components/career-form';
 import {FooterSearch}                                  from './components/footer-search';
 import {initMaskedInput, initPlaceholders}             from './components/form'
@@ -17,6 +17,10 @@ import {MediaVideo}                                  from './components/media-vi
 import {ProjectSlider}                               from "./components/projects";
 import {SearchPage}                                  from "./components/search-page";
 import {WidgetTabs}                                  from "./components/widgets-tabs";
+
+
+
+
 
 $(function () {
 
