@@ -22,7 +22,7 @@ export class ProductsModal {
    }
 
    getUserGeo = () => {
-      /*var startPos;
+     /* var startPos;
       var geoSuccess = function(position) {
          startPos = position;
 
@@ -32,13 +32,17 @@ export class ProductsModal {
 
          let geocoder = new google.maps.Geocoder();
 
+         var latlng = new google.maps.LatLng(+lat, +long);
+         console.log(lat)
+         console.log(long)
+
          $.ajax({
             type: 'GET',
             dataType: "json",
             url: "https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+long+"&key=AIzaSyBLlGR7bVSqktIomcOH2UedzgcdzVlccnk",
             data: {},
             success: function(data) {
-              console.log(data)
+               console.log(data)
             },
             error: function () { console.log('error'); }
          });

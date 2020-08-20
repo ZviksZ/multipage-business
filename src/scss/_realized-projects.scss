@@ -678,6 +678,7 @@
             text-decoration: none;
             color: $colorWhite;
             background: $colorBlueDarken;
+            transition: .2s linear;
             z-index: 13;
             img {
                 display: block;
@@ -687,6 +688,7 @@
             }
             @include desktop {
                 &:hover {
+                    background: darken($colorBlueDarken, 10%);
                     img {
                         transform: translateX(10px) rotate(-90deg);
                     }
