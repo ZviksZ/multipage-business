@@ -1,12 +1,10 @@
 <% var data = {
 title: "КОНЦЕРТНЫЙ ЗАЛ И ГОРОДСКАЯ ПЛОЩАДЬ | AGC Glass Russia",
-url: "realized-projects-detail.html",
+url: "ro-detail.html",
 header: "white",
 footer: "white"
 }; %>
 <%= _.template(require('./../includes/header.html').default)(data) %>
-
-
 
 
 <section class="section no-padding-top no-padding-bottom ro-top">
@@ -16,9 +14,10 @@ footer: "white"
             <div class="ro-top__type">Архитектурный проект</div>
 
             <div class="ro-top__line"></div>
-            <a href="#ro-content" class="ro-top__down-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path fill-rule="evenodd" d="M12.478,13.102 L23.801,1.847 C24.068,1.582 24.068,1.158 23.801,0.893 C23.535,0.628 23.107,0.628 22.841,0.893 L12.001,11.667 L1.160,0.893 C0.894,0.628 0.466,0.628 0.200,0.893 C0.069,1.023 -0.001,1.198 -0.001,1.368 C-0.001,1.537 0.064,1.712 0.200,1.843 L11.523,13.097 C11.784,13.362 12.217,13.362 12.478,13.102 Z"></path>
+            <a class="ro-top__down-btn" href="#ro-content">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.478,13.102 L23.801,1.847 C24.068,1.582 24.068,1.158 23.801,0.893 C23.535,0.628 23.107,0.628 22.841,0.893 L12.001,11.667 L1.160,0.893 C0.894,0.628 0.466,0.628 0.200,0.893 C0.069,1.023 -0.001,1.198 -0.001,1.368 C-0.001,1.537 0.064,1.712 0.200,1.843 L11.523,13.097 C11.784,13.362 12.217,13.362 12.478,13.102 Z"
+                          fill-rule="evenodd"></path>
                 </svg>
             </a>
 
@@ -34,37 +33,36 @@ footer: "white"
 
             <div class="tags">
                 <span class="text">Стекло:</span>
-                <a href="#" class="tag">TOP N+T</a>
-                <a href="#" class="tag">PLANIBEL COLORED ARCHITECTURAL</a>
+                <a class="tag" href="#">TOP N+T</a>
+                <a class="tag" href="#">PLANIBEL COLORED ARCHITECTURAL</a>
             </div>
 
-            <a href="#" class="back-btn">Вернуться в каталог</a>
+            <a class="back-btn" href="#">Вернуться в каталог</a>
         </div>
 
         <div class="ro_top__slider-wrap ro__slider-wrap">
             <div class="ro-top__slider ro__slider" id="ro-top_slider">
                 <div class="swiper-wrapper">
-                    <a href="#" class="swiper-slide" style="background-image: url(./img/projects/slide1.jpg)"></a>
-                    <a href="#" class="swiper-slide" style="background-image: url(./img/projects/slide2.jpg)"></a>
-                    <a href="#" class="swiper-slide" style="background-image: url(./img/projects/slide1.jpg)"></a>
-                    <a href="#" class="swiper-slide" style="background-image: url(./img/projects/slide2.jpg)"></a>
+                    <a class="swiper-slide" href="#" style="background-image: url(./img/projects/slide1.jpg)"></a>
+                    <a class="swiper-slide" href="#" style="background-image: url(./img/projects/slide2.jpg)"></a>
+                    <a class="swiper-slide" href="#" style="background-image: url(./img/projects/slide1.jpg)"></a>
+                    <a class="swiper-slide" href="#" style="background-image: url(./img/projects/slide2.jpg)"></a>
                 </div>
             </div>
 
             <div class="ro-top__slider-controls ro__slider-controls">
                 <div class="swiper-arrows">
                     <div class="swiper-button swiper-button-prev">
-                        <img src="./img/agc/newsitem-read-more.svg" alt="">
+                        <img alt="" src="./img/agc/newsitem-read-more.svg">
                     </div>
                     <div class="swiper-button swiper-button-next">
-                        <img src="./img/agc/newsitem-read-more.svg" alt="">
+                        <img alt="" src="./img/agc/newsitem-read-more.svg">
                     </div>
                 </div>
                 <div class="swiper-pagination swiper-pagination-fraction">
                     <span class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">1</span></div>
             </div>
         </div>
-
 
 
     </div>
@@ -78,19 +76,25 @@ footer: "white"
             <div class="ro-text">
                 <div class="info">
                     <p>
-                        Planibel Crystalvision — это новое стекло с показателями максимальной нейтральности и высочайшим уровнем цветопередачи; уникальный продукт, который производится на территории Российской Федерации.
+                        Planibel Crystalvision — это новое стекло с показателями максимальной нейтральности и высочайшим уровнем цветопередачи; уникальный продукт, который производится на территории
+                        Российской Федерации.
                     </p>
                     <p>
                         Максимально нейтральное стекло является базовым продуктом для целого ассортимента специальных решений с функцией солнцезащиты и энергосбережения.
                     </p>
                     <p>
-                        Уникальные характеристики нового продукта полностью отвечают требованиям нейтральности для создания архитектуры будущего. Отсутствие зеленых оттенков позволяет растворить здание в окружающем пространстве и максимально точно передать задумку архитектора. Зеркальность солнцезащитных и мультифункциональных стекол не искажается за счет отсутствия голубых и зеленых оттенков в стекле Crystalvision.
+                        Уникальные характеристики нового продукта полностью отвечают требованиям нейтральности для создания архитектуры будущего. Отсутствие зеленых оттенков позволяет растворить
+                        здание в окружающем пространстве и максимально точно передать задумку архитектора. Зеркальность солнцезащитных и мультифункциональных стекол не искажается за счет отсутствия
+                        голубых и зеленых оттенков в стекле Crystalvision.
                     </p>
                     <p>
-                        Благодаря своим эстетическим свойствам Planibel Crystalvision становится естественным выбором, когда ключевыми характеристиками являются чистота и высокая прозрачность. Неудивительно, что архитекторы и дизайнеры все чаще выбирают стекло с минимальным содержанием железа для проектов, требующих высокой степени прозрачности и четкости передачи цветов.
+                        Благодаря своим эстетическим свойствам Planibel Crystalvision становится естественным выбором, когда ключевыми характеристиками являются чистота и высокая прозрачность.
+                        Неудивительно, что архитекторы и дизайнеры все чаще выбирают стекло с минимальным содержанием железа для проектов, требующих высокой степени прозрачности и четкости передачи
+                        цветов.
                     </p>
                     <p>
-                        Чистота стекла стирает границу между человеком и внешним миром, не создавая барьеров в восприятии, создает дополнительный комфорт для людей, находящихся внутри помещения, и позволяет наслаждаться видом из окна с максимально точной цветопередачей.
+                        Чистота стекла стирает границу между человеком и внешним миром, не создавая барьеров в восприятии, создает дополнительный комфорт для людей, находящихся внутри помещения, и
+                        позволяет наслаждаться видом из окна с максимально точной цветопередачей.
                     </p>
                 </div>
 
@@ -133,99 +137,125 @@ footer: "white"
 </section>
 
 
-<section class="section realized-projects realized-projects__page realized-projects__page-detail no-padding-bottom no-padding-top">
-    <div class="realized-projects_list">
-        <a href="#" class="item">
-            <div class="bg" style="background-image: url('./img/projects/1.jpg')"></div>
-            <div class="overlay"></div>
-            <div class="content">
-                <div class="title">
-                    BLUE PAVILION - FIERA DEL MARE
+<section class="section ro ro__page ro__page-detail no-padding-bottom no-padding-top">
+    <div class="ro__content">
+        <div class="ro_list">
+            <a href="#" class="item">
+                <div class="bg" style="background-image: url('./img/projects/1.jpg')"></div>
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="title">
+                        BLUE PAVILION - FIERA DEL MARE
+                    </div>
+                    <div class="tags">
+                        <span>Архитектурный проект</span>
+                    </div>
+                    <div class="desc">
+                        <div>Адрес: г.Москва, улица Ленина 96</div>
+                        <div>Архитектор: Филипп Никандров</div>
+                    </div>
+                    <object type="owo/uwu">
+                        <div class="glasses">
+                            <span class="text">Стекло:</span>
+                            <a href="">Planibel clear</a>
+                            <a href="">Stopray vision 60t</a>
+                        </div>
+                    </object>
+                    <div class="detail-link">
+                        Подробнее
+                        <img src="./img/agc/newsitem-read-more.svg" alt="">
+                    </div>
                 </div>
-                <div class="tags">
-                    <span>Архитектурный проект</span>
-                </div>
-                <div class="desc">
-                    Деймон Лавель, архитектурное агенство  "Populous" (Великобритания)
-                    РФ, Сочи, Олимпийский проспект
-                </div>
+            </a>
 
-                <div class="detail-link">
-                    Подробнее
-                    <img src="./img/agc/newsitem-read-more.svg" alt="">
+            <a href="" class="item">
+                <div class="bg" style="background-image: url('./img/projects/2.jpg')"></div>
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="title">
+                        BLUE PAVILION - FIERA DEL MARE
+                    </div>
+                    <div class="tags">
+                        <span>Архитектурный проект</span>
+                    </div>
+                    <div class="desc">
+                        <div>Адрес: г.Москва, улица Ленина 96</div>
+                        <div>Архитектор: Филипп Никандров</div>
+                    </div>
+                    <object type="owo/uwu">
+                        <div class="glasses">
+                            <span class="text">Стекло:</span>
+                            <a href="">Planibel clear</a>
+                            <a href="">Stopray vision 60t</a>
+                        </div>
+                    </object>
+                    <div class="detail-link">
+                        Подробнее
+                        <img src="./img/agc/newsitem-read-more.svg" alt="">
+                    </div>
                 </div>
-            </div>
-        </a>
+            </a>
 
-        <a href="" class="item">
-            <div class="bg" style="background-image: url('./img/projects/2.jpg')"></div>
-            <div class="overlay"></div>
-            <div class="content">
-                <div class="title">
-                    BLUE PAVILION - FIERA DEL MARE
+            <a href="" class="item">
+                <div class="bg" style="background-image: url('./img/projects/3.jpg')"></div>
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="title">
+                        BLUE PAVILION - FIERA DEL MARE
+                    </div>
+                    <div class="tags">
+                        <span>Архитектурный проект</span>
+                    </div>
+                    <div class="desc">
+                        <div>Адрес: г.Москва, улица Ленина 96</div>
+                        <div>Архитектор: Филипп Никандров</div>
+                    </div>
+                    <object type="owo/uwu">
+                        <div class="glasses">
+                            <span class="text">Стекло:</span>
+                            <a href="">Planibel clear</a>
+                            <a href="">Stopray vision 60t</a>
+                        </div>
+                    </object>
+                    <div class="detail-link">
+                        Подробнее
+                        <img src="./img/agc/newsitem-read-more.svg" alt="">
+                    </div>
                 </div>
-                <div class="tags">
-                    <span>Архитектурный проект</span>
-                </div>
-                <div class="desc">
-                    Деймон Лавель, архитектурное агенство  "Populous" (Великобритания)
-                    РФ, Сочи, Олимпийский проспект
-                </div>
+            </a>
 
-                <div class="detail-link">
-                    Подробнее
-                    <img src="./img/agc/newsitem-read-more.svg" alt="">
-                </div>
-            </div>
-        </a>
+            <a href="" class="item">
+                <div class="bg" style="background-image: url('./img/projects/4.jpg')"></div>
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="title">
+                        BLUE PAVILION - FIERA DEL MARE
+                    </div>
+                    <div class="tags">
+                        <span>Архитектурный проект</span>
+                    </div>
+                    <div class="desc">
+                        <div>Адрес: г.Москва, улица Ленина 96</div>
+                        <div>Архитектор: Филипп Никандров</div>
+                    </div>
 
-        <a href="" class="item">
-            <div class="bg" style="background-image: url('./img/projects/3.jpg')"></div>
-            <div class="overlay"></div>
-            <div class="content">
-                <div class="title">
-                    BLUE PAVILION - FIERA DEL MARE
+                    <object type="owo/uwu">
+                        <div class="glasses">
+                            <span class="text">Стекло:</span>
+                            <a href="">Planibel clear</a>
+                            <a href="">Stopray vision 60t</a>
+                        </div>
+                    </object>
+                    <div class="detail-link">
+                        Подробнее
+                        <img src="./img/agc/newsitem-read-more.svg" alt="">
+                    </div>
                 </div>
-                <div class="tags">
-                    <span>Архитектурный проект</span>
-                </div>
-                <div class="desc">
-                    Деймон Лавель, архитектурное агенство  "Populous" (Великобритания)
-                    РФ, Сочи, Олимпийский проспект
-                </div>
+            </a>
 
-                <div class="detail-link">
-                    Подробнее
-                    <img src="./img/agc/newsitem-read-more.svg" alt="">
-                </div>
-            </div>
-        </a>
-
-        <a href="" class="item">
-            <div class="bg" style="background-image: url('./img/projects/4.jpg')"></div>
-            <div class="overlay"></div>
-            <div class="content">
-                <div class="title">
-                    BLUE PAVILION - FIERA DEL MARE
-                </div>
-                <div class="tags">
-                    <span>Архитектурный проект</span>
-                </div>
-                <div class="desc">
-                    Деймон Лавель, архитектурное агенство  "Populous" (Великобритания)
-                    РФ, Сочи, Олимпийский проспект
-                </div>
-
-                <div class="detail-link">
-                    Подробнее
-                    <img src="./img/agc/newsitem-read-more.svg" alt="">
-                </div>
-            </div>
-        </a>
-
+        </div>
     </div>
 </section>
-
 
 
 <%= _.template(require('./../includes/footer.html').default)(data) %>

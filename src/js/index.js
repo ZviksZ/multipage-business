@@ -8,15 +8,15 @@ import {GlassBusForm, GlassBusSlider}                  from "./components/glass-
 import {Header}                                        from './components/header';
 import {HeaderMenu}                                    from './components/header-menu';
 import {MatelacJuxtapose, MatelacGallery, MatelacForm} from "./components/matelac";
-import {ModalWindowFullScreen}                       from './components/modal-window-fullscreen';
-import {PageFilter}                                  from './components/page-filter';
-import {InitPartnersPage}                            from "./components/partners";
-import {ProductsModal, ProductsSlider, ProductsTabs} from './components/products';
-import {NewsLoad}                                    from './components/news';
-import {MediaVideo}                                  from './components/media-video';
-import {ProjectSlider, ProjectTopSlider}             from "./components/projects";
-import {SearchPage}                                  from "./components/search-page";
-import {WidgetTabs}                                  from "./components/widgets-tabs";
+import {ModalWindowFullScreen}                         from './components/modal-window-fullscreen';
+import {PageFilter}                                    from './components/page-filter';
+import {InitPartnersPage}                              from "./components/partners";
+import {ProductsModal, ProductsSlider, ProductsTabs}   from './components/products';
+import {NewsLoad}                                      from './components/news';
+import {MediaVideo}                                    from './components/media-video';
+import {ProjectSlider, ProjectsPage, ProjectTopSlider} from "./components/projects";
+import {SearchPage}                                    from "./components/search-page";
+import {WidgetTabs}                                    from "./components/widgets-tabs";
 
 
 
@@ -77,9 +77,10 @@ $(function () {
    new GlassBusSlider();
    new GlassBusForm();
 
-   //Слайдер на детальной странице проектов
+   //Страница проектов
    new ProjectTopSlider();
    new ProjectSlider();
+   new ProjectsPage(modal);
 
 
    // Инициализация плейсхолдеров и масок

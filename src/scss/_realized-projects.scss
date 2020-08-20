@@ -1,4 +1,4 @@
-.realized-projects {
+.ro {
     &_list {
         display: flex;
         align-items: center;
@@ -180,6 +180,7 @@
                         font-size: 14px;
                     }
                 }
+
                 .detail-link {
                     opacity: 0;
                     position: absolute;
@@ -238,13 +239,14 @@
     }
 
 
-    &.realized-projects__page {
+    &.ro__page {
         display: flex;
         background: $colorBlackLight;
         @include mobile {
             flex-wrap: wrap;
         }
-        .realized-projects__left {
+
+        .ro__left {
             width: 550px;
             padding: 50px 35px 40px 50px;
             color: #676767;
@@ -263,7 +265,7 @@
             @include only-mobile {
                 padding: 30px 15px;
             }
-            .realized-projects__links {
+            .ro__links {
                 display: flex;
                 flex-direction: column;
                 @include mobile {
@@ -323,7 +325,7 @@
                 }
             }
 
-            .realized-projects__view {
+            .ro__view {
                 display: flex;
                 justify-content: flex-end;
                 align-items: flex-end;
@@ -337,9 +339,15 @@
                 .text {
                     margin-right: 20px;
                 }
-                .realized-projects-tab {
+                .ro-tab {
                     font-size: 15px;
                     margin-right: 10px;
+                    &.active {
+                        color: $colorWhite;
+                        span {
+                            color: $colorWhite;
+                        }
+                    }
                     @include desktop {
                         &:hover {
                             color: $colorWhite;
@@ -351,13 +359,13 @@
                 }
             }
 
-            .realized-projects__text {
+            .ro__text {
                 font-size: 16px;
                 margin-top: 0;
                 margin-bottom: 20px;
             }
 
-            .realized-projects__subtitle {
+            .ro__subtitle {
                 text-transform: uppercase;
                 color: $colorWhite;
                 font-size: 14px;
@@ -366,107 +374,325 @@
                 margin: 20px 0;
             }
         }
-        .realized-projects_list {
+        .ro__content {
             width: 100%;
-            padding: 0;
             @include desktop-smaller {
                 width: 50%;
             }
-            .item {
-                display: block;
-                position: relative;
-                width: 50%;
-                margin: 0;
+            .ro_map {
+                width: 100%;
+                min-height: calc(100vh - 230px);
+            }
+            .ro_list {
+                width: 100%;
+                padding: 0;
+                .item {
+                    display: block;
+                    position: relative;
+                    width: 50%;
+                    margin: 0;
 
-                .bg {
-                    &:before {
-                        padding-top: 58%;
-                    }
-                }
-                .content {
-                    .title {
-                        margin-bottom: 5px;
-                        @include desktop-big {
-                            font-size: 31px;
-                        }
-                    }
-                    .tags {
-                        position: absolute;
-                        bottom: 20px;
-                        left: 20px;
-                        opacity: 1;
-                        span {
-                            font-size: 12px;
-                            color: $colorWhite;
-                        }
-                        &:before {
-                            display: none;
-                        }
-                        @include desktop-big {
-                            span {
-                                font-size: 16px;
-                            }
-                        }
-                    }
-                    .desc {
-                        position: relative;
-                        &:before {
-                            position: absolute;
-                            left: 0;
-                            top: -12px;
-                            display: block;
-                            content:'';
-                            width: 38px;
-                            height: 2px;
-                            background: $colorWhite;
-                            @include desktop-big {
-                                top: -16px;
-                            }
-                            @include desktop-smaller {
-                                display: none;
-                            }
-                            @include mobile {
-                                display: none;
-                            }
-
-                        }
-                        @include desktop-big {
-                            font-size: 24px;
-                        }
-                    }
-                }
-
-                @include desktop-smaller {
-                    width: 100%;
-                }
-                @include mobile {
-                    width: 100%;
                     .bg {
                         &:before {
-                            padding-top: 45%;
+                            padding-top: 58%;
                         }
                     }
-                }
-                @include only-mobile {
-                    width: 100%;
-                    .bg {
-                        &:before {
-                            padding-top: 55%;
-                        }
-                    }
-
                     .content {
-                        padding: 15px 10px;
+                        .title {
+                            margin-bottom: 5px;
+                            @include desktop-big {
+                                font-size: 31px;
+                            }
+                        }
                         .tags {
                             position: absolute;
-                            bottom: 15px;
-                            left: 10px;
+                            bottom: 20px;
+                            left: 20px;
+                            opacity: 1;
+                            span {
+                                font-size: 12px;
+                                color: $colorWhite;
+                            }
+                            &:before {
+                                display: none;
+                            }
+                            @include desktop-big {
+                                span {
+                                    font-size: 16px;
+                                }
+                            }
                         }
+                        .desc {
+                            position: relative;
+                            &:before {
+                                position: absolute;
+                                left: 0;
+                                top: -12px;
+                                display: block;
+                                content:'';
+                                width: 38px;
+                                height: 2px;
+                                background: $colorWhite;
+                                @include desktop-big {
+                                    top: -16px;
+                                }
+                                @include desktop-smaller {
+                                    display: none;
+                                }
+                                @include mobile {
+                                    display: none;
+                                }
+
+                            }
+                            @include desktop-big {
+                                font-size: 24px;
+                            }
+                        }
+                        .glasses {
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            margin-top: 10px;
+                            opacity: 0;
+                            transition: .2s;
+                            .text {
+                                display: inline-block;
+                                margin-right: 10px;
+                                font-size: 18px;
+                                color: $colorWhite;
+                                margin-bottom: 10px;
+                            }
+                            a {
+                                display: inline-flex;
+                                padding: 6px 12px;
+                                border: 2px solid $colorWhite;
+                                font-size: 18px;
+                                color: $colorWhite;
+                                margin-right: 10px;
+                                transition: .2s;
+                                margin-bottom: 10px;
+                                border-radius: 5px;
+                                @include desktop {
+                                    &:hover {
+                                        background: $colorWhite;
+                                        color: $colorText;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+
+                    @include desktop {
+                        &:hover {
+                            .content {
+                                .glasses {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                    @include desktop-medium {
+                        .glasses {
+                            .text {
+                                font-size: 16px !important;
+                            }
+                            a {
+                                padding: 5px 10px !important;
+                                font-size: 16px !important;
+                            }
+                        }
+                    }
+                    @include desktop-smaller {
+                        width: 100%;
+                        .content {
+                            .glasses {
+                                .text {
+                                    font-size: 14px !important;
+                                }
+                                a {
+                                    font-size: 14px !important;
+                                }
+                            }
+                        }
+                    }
+                    @include mobile {
+                        width: 100%;
+                        .bg {
+                            &:before {
+                                padding-top: 45%;
+                            }
+                        }
+                        .content {
+                            .glasses {
+                                opacity: 1;
+                                .text {
+                                    font-size: 15px;
+                                }
+                                a {
+                                    padding: 5px 10px;
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                    @include only-mobile {
+                        width: 100%;
+                        .bg {
+                            &:before {
+                                padding-top: 55%;
+                            }
+                        }
+
+                        .content {
+                            padding: 15px 10px;
+
+                            .title {
+                                font-size: 13px;
+                                min-height: 30px;
+                            }
+                            .tags {
+                                position: absolute;
+                                bottom: 15px;
+                                left: 10px;
+                            }
+
+
+                            .desc {
+                                font-size: 10px;
+                            }
+
+                            .glasses {
+                                .text {
+                                    font-size: 10px;
+                                    margin-bottom: 5px;
+                                }
+                                a {
+                                    padding: 3px 6px;
+                                    font-size: 10px;
+                                    margin-bottom: 5px;
+                                }
+                            }
+
+                            .detail-link {
+                                padding: 5px 10px;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+.projects-modal {
+
+    .modal-content {
+        position: relative;
+        overflow: visible;
+        background: transparent;
+        padding: 0;
+        .modal-info {
+            padding: 0;
+        }
+        .close {
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            &:before, &:after {
+                background-color: $colorWhite;
+            }
+        }
+    }
+    .project-info {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        -webkit-background-size: cover;
+        background-size: cover;
+        &:before {
+            display: block;
+            float: left;
+            content: '';
+            padding-top: 100%;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $colorBlackLight;
+            opacity: 0.25;
+            transition: .2s linear;
+            z-index: 3;
+        }
+        .project-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px 25px 60px;
+            z-index: 12;
+            .title {
+                font-weight: 600;
+                font-size: 30px;
+                color: $colorWhite;
+            }
+            .type {
+                display: inline-block;
+                width: auto;
+                border: 1px solid $colorWhite;
+                padding: 10px;
+                color: $colorWhite;
+                font-size: 18px;
+                margin: 20px 0;
+            }
+            .address {
+                color: $colorWhite;
+                font-size: 18px;
+                div {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+        .detail-link {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 15px 5px;
+            text-decoration: none;
+            color: $colorWhite;
+            background: $colorBlueDarken;
+            z-index: 13;
+            img {
+                display: block;
+                margin-left: 10px;
+                transform: rotate(-90deg);
+                transition: .2s linear;
+            }
+            @include desktop {
+                &:hover {
+                    img {
+                        transform: translateX(10px) rotate(-90deg);
                     }
                 }
             }
         }
     }
 }
-
 

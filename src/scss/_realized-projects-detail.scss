@@ -469,8 +469,11 @@
     }
 }
 
-.realized-projects__page-detail {
-    .realized-projects_list {
+.ro__page-detail {
+    .ro__content {
+        width: 100% !important;
+    }
+    .ro_list {
         width: 100% !important;
 
         @include desktop {
