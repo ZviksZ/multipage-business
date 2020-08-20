@@ -1,9 +1,9 @@
 import * as $                    from 'jquery';
 import Swiper from 'swiper/js/swiper.min';
 
-export class ProjectSlider {
+export class ProjectTopSlider {
    constructor() {
-      this.$slider = $('#ro_slider');
+      this.$slider = $('#ro-top_slider');
       if (!this.$slider.length) return false;
 
       this.init();
@@ -20,14 +20,16 @@ export class ProjectSlider {
          preloadImages: false,
          lazy: true,
          resistance: false,
-         slidesPerView: 1,
+         slidesPerView: 'auto',
+         spaceBetween: 30,
+         freeMode: true,
          //spaceBetween: 32,
          navigation: {
-            nextEl: '.ro-main-slider .ro__slider-controls .swiper-button-next',
-            prevEl: '.ro-main-slider .ro__slider-controls .swiper-button-prev'
+            nextEl: '.ro_top__slider-wrap .ro-top__slider-controls .swiper-button-next',
+            prevEl: '.ro_top__slider-wrap .ro-top__slider-controls .swiper-button-prev'
          },
          pagination: {
-            el: '.ro-main-slider .ro__slider-controls .swiper-pagination',
+            el: '.ro_top__slider-wrap .ro-top__slider-controls .swiper-pagination',
             type: 'fraction',
          },
          on: {

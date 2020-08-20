@@ -177,7 +177,7 @@
                 }
             }
             @include only-mobile {
-                padding: 0 10px;
+                padding: 0 10px 50px;
                 .title {
                     font-size: 28px;
                     margin-bottom: 15px;
@@ -197,20 +197,24 @@
                 }
             }
         }
-        .ro-top__slider {
+
+        .ro-top__bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            width: 100%;
             height: 100%;
-            .swiper-slide {
-                width: 100%;
-                background-repeat: no-repeat;
-                -webkit-background-size: cover;
-                background-size: cover;
-                background-position: center 0;
-                &:before {
-                    display: block;
-                    content: '';
-                    float: left;
-                    padding-top: 100%;
-                }
+            background-repeat: no-repeat;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center 0;
+            z-index: 5;
+            &:before {
+                display: block;
+                content: '';
+                float: left;
+                padding-top: 100%;
             }
             &:after {
                 position: absolute;
@@ -224,51 +228,134 @@
             }
         }
 
-        .ro-top__slider-controls {
+        .ro_top__slider-wrap {
             position: absolute;
-            bottom: 40px;
-            right: 40px;
-            z-index: 12;
-            display: flex;
+            bottom: 0;
+            right: 0;
+            width: 20%;
+            background: transparent !important;
             @include mobile {
-                bottom: 15px;
-                right: 30px;
+                width: 30%;
             }
-            .swiper-pagination {
-                display: flex;
-                color: #c1c0c0;
-                font-size: 13px;
-                transition: .3s opacity;
-                margin-left: 25px;
-                margin-bottom: 60px;
-                min-width: 45px;
-                @include mobile {
-                    margin-bottom: 40px;
-                }
-                .swiper-pagination-current {
-                    display: inline-block;
-                    top: 5px;
-                    color: #fff;
-                    font-size: 38px;
-                    margin-right: 5px;
-                    position: relative;
-                }
-                .swiper-pagination-total {
-                    display: inline-block;
-                    margin-left: 5px;
+            @include only-mobile {
+                width: 50%;
+            }
+            .ro__slider {
+                width: 100%;
+                .swiper-slide {
+                    width: 80%;
+                    &:before {
+                        display: block;
+                        content: '';
+                        float: left;
+                        padding-top: 75%;
+                    }
+
+                    @include only-mobile {
+                        &:before {
+                            padding-top: 55%;
+                        }
+                    }
                 }
             }
-            .swiper-button {
-                width: 30px;
-                height: 30px;
-            }
-            .swiper-button + .swiper-button {
-                margin-left: 5px;
+            .ro__slider-controls {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                margin-top: 15px !important;
+                margin-right: 20px !important;
             }
         }
     }
 
 }
+
+.ro__slider-wrap {
+    position: relative;
+    z-index: 12;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background: $colorBlackLight;
+    .ro__slider {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        .swiper-slide {
+            width: 100%;
+            background-repeat: no-repeat;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center 0;
+            &:before {
+                display: block;
+                content: '';
+                float: left;
+                padding-top: 60%;
+            }
+        }
+    }
+
+
+
+    .ro__slider-controls {
+        display: flex;
+        margin-top: 15px;
+        margin-right: 20px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 12;
+        @include mobile {
+            bottom: 5px;
+            right: 5px;
+
+            margin-top: 5px;
+            margin-right: 5px;
+        }
+        .swiper-pagination {
+            display: flex;
+            font-size: 13px;
+            transition: .3s opacity;
+            margin-left: 25px;
+            margin-bottom: 60px;
+            min-width: 45px;
+            color: #fff;
+            @include mobile {
+                margin-bottom: 40px;
+            }
+            @include only-mobile {
+                margin-bottom: 15px;
+            }
+            .swiper-pagination-current {
+                display: inline-block;
+                top: 5px;
+                color: #fff;
+                font-size: 38px;
+                margin-right: 5px;
+                position: relative;
+            }
+            .swiper-pagination-total {
+                display: inline-block;
+                margin-left: 5px;
+                color: #fff;
+            }
+        }
+        .swiper-button {
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            &.swiper-button-disabled {
+                opacity: .5;
+            }
+        }
+        .swiper-button + .swiper-button {
+            margin-left: 5px;
+        }
+    }
+}
+
 
 
 .ro-content {
@@ -298,10 +385,16 @@
                 font-size: 30px;
             }
         }
+
+        .ro-text {
+            padding-left: 65px;
+            @include mobile {
+                padding-left: 0;
+            }
+        }
         .info {
             width: 100%;
             margin-top: 85px;
-            margin-left: 65px;
             columns: 2;
             -moz-columns: 2;
             -webkit-columns: 2;
@@ -337,15 +430,63 @@
                 }
             }
         }
+
+        .tags {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            padding: 0 15px;
+            @include mobile {
+                padding: 0;
+                margin-bottom: 15px;
+            }
+            a {
+                font-size: 20px;
+                padding: 10px 20px;
+                border: 1px solid $colorWhite;
+                color: $colorWhite;
+                transition: .2s linear;
+                margin-right: 15px;
+                margin-bottom: 10px;
+                @include desktop {
+                    &:hover {
+                        border: 1px solid $colorBlueDarken;
+                        background: $colorBlueDarken;
+                    }
+                }
+                @include mobile {
+                    padding: 8px 14px;
+                    font-size: 18px;
+                }
+                @include only-mobile {
+                    padding: 5px 10px;
+                    font-size: 15px;
+                }
+            }
+        }
     }
 }
 
 .realized-projects__page-detail {
     .realized-projects_list {
         width: 100% !important;
+
+        @include desktop {
+            padding: 15px 30px !important;
+        }
+        @include mobile {
+            padding-top: 50px !important;
+        }
         .item {
+            @include desktop {
+                width: 48% !important;
+                margin: 1% !important;
+            }
             @include desktop-smaller {
-                width: 50% !important;
+                width: 48% !important;
+                margin: 1% !important;
             }
         }
     }

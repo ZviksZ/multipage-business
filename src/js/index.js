@@ -14,7 +14,7 @@ import {InitPartnersPage}                            from "./components/partners
 import {ProductsModal, ProductsSlider, ProductsTabs} from './components/products';
 import {NewsLoad}                                    from './components/news';
 import {MediaVideo}                                  from './components/media-video';
-import {ProjectSlider}                               from "./components/projects";
+import {ProjectSlider, ProjectTopSlider}             from "./components/projects";
 import {SearchPage}                                  from "./components/search-page";
 import {WidgetTabs}                                  from "./components/widgets-tabs";
 
@@ -78,6 +78,7 @@ $(function () {
    new GlassBusForm();
 
    //Слайдер на детальной странице проектов
+   new ProjectTopSlider();
    new ProjectSlider();
 
 
