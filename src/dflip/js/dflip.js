@@ -40,7 +40,7 @@ var PRESENTATION = DFLIP;
     webglShadow: true,
 
     // if enable sound at start (true|false)
-    soundEnable: true,
+    soundEnable: false,
 
     // height of the container
     // value(eg: 320) or percentage (eg: '50%')
@@ -80,7 +80,7 @@ var PRESENTATION = DFLIP;
     singlePageMode: DFLIP.SINGLE_PAGE_MODE.AUTO,
 
     //color value in hexadecimal
-    backgroundColor: "#fff",
+    backgroundColor: "#6f6f6f",
 
     forceFit: true, //very rare usage leave it as true unless page are not fitting wrong...
     transparent: false, //true or false
@@ -133,30 +133,29 @@ var PRESENTATION = DFLIP;
 
       toggleSound: "Turn on/off Sound",
       toggleThumbnails: "Toggle Thumbnails",
-      toggleOutline: "Toggle Outline/Bookmark",
+      toggleOutline: "Оглавление",
       previousPage: "Previous Page",
       nextPage: "Next Page",
-      toggleFullscreen: "Toggle Fullscreen",
-      zoomIn: "Zoom In",
-      zoomOut: "Zoom Out",
+      toggleFullscreen: "Во весь экран",
+      zoomIn: "Увеличить",
+      zoomOut: "Уменьшить",
       toggleHelp: "Toggle Help",
-
-      singlePageMode: "Single Page Mode",
-      doublePageMode: "Double Page Mode",
-      downloadPDFFile: "Download PDF File",
+      singlePageMode: "Одностраничный просмотр",
+      doublePageMode: "Двухстраничный просмотр",
+      downloadPDFFile: "Скачать",
       gotoFirstPage: "Goto First Page",
       gotoLastPage: "Goto Last Page",
       play: "Start AutoPlay",
       pause: "Pause AutoPlay",
-
-      share: "Share"
+      share: "Поделиться"
     },
 
     //valid controlnames:
     //altPrev,pageNumber,altNext,outline,thumbnail,zoomIn,zoomOut,fullScreen,share
     //more,download,pageMode,startPage,endPage,sound
-    allControls: "altPrev,pageNumber,altNext,play,outline,thumbnail,zoomIn,zoomOut,fullScreen,share,download,more,pageMode,startPage,endPage,sound",
-    moreControls: "download,pageMode,startPage,endPage,sound",
+    //allControls: "altPrev,pageNumber,altNext,play,outline,thumbnail,zoomIn,zoomOut,fullScreen,download, share, more,pageMode,startPage,endPage,sound",
+    allControls: "altPrev,pageNumber,altNext,play,outline,zoomIn,zoomOut,fullScreen,download, share",
+    moreControls: "pageMode,startPage,endPage,sound",
     hideControls: "",
 
     controlsPosition: DFLIP.CONTROLSPOSITION.BOTTOM,
@@ -170,7 +169,7 @@ var PRESENTATION = DFLIP;
 
     // callbacks
     onCreate: function (flipBook) {
-      // after flip book is created is fired
+
     },
     onCreateUI: function (flipBook) {
       // after ui created event is fired

@@ -115,9 +115,12 @@
 @import 'fullscreen-page';
 
 
+
+
 @import "/src/dflip/css/dflip.css";
 @import "/src/dflip/css/themify-icons.css";
-@import "/src/dflip/css/style.css";
+//@import "/src/dflip/css/style.css";
 
 
-
+// страница PDF
+@import 'pdf';

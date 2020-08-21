@@ -1,5 +1,8 @@
 import * as $                                          from 'jquery';
 window.jQuery = require('jquery');
+
+//require('../dflip/js/dflip.js');
+
 import {CareerForm}                                    from './components/career-form';
 import {FooterSearch}                                  from './components/footer-search';
 import {initMaskedInput, initPlaceholders}             from './components/form'
@@ -17,6 +20,8 @@ import {MediaVideo}                                    from './components/media-
 import {ProjectSlider, ProjectsPage, ProjectTopSlider} from "./components/projects";
 import {SearchPage}                                    from "./components/search-page";
 import {WidgetTabs}                                    from "./components/widgets-tabs";
+
+
 
 
 
