@@ -154,7 +154,7 @@ var PRESENTATION = DFLIP;
     //altPrev,pageNumber,altNext,outline,thumbnail,zoomIn,zoomOut,fullScreen,share
     //more,download,pageMode,startPage,endPage,sound
     //allControls: "altPrev,pageNumber,altNext,play,outline,thumbnail,zoomIn,zoomOut,fullScreen,download, share, more,pageMode,startPage,endPage,sound",
-    allControls: "altPrev,pageNumber,altNext,play,outline,zoomIn,zoomOut,fullScreen,download, share",
+    allControls: "altPrev,pageNumber,altNext,play,outline,zoomIn,zoomOut,fullScreen,download,share",
     moreControls: "pageMode,startPage,endPage,sound",
     hideControls: "",
 

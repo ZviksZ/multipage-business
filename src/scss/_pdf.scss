@@ -141,6 +141,9 @@
         span {
             display: inline-block;
             margin-left: 5px;
+            @include only-mobile {
+                display: none;
+            }
         }
     }
     label {
@@ -149,4 +152,17 @@
 }
 .df-share-button {
     font-size: 21px;
+}
+.df-sidemenu {
+    width: 300px;
+    @include only-mobile {
+        width: 280px;
+    }
+    .df-outline-item {
+        a {
+            font-size: 19px;
+            text-transform: uppercase;
+            padding-bottom: 10px;
+        }
+    }
 }
