@@ -28,6 +28,7 @@
 .form {
     position: relative;
     background: #ffffff;
+    overflow: hidden;
     .form-row {
         display: flex;
         justify-content: space-between;
@@ -248,6 +249,10 @@
             margin-top: 0;
         }
     }
+    .form-text {
+        width: 100%;
+        margin: 0;
+    }
     &.form-hide {
         .field,
         .form-bottom,
@@ -255,6 +260,7 @@
         .modal-caption-with-close,
         .button,
         .career_file,
+        .form-text,
         .form-footer {
             transform: translateY(-100%);
             opacity: 0;

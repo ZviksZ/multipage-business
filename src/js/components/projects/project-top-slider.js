@@ -6,10 +6,13 @@ export class ProjectTopSlider {
       this.$slider = $('#ro-top_slider');
       if (!this.$slider.length) return false;
 
+      this.$sliderControls = $('#ro-top_slider-controls');
+
       this.init();
    }
 
    init = () => {
+      this.initPagination();
       this.initSlider();
    }
 
@@ -20,26 +23,40 @@ export class ProjectTopSlider {
          preloadImages: false,
          lazy: true,
          resistance: false,
+         freeMode: true,
          slidesPerView: 'auto',
          spaceBetween: 30,
-         freeMode: true,
-         //spaceBetween: 32,
          navigation: {
             nextEl: '.ro_top__slider-wrap .ro-top__slider-controls .swiper-button-next',
             prevEl: '.ro_top__slider-wrap .ro-top__slider-controls .swiper-button-prev'
          },
          pagination: {
-            el: '.ro_top__slider-wrap .ro-top__slider-controls .swiper-pagination',
-            type: 'fraction',
+            el: '.ro_top__slider-wrap .ro-top__slider-controls .swiper-progressbar',
+            type: 'progressbar'
          },
          on: {
             slideChange: () => {
-               let slideIndex = +this.$instance.activeIndex;
+               let slideIndex = +this.$instance.activeIndex + 1;
 
-               /*this.$tabs.find('.item').removeClass('active');
-               this.$tabs.find('[data-slide="'+ slideIndex + '"]').addClass('active');*/
+
+               this.$sliderControls.find('.swiper-pagination-current').text(slideIndex);
+            },
+            reachEnd: () => {
+               setTimeout(() => {
+                  this.$sliderControls.find('.swiper-pagination-current').text(this.totalSlides);
+
+                  this.$instance.activeIndex = this.totalSlides + '';
+               }, 100)
+
             }
+
          }
       });
+   }
+
+   initPagination = () => {
+      this.totalSlides = this.$slider.find('.swiper-slide').length;
+
+      this.$sliderControls.find('.swiper-pagination-total').text(this.totalSlides);
    }
 }

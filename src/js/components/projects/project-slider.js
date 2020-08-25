@@ -4,12 +4,16 @@ import Swiper from 'swiper/js/swiper.min';
 export class ProjectSlider {
    constructor() {
       this.$slider = $('#ro_slider');
-      if (!this.$slider.length) return false;
+
+      if (this.$slider.length === 0) return false;
+
+      this.$sliderControls = $('#ro_slider-controls');
 
       this.init();
    }
 
    init = () => {
+      this.initPagination();
       this.initSlider();
    }
 
@@ -27,17 +31,22 @@ export class ProjectSlider {
             prevEl: '.ro-main-slider .ro__slider-controls .swiper-button-prev'
          },
          pagination: {
-            el: '.ro-main-slider .ro__slider-controls .swiper-pagination',
-            type: 'fraction',
+            el: '.ro-main-slider .ro__slider-controls .swiper-progressbar',
+            type: 'progressbar'
          },
          on: {
             slideChange: () => {
-               let slideIndex = +this.$instance.activeIndex;
+               let slideIndex = +this.$instance.activeIndex + 1;
 
-               /*this.$tabs.find('.item').removeClass('active');
-               this.$tabs.find('[data-slide="'+ slideIndex + '"]').addClass('active');*/
+               this.$sliderControls.find('.swiper-pagination-current').text(slideIndex);
             }
          }
       });
+   }
+
+   initPagination = () => {
+      let total = this.$slider.find('.swiper-slide').length;
+
+      this.$sliderControls.find('.swiper-pagination-total').text(total);
    }
 }

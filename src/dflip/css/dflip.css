@@ -144,7 +144,7 @@
 
 .df-container.df-loading:after {
   content: " ";
-  background-image: url("../images/loading.gif");
+  background-image: url("../img/dflip/loading.gif");
   background-repeat: no-repeat;
   background-size: 32px;
   background-position: 50%;
@@ -1175,7 +1175,7 @@ section.linkAnnotation a.internalLink:hover {
 }
 
 .df-page-loading:after {
-  background-image: url("../images/loading.gif");
+  background-image: url("../img/dflip/loading.gif");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 22px;
@@ -1196,7 +1196,7 @@ section.linkAnnotation a.internalLink:hover {
 
 .df-thumb-container .df-vrow:before {
   content: "";
-  background-image: url("../images/loading.gif");
+  background-image: url("../img/dflip/loading.gif");
   background-size: 22px;
   height: 22px;
   width: 22px;

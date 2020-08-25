@@ -104,7 +104,7 @@ export class FullscreenScroll {
       if (this.stopScrolling) {
          return
       }
-      const delta = event.wheelDelta || event.detail;
+      const delta = event.wheelDelta || -event.detail || event.originalEvent.wheelDelta || -event.originalEvent.detail || -(event.originalEvent.deltaY * 25) || null;
       const down = delta < 0;
 
 
