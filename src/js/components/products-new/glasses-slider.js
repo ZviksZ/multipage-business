@@ -55,16 +55,16 @@ export class GlassesSlider {
    initProgressBars = () => {
       this.$slider.find('.circle-item').each(function(_, item) {
          let bar = new ProgressBar.Circle(item, {
-            strokeWidth: 2,
+            strokeWidth: 4,
             easing: 'easeInOut',
             duration: 1400,
-            color: '#ba1946',
+            color: '#3e61ab',
             trailColor: 'rgba(255,255,255,0.3)',
-            trailWidth: 2,
+            trailWidth: 4,
             svgStyle: null
          });
 
-         //bar.animate(1.0);
+         //bar.animate(0.7);
          bar.set(0.7);
       })
 
