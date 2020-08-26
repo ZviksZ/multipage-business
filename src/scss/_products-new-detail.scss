@@ -1,7 +1,362 @@
+.product-page {
+    .product_title {
+        display: inline-block;
+        padding-bottom: 20px;
+        border-bottom: 2px solid $colorGrayMiddle;
+        font-size: 36px;
+        color: $colorText;
+        white-space: nowrap;
+    }
+}
 .product-header {
     height: 500px;
     .page-header_title {
         max-height: 100%;
         bottom: 100px;
+        @include mobile {
+            bottom: auto;
+        }
+    }
+}
+.product-nav {
+    background: $colorBlackLight;
+    padding: 10px 0;
+    .product-nav_wrap {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a {
+            color: $colorGrayLight;
+            font-size: 18px;
+            text-transform: uppercase;
+            transition: .3s;
+            @include desktop {
+                &:hover {
+                    color: $colorWhite;
+                }
+            }
+        }
+        a + a {
+            margin-left: 25px;
+        }
+    }
+}
+.product-about {
+    padding-bottom: 110px;
+    .product-about_wrap {
+        display: flex;
+        align-items: flex-start;
+        .product-about_info {
+            padding: 50px 0 0 70px;
+            .text {
+                max-height: 450px;
+                overflow: auto;
+                margin-bottom: 100px;
+                &::-webkit-scrollbar { width: 2px; height: 3px;}
+                &::-webkit-scrollbar-button {  height: 0; }
+                &::-webkit-scrollbar-track {  background-color: #999;}
+                &::-webkit-scrollbar-track-piece { background-color: #ffffff;}
+                &::-webkit-scrollbar-thumb { height: 50px; background-color: #bdbdbd; border-radius: 3px;}
+                &::-webkit-scrollbar-corner { background-color: #999;}
+                &::-webkit-resizer { background-color: #666;}
+
+                p {
+                    color: #71737e;
+                }
+            }
+
+            .buttons {
+                display: flex;
+                justify-content: space-between;
+                .item {
+                    display: block;
+                    position: relative;
+                    width: 30%;
+                    border: 1px solid #ebebeb;
+                    text-decoration: none;
+                    color: $colorText;
+                    transition: .3s linear;
+                    overflow: hidden;
+                    &:before {
+                        display: block;
+                        content: '';
+                        float: left;
+                        padding-top: 100%;
+                    }
+
+                    .content {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        span {
+                            display: inline-block;
+                            margin-top: 25px;
+                            font-size: 18px;
+                        }
+                    }
+
+                    .btn {
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: auto;
+                        background: $colorBlue;
+                        padding: 10px 15px;
+                        transition: .3s;
+                        img {
+                            display: block;
+                            transform: rotate(-90deg);
+                        }
+                    }
+                    @include desktop {
+                        &:hover {
+                            border: 1px solid $colorBlue;
+                            .btn {
+                                transform: scale(1.05);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+.product-glasses {
+    .product-glasses_top {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        .product-glasses_tabs {
+            width: 100%;
+            padding-left: 80px;
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 20px;
+            .item + .item {
+                margin-left: 2.5%;
+            }
+            .item {
+                width: 18%;
+                height: 100%;
+                margin-bottom: 10px;
+                cursor: pointer;
+
+                .image {
+                    position: relative;
+                    display: flex;
+                    width: 100%;
+                    height: 100%;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    -webkit-background-size: cover;
+                    background-size: cover;
+                    transition: .2s linear;
+
+                    &:before {
+                        display: block;
+                        content: '';
+                        float: left;
+                        padding-top: 60%;
+                    }
+
+                    .border {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border: 2px solid transparent;
+                    }
+
+                    span {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 20px;
+                        height: 20px;
+                        background-color: $colorBlueDarken;
+                        font-size: 12px;
+                        color: $colorWhite;
+                        text-align: center;
+                        line-height: 20px;
+                    }
+                }
+
+                .desc {
+                    font-size: 14px;
+                    line-height: 1.17;
+                    color: #000000;
+                    margin-top: 10px;
+                }
+
+                &.active {
+                    .image {
+                        .border {
+                            border: 2px solid $colorBlueDarken;
+                        }
+                    }
+                }
+
+                @include desktop {
+                    &:nth-child(5n+6) {
+                        margin-left: 0;
+                    }
+                }
+            }
+            @include mobile {
+                .item {
+                    width: 23%;
+                    margin: 0 1% 25px;
+                }
+                .item + .item {
+                    margin-left: 1%;
+                }
+
+
+            }
+
+            @include only-mobile {
+                justify-content: space-between;
+                .item {
+                    width: 48%;
+                    margin: 0 0 25px;
+                }
+                .item + .item {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    .product-glasses_slider {
+        width: 100%;
+        margin-top: 50px;
+        overflow: hidden;
+        .swiper-slide {
+            width: 100%;
+            .slide {
+                .slide-top {
+                    display: flex;
+                    justify-content: space-between;
+                    .slide-top_img {
+                        display: flex;
+                        width: 48%;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        -webkit-background-size: contain;
+                        background-size: contain;
+                        &:before {
+                            display: block;
+                            float: left;
+                            content: '';
+                            padding-top: 70%;
+                        }
+
+                    }
+
+                    .slide-top_desc {
+                        width: 48%;
+                        .caption {
+                            display: inline-block;
+                            font-size: 18px;
+                            color: $colorText;
+                            margin-top: 0;
+                            margin-bottom: 30px;
+                            text-transform: uppercase;
+                            font-weight: 600;
+                            padding-bottom: 14px;
+                            border-bottom: 1px solid $colorGrayMiddle;
+                        }
+                        .desc-list {
+                            width: 100%;
+                            .item {
+                                width: 100%;
+                                display: flex;
+                                margin-bottom: 20px;
+                                .name, .info {
+                                    width: 50%;
+                                    font-size: 20px;
+                                    line-height: 24px;
+                                    color: $colorText;
+                                }
+                                .name {
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .slide-bottom {
+                    margin-top: 55px;
+                    position: relative;
+                    border-top: 2px solid $colorBlueDarken;
+                    display: flex;
+                    &:after, &:before {
+                        content: "";
+                        border: solid transparent;
+                        position: absolute;
+                        bottom: 100%;
+                        left: 50%;
+                    }
+                    &:after {
+                        border-bottom-color: #fff;
+                        border-width: 8px;
+                        margin-left: -8px;
+                    }
+                    &:before {
+                        border-bottom-color: $colorBlueDarken;
+                        border-width: 11px;
+                        margin-left: -11px;
+                    }
+
+                    .item {
+                        width: 25%;
+                        .circle-item {
+                            width: 190px;
+                            height: 190px;
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            flex-direction: column;
+                            span {
+                                display: inline-block;
+                                width: 100%;
+                                text-align: center;
+                                color: $colorWhite;
+                                line-height: 1;
+                            }
+                            .counter {
+                                font-size: 45px;
+                                font-weight: 600;
+                            }
+                            .counter-text {
+                                font-size: 21px;
+                                margin-top: -4px;
+                            }
+                            svg {
+                                position: absolute;
+                                width: 100%;
+                                height: 100%;
+                                top: 0;
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
     }
 }

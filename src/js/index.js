@@ -15,7 +15,7 @@ import {InitPartnersPage}                                            from "./com
 import {ProductsModal, ProductsSlider, ProductsTabs}                 from './components/products';
 import {NewsLoad}                                                    from './components/news';
 import {MediaVideo}                                                  from './components/media-video';
-import {ProductsSearch}                                              from "./components/products-new";
+import {GlassesSlider, ProductsSearch}                               from "./components/products-new";
 import {ProjectsForm, ProjectSlider, ProjectsPage, ProjectTopSlider} from "./components/projects";
 import {SearchPage}                                                  from "./components/search-page";
 import {WidgetTabs}                                                  from "./components/widgets-tabs";
@@ -47,6 +47,7 @@ $(function () {
 
    //Обновленные страницы продукции
    new ProductsSearch();
+   new GlassesSlider();
 
    // инициализация функционала модальных окон
    let modal = new ModalWindowFullScreen();

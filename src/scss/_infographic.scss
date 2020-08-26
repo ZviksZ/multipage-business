@@ -180,8 +180,10 @@
 
     &_subtitle {
         font-size: 18px;
+        margin-bottom: 0;
     }
     &_tag-link {
+        display: inline;
         color: $colorWhite;
         background: $colorRed;
         font-size: 12px;
@@ -219,6 +221,9 @@
             color: $colorText !important;
             text-align: center;
             margin-bottom: 10px;
+        }
+        &_subtitle {
+            color: $colorText !important;
         }
         &_overlay {
             height: 82px;
