@@ -1,0 +1,109 @@
+<% var data = {
+title: "Продукция по функциям стекла | AGC Glass Russia",
+url: "products-5.html",
+header: "white",
+footer: "black"
+}; %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+
+
+<div class="page-header">
+    <div class="page-header_bg" style="background-image: url('./img/products-new/bg4.jpg')"></div>
+    <div class="page-header_overlay"></div>
+    <h1 class="h1 page-header_title color-white page-header_title--center">Продукция по функциям стекла</h1>
+</div>
+
+<section class="section products-section">
+    <div class="container">
+        <div class="products-top">
+            <div class="products-top__links">
+                <a href="#">По названию</a>
+                <a href="#">По типу стекла</a>
+                <a href="#">По применению стекла</a>
+                <a href="#" class="active">По функциям стекла</a>
+            </div>
+
+            <div class="products-top__search">
+                <input type="text" id="products-input" placeholder="Начните вводить название">
+                <span class="search-icon"></span>
+            </div>
+        </div>
+
+        <div class="products-list" id="products-list">
+            <div class="products-list_wrap">
+                <div class="column">
+                    <div class="column-block">
+                        <h2 class="title">Максимум Света</h2>
+                        <a href="#" class="item">Blackpearl</a>
+                        <a href="#" class="item">Clearsight</a>
+                        <a href="#" class="item">Colorbel</a>
+                        <a href="#" class="item">Energy</a>
+                    </div>
+                    <div class="column-block">
+                        <h2 class="title">Цвет</h2>
+                        <a href="#" class="item">Blackpearl</a>
+                        <a href="#" class="item">Clearsight</a>
+                        <a href="#" class="item">Colorbel</a>
+                        <a href="#" class="item">Energy</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column-block">
+                        <h2 class="title">Энергосбережение</h2>
+                        <a href="#" class="item">Blackpearl</a>
+                        <a href="#" class="item">Clearsight</a>
+                    </div>
+                    <div class="column-block">
+                        <h2 class="title">Солнцезащита</h2>
+                        <a href="#" class="item">Blackpearl</a>
+                        <a href="#" class="item">Clearsight</a>
+                        <a href="#" class="item">Colorbel</a>
+                        <a href="#" class="item">Energy</a>
+                    </div>
+                    <div class="column-block">
+                        <h2 class="title">Мульти-функциональность</h2>
+                        <a href="#" class="item">Blackpearl</a>
+                        <a href="#" class="item">Clearsight</a>
+                        <a href="#" class="item">Colorbel</a>
+                        <a href="#" class="item">Energy</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column-block">
+                        <h2 class="title">Безопасность</h2>
+                        <a href="#" class="item">Blackpearl</a>
+                        <a href="#" class="item">Clearsight</a>
+                        <a href="#" class="item">Colorbel</a>
+                        <a href="#" class="item">Energy</a>
+                        <a href="#" class="item">Lacobel T</a>
+                    </div>
+                    <div class="column-block">
+                        <h2 class="title">Матовость</h2>
+                        <a href="#" class="item">Blackpearl</a>
+                        <a href="#" class="item">Clearsight</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column-block">
+                        <h2 class="title">Зеркальность</h2>
+                        <a href="#" class="item">Blackpearl</a>
+                        <a href="#" class="item">Clearsight</a>
+                        <a href="#" class="item">Colorbel</a>
+                    </div>
+                    <div class="column-block">
+                        <h2 class="title">Уникальность</h2>
+                        <a href="#" class="item">Stratobel</a>
+                        <a href="#" class="item">Stratophone</a>
+                        <a href="#" class="item">Stopray</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>

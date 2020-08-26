@@ -1,0 +1,97 @@
+<% var data = {
+title: "Продукция по типу стекла | AGC Glass Russia",
+url: "products-3.html",
+header: "white",
+footer: "black"
+}; %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+
+
+<div class="page-header">
+    <div class="page-header_bg" style="background-image: url('./img/products-new/bg2.jpg')"></div>
+    <div class="page-header_overlay"></div>
+    <h1 class="h1 page-header_title color-white page-header_title--center">Продукция по типу стекла</h1>
+</div>
+
+<section class="section products-section">
+    <div class="container">
+        <div class="products-top">
+            <div class="products-top__links">
+                <a href="#">По названию</a>
+                <a href="#" class="active">По типу стекла</a>
+                <a href="#">По применению стекла</a>
+                <a href="#">По функциям стекла</a>
+            </div>
+
+            <div class="products-top__search">
+                <input type="text" id="products-input" placeholder="Начните вводить название">
+                <span class="search-icon"></span>
+            </div>
+        </div>
+
+        <div class="products-list" id="products-list">
+            <div class="products-list_wrap">
+                <div class="column">
+                    <div class="column-block">
+                        <h2 class="title">Базовые стекла</h2>
+                        <a href="#" class="item">Blackpearl</a>
+                        <a href="#" class="item">Clearsight</a>
+                        <a href="#" class="item">Colorbel</a>
+                        <a href="#" class="item">Energy</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column-block">
+                        <h2 class="title">Интерьерные стекла</h2>
+                        <a href="#" class="item">Blackpearl</a>
+                        <a href="#" class="item">Clearsight</a>
+                        <a href="#" class="item">Colorbel</a>
+                        <a href="#" class="item">Energy</a>
+                        <a href="#" class="item">Lacobel T</a>
+                        <a href="#" class="item">Lacomat</a>
+                        <a href="#" class="item">Luxclear Protect</a>
+                        <a href="#" class="item">Matelac</a>
+                        <a href="#" class="item">Matelac T</a>
+                        <a href="#" class="item">Matelux</a>
+                        <a href="#" class="item">Mirox</a>
+                        <a href="#" class="item">Oltreluce</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column-block">
+                        <h2 class="title">Экстерьерные Стекла</h2>
+                        <a href="#" class="item">Blackpearl</a>
+                        <a href="#" class="item">Clearsight</a>
+                        <a href="#" class="item">Colorbel</a>
+                        <a href="#" class="item">Energy</a>
+                        <a href="#" class="item">Lacobel T</a>
+                        <a href="#" class="item">Lacomat</a>
+                        <a href="#" class="item">Luxclear Protect</a>
+                        <a href="#" class="item">Matelac</a>
+                        <a href="#" class="item">Matelac T</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column-block">
+                        <h2 class="title">Противопожарные Стекла</h2>
+                        <a href="#" class="item">Blackpearl</a>
+                        <a href="#" class="item">Clearsight</a>
+                        <a href="#" class="item">Colorbel</a>
+                    </div>
+                    <div class="column-block">
+                        <h2 class="title">Smart Стекла</h2>
+                        <a href="#" class="item">Stratobel</a>
+                        <a href="#" class="item">Stratophone</a>
+                        <a href="#" class="item">Stopray</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>

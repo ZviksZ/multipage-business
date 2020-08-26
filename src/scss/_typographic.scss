@@ -23,6 +23,15 @@
             padding: 30% 6% !important;
         }
     }
+    &.fullscreen.products-section {
+        height: calc(100vh - 64px);
+        min-height: calc(100vh - 64px);
+        padding: 0 !important;
+        @include only-mobile {
+            min-height: auto;
+            height: auto;
+        }
+    }
     &.fullscreen.contacts {
         height: calc(100vh - 64px);
         min-height: calc(100vh - 64px);

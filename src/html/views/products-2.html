@@ -1,0 +1,77 @@
+<% var data = {
+title: "Продукция по названию | AGC Glass Russia",
+url: "products-2.html",
+header: "white",
+footer: "black"
+}; %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+
+
+<div class="page-header">
+    <div class="page-header_bg" style="background-image: url('./img/products-new/bg1.jpg')"></div>
+    <div class="page-header_overlay"></div>
+    <h1 class="h1 page-header_title color-white page-header_title--center">Продукция по названию</h1>
+</div>
+
+<section class="section products-section">
+    <div class="container">
+        <div class="products-top">
+            <div class="products-top__links">
+                <a href="#" class="active">По названию</a>
+                <a href="#">По типу стекла</a>
+                <a href="#">По применению стекла</a>
+                <a href="#">По функциям стекла</a>
+            </div>
+
+            <div class="products-top__search">
+                <input type="text" id="products-input" placeholder="Начните вводить название">
+                <span class="search-icon"></span>
+            </div>
+        </div>
+
+        <div class="products-list" id="products-list">
+            <div class="products-list_wrap">
+                <div class="column">
+                    <a href="#" class="item">Blackpearl</a>
+                    <a href="#" class="item">Clearsight</a>
+                    <a href="#" class="item">Colorbel</a>
+                    <a href="#" class="item">Energy</a>
+                    <a href="#" class="item">Framing glass</a>
+                    <a href="#" class="item">Glassiled</a>
+                    <a href="#" class="item">Imagin</a>
+                    <a href="#" class="item">Lacobel</a>
+                </div>
+                <div class="column">
+                    <a href="#" class="item">Lacobel T</a>
+                    <a href="#" class="item">Lacomat</a>
+                    <a href="#" class="item">Luxclear Protect</a>
+                    <a href="#" class="item">Matelac</a>
+                    <a href="#" class="item">Matelac T</a>
+                    <a href="#" class="item">Matelux</a>
+                    <a href="#" class="item">Mirox</a>
+                    <a href="#" class="item">Oltreluce</a>
+                </div>
+                <div class="column">
+                    <a href="#" class="item">Planibel Clear</a>
+                    <a href="#" class="item">Planibel Coloured</a>
+                    <a href="#" class="item">Planibel Crystalvision</a>
+                    <a href="#" class="item">Pyrobel</a>
+                    <a href="#" class="item">Pyropane</a>
+                    <a href="#" class="item">Sunewat</a>
+                </div>
+                <div class="column">
+                    <a href="#" class="item">Stratobel</a>
+                    <a href="#" class="item">Stratophone</a>
+                    <a href="#" class="item">Stopray</a>
+                    <a href="#" class="item">Stopsol</a>
+                    <a href="#" class="item">Sunergy</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>

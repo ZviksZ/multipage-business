@@ -171,6 +171,28 @@
         left: 15%;
         text-transform: uppercase;
         max-height: 120px;
+        &.page-header_title--center {
+            width: 100%;
+            left: 0;
+            text-align: center;
+        }
+    }
+
+    &_subtitle {
+        font-size: 18px;
+    }
+    &_tag-link {
+        color: $colorWhite;
+        background: $colorRed;
+        font-size: 12px;
+        border-radius: 4px;
+        padding: 4px 10px;
+        transition: .3s;
+        @include desktop {
+            &:hover {
+                background: darken($colorRed, 10%);
+            }
+        }
     }
 
     @include mobile {

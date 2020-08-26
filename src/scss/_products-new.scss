@@ -1,0 +1,276 @@
+.products-section {
+    .products-main {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        height: 100%;
+        .item {
+            position: relative;
+            width: 25%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            .bg {
+                display: flex;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
+                -webkit-background-size: cover;
+                background-size: cover;
+                background-position: center center;
+                transition: .3s;
+            }
+            .text {
+                width: 100%;
+                padding: 0 5px;
+                position: relative;
+                color: $colorWhite;
+                text-transform: uppercase;
+                font-size: 35px;
+                font-weight: 600;
+                text-align: center;
+                min-height: 88px;
+            }
+            @include desktop {
+                &:hover {
+                    .bg {
+                        transform: scale(1.1) translateZ(0);
+                        opacity: .9;
+                    }
+                }
+            }
+            @include desktop-small {
+                .text {
+                    font-size: 24px;
+                }
+            }
+            @include mobile {
+                width: 100%;
+                height: 25%;
+                .text {
+                    min-height: auto;
+                    font-size: 30px;
+                }
+            }
+            @include only-mobile {
+                height: 220px;
+                .text {
+                    min-height: auto;
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+
+    .products-top {
+        display: flex;
+        align-items: center;
+        @include mobile {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .products-top__links {
+            width: 100%;
+            margin-right: 65px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgb(231, 231, 231);
+            @include mobile {
+                margin-bottom: 30px;
+                margin-right: 0;
+                overflow: auto;
+            }
+            a {
+                display: inline-block;
+                color: $colorText;
+                font-size: 14px;
+                text-transform: uppercase;
+                padding-bottom: 18px;
+                border-bottom: 2px solid transparent;
+                white-space: nowrap;
+                margin-bottom: -1px;
+                transition: .2s;
+                &.active {
+                    color: $colorBlueDarken;
+                    border-bottom: 2px solid $colorBlueDarken;
+                }
+                @include desktop {
+                    &:hover {
+                        color: $colorBlueDarken;
+                        border-bottom: 2px solid $colorBlueDarken;
+                    }
+                }
+            }
+            a + a {
+                margin-left: 55px;
+            }
+        }
+        .products-top__search {
+            position: relative;
+            width: 100%;
+            input {
+                width: 100%;
+                font-size: 14px;
+                padding-bottom: 18px;
+                border: 0;
+                border-bottom: 1px solid rgb(231, 231, 231);
+            }
+            .search-icon {
+                position: absolute;
+                right: 0;
+                top: -3px;
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                background-position: center center;
+                background-repeat: no-repeat;
+                -webkit-background-size: contain;
+                background-size: contain;
+                margin-left: 10px;
+                cursor: pointer;
+                background-image: url('../img/agc/search-black.svg');
+            }
+        }
+    }
+
+    .products-list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 50px 0;
+        .products-list_title {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            &:before {
+                display: block;
+                float: left;
+                content: '';
+                padding-top: 24%;
+            }
+            .bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
+                -webkit-background-size: cover;
+                background-size: cover;
+                background-position: center center;
+            }
+            .text {
+                width: 100%;
+                padding: 0 5px;
+                position: relative;
+                color: $colorWhite;
+                text-transform: uppercase;
+                font-size: 35px;
+                font-weight: 600;
+                text-align: center;
+            }
+            @include desktop-small {
+                .text {
+                    font-size: 24px;
+                }
+            }
+            @include mobile {
+                &:before {
+                    padding-top: 30%;
+                }
+                .text {
+                    min-height: auto;
+                    font-size: 30px;
+                }
+            }
+            @include only-mobile {
+                &:before {
+                    padding-top: 45%;
+                }
+                .text {
+                    min-height: auto;
+                    font-size: 24px;
+                }
+            }
+        }
+        .products-list_wrap {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 50px 0;
+            &:first-of-type {
+                margin-top: 0 !important;
+            }
+            @include mobile {
+                margin: 40px 0 30px;
+            }
+            @include only-mobile {
+                margin: 40px 0 20px;
+            }
+            .column {
+                width: 25%;
+                padding-right: 52px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                @include mobile {
+                    width: 50%;
+                }
+                @include mobile-small {
+                    width: 100%;
+                }
+                .column-block {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    margin-bottom: 35px;
+                }
+                .title {
+                    color: $colorText;
+                    font-size: 20px;
+                    line-height: 20px;
+                    text-transform: uppercase;
+                    margin-bottom: 15px !important;
+                    margin-top: 0 !important;
+                }
+
+            }
+
+            .item {
+                width: auto;
+                position: relative;
+                color: $colorText;
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 20px;
+                margin-bottom: 15px;
+                transition: .2s;
+                &:before {
+                    position: absolute;
+                    top: 8px;
+                    left: -50px;
+                    display: block;
+                    content: '';
+                    width: 34px;
+                    height: 2px;
+                    background: transparent;
+                    transition: .2s;
+                }
+                @include desktop {
+                    &:hover {
+                        color: $colorBlueDarken;
+                        &:before {
+                            background: $colorBlueDarken;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,43 @@
+<% var data = {
+title: "Продукция | AGC Glass Russia",
+url: "products-1.html",
+header: "white",
+footer: "white"
+}; %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+
+
+<section class="section fullscreen products-section">
+    <div class="products-main">
+        <a href="" class="item">
+            <div class="bg" style="background-image: url('./img/products-new/1.jpg')"></div>
+            <div class="text">
+                По названию
+                продуктов
+            </div>
+        </a>
+        <a href="" class="item">
+            <div class="bg" style="background-image: url('./img/products-new/2.jpg')"></div>
+            <div class="text">
+                По типу стекла
+            </div>
+        </a>
+        <a href="" class="item">
+            <div class="bg" style="background-image: url('./img/products-new/3.jpg')"></div>
+            <div class="text">
+                По применению
+                стекла
+            </div>
+        </a>
+        <a href="" class="item">
+            <div class="bg" style="background-image: url('./img/products-new/4.jpg')"></div>
+            <div class="text">
+                По функциям
+                стекла
+            </div>
+        </a>
+    </div>
+</section>
+
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>
