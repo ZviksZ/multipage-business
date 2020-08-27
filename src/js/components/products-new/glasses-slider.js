@@ -54,8 +54,10 @@ export class GlassesSlider {
 
    initProgressBars = () => {
       this.$slider.find('.circle-item').each(function(_, item) {
+         let percent = +$(item).attr('data-percent') / 100;
+
          let bar = new ProgressBar.Circle(item, {
-            strokeWidth: 4,
+            strokeWidth: 10,
             easing: 'easeInOut',
             duration: 1400,
             color: '#3e61ab',
@@ -64,8 +66,7 @@ export class GlassesSlider {
             svgStyle: null
          });
 
-         //bar.animate(0.7);
-         bar.set(0.7);
+         bar.set(percent);
       })
 
 
