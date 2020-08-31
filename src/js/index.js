@@ -1,4 +1,5 @@
-import * as $                                          from 'jquery';
+import * as $            from 'jquery';
+import {AgcOnlineSlider} from "./components/agc-online-slider";
 window.jQuery = require('jquery');
 
 import {CareerForm}                                    from './components/career-form';
@@ -52,6 +53,9 @@ $(function () {
    new ProductsSmallSlider();
    new ProductsInfoSlider();
    new ShowMore();
+
+   //Слайдер Agc-online детальная
+   new AgcOnlineSlider()
 
    // инициализация функционала модальных окон
    let modal = new ModalWindowFullScreen();

@@ -138,28 +138,65 @@
                 }
                 .news-content {
                     position: relative;
-                    width: 65%;
+                    width: 75%;
                     padding: 40px 0;
                     display: flex;
                     flex-direction: column;
+                    flex-wrap: wrap;
                     align-items: flex-start;
+                    .tags {
+                        margin-bottom: 40px;
+                        display: flex;
+                        align-items: flex-start;
+                        flex-wrap: wrap;
+                        height: 96px;
+                        overflow: hidden;
+                        @include desktop-smaller {
+                            height: 82px;
+                            margin-bottom: 25px;
+                        }
+                        @include mobile {
+                            height: 82px;
+                            margin-bottom: 25px;
+                        }
+                        @include only-mobile {
+                            height: 72px;
+                            margin-bottom: 15px;
+                        }
+                    }
                     .news-tag {
                         display: inline-block;
                         text-decoration: none;
                         color: $colorWhite;
                         background: $colorRedMiddle;
                         padding: 10px;
-                        font-size: 17px;
+                        font-size: 15px;
                         white-space: nowrap;
-                        margin-bottom: 40px;
+                        margin-bottom: 10px;
                         border-radius: 5px;
+                        margin-right: 10px;
                         @include desktop {
                             &:hover {
                                 background: $colorRedDarken;
                             }
                         }
+                        @include desktop-smaller {
+                            padding: 8px;
+                            font-size: 13px;
+                        }
+                        @include mobile {
+                            padding: 8px;
+                            font-size: 13px;
+                        }
+                        @include only-mobile {
+                            padding: 5px 7px;
+                            font-size: 10px;
+                            margin-bottom: 4px;
+                        }
                     }
                     .news-title {
+                        width: 100%;
+                        float: left;
                         display: inline-block;
                         text-decoration: none;
                         color: $colorWhite;
@@ -188,7 +225,7 @@
                         background: linear-gradient(to right, rgba(53, 88, 162, 0) 30%, #3558a2 70%, #3558a2 100%);
                     }
                     .news-content {
-                        padding-right: 120px;
+                        padding-right: 100px;
                     }
                 }
                 &.item-right {
@@ -198,7 +235,7 @@
                         background: linear-gradient(to right, #3558a2 0%, #3558a2 30%, rgba(53, 88, 162, 0) 70%, rgba(53, 88, 162, 0) 100%);
                     }
                     .news-content {
-                        padding-left: 120px;
+                        padding-left: 110px;
                     }
                 }
 

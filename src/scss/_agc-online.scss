@@ -1,0 +1,268 @@
+.agc-online-section {
+    .year-title {
+        display: inline-block;
+        font-size: 36px;
+        color: $colorText;
+        font-weight: 600;
+        margin: 20px auto 30px;
+        text-align: center;
+    }
+
+    .agc-online_list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 25px 0;
+        .item {
+            display: inline-block;
+            position: relative;
+            width: 48%;
+            overflow: hidden;
+            margin-bottom: 40px;
+            @include only-mobile {
+                width: 100%;
+            }
+            &:before {
+                display: block;
+                float: left;
+                content: '';
+                padding-top: 73%;
+            }
+            @include desktop-small {
+                &:before {
+                    padding-top: 78%;
+                }
+            }
+            @include mobile {
+                display: flex;
+                flex-direction: column;
+                &:before {
+                    display: none;
+                }
+            }
+            .img {
+                display: flex;
+                width: 50%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-repeat: no-repeat;
+                background-position: center center;
+                -webkit-background-size: cover;
+                background-size: cover;
+                &:before {
+                    display: block;
+                    float: left;
+                    content: '';
+                    padding-top: 128%;
+                }
+
+                @include mobile {
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                    width: 100%;
+                }
+            }
+            .content {
+                position: absolute;
+                top: 50px;
+                height: calc(100% - 50px);
+                bottom: 0;
+                right: 0;
+                width: 60%;
+                background: $colorWhite;
+                padding: 30px;
+                padding-bottom: 0;
+                z-index: 6;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                @include mobile {
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                    bottom: auto;
+                    width: 100%;
+                    padding: 10px;
+                    height: auto;
+                    flex-grow: 1;
+                }
+                .date {
+                    font-size: 12px;
+                    color: $colorWhite;
+                    font-weight: 600;
+                    line-height: 15px;
+                    padding: 0 10px;
+                    border-radius: 5px;
+                    margin-bottom: 9px;
+                    background: $colorRed;
+                }
+                .title {
+                    display: -webkit-box;
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: $colorText;
+                    text-transform: uppercase;
+                    line-height: 24px;
+                    margin-bottom: 20px;
+                    letter-spacing: 0.5px;
+                    -webkit-line-clamp: 4;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    max-height: 95px;
+                    @include mobile {
+                        max-height: 72px;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                    }
+                    @include only-mobile {
+                        max-height: 100%;
+                        font-size: 18px;
+                        line-height: 22px;
+                        text-overflow: initial;
+                        -webkit-line-clamp: 99;
+                    }
+
+                }
+                .quote {
+                    display: -webkit-box;
+                    line-height: 15px;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    padding-left: 20px;
+                    margin: 0 10px 26px 0;
+                    font-size: 12px;
+                    font-weight: 600;
+                    position: relative;
+                    color: $colorText;
+                    @include mobile {
+                        margin-bottom: 15px;
+                        margin-right: 0;
+                    }
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        left: 0px;
+                        top: 0;
+                        width: 10px;
+                        height: 8px;
+                        background-image: url(../img/agc/two-quotes.svg);
+                        background-size: 10px 8px;
+                        background-position: left top;
+                        background-repeat: no-repeat;
+                    }
+                }
+                .button {
+                    margin-top: auto;
+                    margin-bottom: 0;
+                }
+            }
+
+        }
+
+
+        &.agc-online_list-single {
+            .item {
+                width: 100%;
+                overflow: visible;
+                margin-bottom: 70px;
+                &:before {
+                    padding-top: 32%;
+                }
+                @include mobile {
+                    margin-bottom: 15px;
+                }
+                .img {
+                    width: 32%;
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                    @include mobile {
+                        width: 100%;
+
+                    }
+                }
+                .content {
+                    padding: 30px;
+                    width: 75%;
+                    height: 100%;
+                    .date {
+                        font-size: 14px;
+                        color: $colorWhite;
+                        font-weight: 600;
+                        line-height: 17px;
+                        padding: 2px 10px;
+                        border-radius: 5px;
+                        margin-bottom: 15px;
+                        background: $colorRed;
+                    }
+                    .title {
+                        display: -webkit-box;
+                        font-size: 25px;
+                        font-weight: 600;
+                        color: $colorText;
+                        text-transform: initial;
+                        line-height: 24px;
+                        margin-bottom: 30px;
+                        text-overflow: initial;
+                        max-height: 100% !important;
+
+                    }
+                    .quote {
+                        line-height: 18px;
+                        text-overflow: initial;
+                        font-size: 15px;
+                    }
+                    .button {
+                        margin-top: auto;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+    .agc-video_slider-wrap {
+        position: relative;
+        .agc-video_slider {
+            overflow: hidden;
+            .item {
+                width: 100%;
+                margin-bottom: 30px;
+                @include only-mobile {
+                    width: 100%;
+                }
+                .video-wrap {
+                    width: 100%;
+                    overflow:hidden;
+                    position:relative;
+                    padding-bottom:56.25%;
+                    padding-top:30px;
+                    height:0;
+                    iframe {
+                        position:absolute;
+                        width:100%;
+                        height:100%;
+                        left:0;
+                        top:0;
+                    }
+                }
+                .title {
+                    margin-top: 10px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $colorText;
+                }
+
+            }
+        }
+
+        .swiper-arrows {
+            justify-content: flex-start;
+        }
+    }
+
+}

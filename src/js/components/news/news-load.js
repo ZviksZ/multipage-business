@@ -1,6 +1,5 @@
-import * as $         from 'jquery';
-import {getMockupNews} from './news-mockup-data.js'
-
+import * as $       from 'jquery';
+import {mockUpNews} from './news-mockup-data.js'
 
 export class NewsLoad {
    constructor() {
@@ -10,69 +9,61 @@ export class NewsLoad {
          return false
       }
 
-      this.$lastDownloadedPage = 1;
-      this.$isLast = false;
-      this.$isLoading = false;
+      this.currentPart = 0;
+      this.isDataLoaded = false;
+      this.isLast = false;
 
       this.init();
    }
 
-   init = () => {
-      this.getNews(this.$lastDownloadedPage);
+   init = async () => {
+      this.data = await this.getNewsPages();
+
+      if (this.data) {
+         this.chunkData = this.chunkArray(this.data, 10);
+         this.isDataLoaded = true;
+      }
 
       this.initHandlers();
-
       $(window).on('scroll', this.onScroll)
    }
 
    initHandlers = () => {
-
-      this.$newsContainer.closest('.news-section').on('click', '.repeat-btn', this.repeatDownload)
-
+      this.$newsContainer.closest('.news-section').on('click', '.repeat-btn', this.repeatDownload);
    }
 
-   repeatDownload = (e) => {
+   repeatDownload = async (e) => {
       e.preventDefault;
 
-      this.$newsContainer.next('.repeat-btn').remove();
+      this.data = await this.getNewsPages();
 
-      this.getNews(this.$lastDownloadedPage + 1);
-
-      this.$lastDownloadedPage += 1;
-   }
-
-   onScroll = () => {
-      if ($(window).scrollTop() >= $(document).height() - $(window).height() - 100) {
-         if (!this.$isLast && !this.$isLoading) {
-            this.getNews(this.$lastDownloadedPage + 1);
-
-            this.$lastDownloadedPage += 1;
-         }
-
+      if (this.data) {
+         this.chunkData = this.chunkArray(this.data, 10);
+         this.isDataLoaded = true;
       }
-
    }
 
-   getNews = async (pageNumber) => {
+   onScroll = async () => {
+      if ($(window).scrollTop() >= $(document).height() - $(window).height() - 100) {
+         if (this.currentPart + 1 < this.chunkData.length && this.isDataLoaded) {
+            this.getNews();
+         } else if (this.currentPart + 1 === this.chunkData.length && this.isDataLoaded && !this.isLast) {
+            this.getNews();
+
+            this.isLast = true;
+         }
+      }
+   }
+
+   getNews = () => {
       this.toggleLoader();
 
-      let newsArray = await this.getNewsPage(pageNumber);
+      let template = this.getNewsTemplate(this.chunkData[this.currentPart]);
+      this.appendNews(template);
 
-      if (newsArray && newsArray.length > 0) {
-         setTimeout(() => {
+      this.currentPart += 1;
 
-            let template = this.getNewsTemplate(newsArray);
-
-            this.appendNews(template);
-
-            this.toggleLoader();
-
-         }, 2000)
-      } else {
-         this.$isLast = true;
-
-         this.toggleLoader();
-      }
+      this.toggleLoader();
    }
 
    appendNews = (template) => {
@@ -93,35 +84,16 @@ export class NewsLoad {
       this.$newsContainer.after('<div class="repeat-btn">Повторить загрузку</div>');
    }
 
-   getNewsPage = async (pageNumber) => {
-      let returnArray = getMockupNews(pageNumber);
+   getNewsPages = () => {
+      return fetch('/news/?nc_ctpl=22&isNaked=1').then(res => res.json()).catch((err) => this.onError())
 
-      $.ajax({
-         url: '/getNews',
-         type: 'POST',
-         dataType: 'text',
-         data: {pageNumber},
-         success: (res) => {
-            returnArray = getMockupNews(pageNumber);
-         },
-         error: (res) => {
-            returnArray = getMockupNews(pageNumber);
-         },
-         timeout: 30000
-      });
-
-      return returnArray;
    }
 
    getNewsTemplate = (newsArray) => {
       let template = ``;
 
       for (let i = 0; i < newsArray.length; i++) {
-         if (this.$lastDownloadedPage === 1 && i === 0) {
-            template += this.getNewsItemTemplate(newsArray[i], true);
-         } else {
-            template += this.getNewsItemTemplate(newsArray[i], false);
-         }
+         template += this.getNewsItemTemplate(newsArray[i], false);
       }
 
       return template;
@@ -142,11 +114,22 @@ export class NewsLoad {
                             <div class="date">${item.date}</div>
                         </div>
                         <div class="btn">
-                            <img src="./img/agc/newsitem-read-more.svg" alt="">
+                            <img src="/img/agc/newsitem-read-more.svg" alt="">
                             <span>Подробнее</span>
                         </div>
                     </div>
                 </a>
       `
+   }
+
+   chunkArray = (arr, n) => {
+      let chunks = [];
+      while (arr.length > n) {
+         chunks.push(arr.slice(0, n));
+         arr = arr.slice(n, arr.length);
+      }
+      chunks.push(arr);
+
+      return chunks;
    }
 }

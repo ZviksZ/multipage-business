@@ -1,0 +1,105 @@
+<% var data = {
+title: "AGC ONLINE | AGC Glass Russia",
+url: "agc-online.html",
+header: "white",
+footer: "black"
+}; %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+
+<div class="page-header">
+    <div class="page-header_bg" style="background-image: url('./img/agc-online/bg.jpg')"></div>
+    <div class="page-header_overlay"></div>
+    <h1 class="h1 page-header_title color-white">AGC ONLINE</h1>
+</div>
+
+
+
+<section class="section agc-online-section no-padding-top">
+    <div class="container container-sm">
+        <div class="agc-online_list agc-online_list-single">
+            <div class="item">
+                <div class="img" style="background-image: url('./img/agc-online/1.jpg')"></div>
+                <div class="content">
+                    <div class="date">17 июня, 14:00, Прямая Трансляция Youtube</div>
+                    <div class="title">
+                        ОБЗОР АРХИТЕКТУРНЫХ И ИНТЕРЬЕРНЫХ ПРОДУКТОВ И ИНТЕРЬЕРНЫХ ПРОДУКТОВ
+                    </div>
+                    <blockquote class="quote">
+                        Новая встреча формата AGC Online будет посвящена ключевым продуктам и решениям от AGC
+                    </blockquote>
+                    <a href="#agc-online-videos" class="button">Смотреть видео</a>
+                </div>
+            </div>
+        </div>
+        <div class="caption-with-line caption-black caption-no-overflow margin-bottom-x3 margin-top-x2">
+            <h3 class="color-text">
+                <b>Еженедельно по четвергам</b> для вас работает <b>виртуальный кабинет технической поддержки</b>. Подключайтесь и задавайте интересующие вас вопросы нашим техническим специалистам. В
+                режиме
+                реального времени наши эксперты готовы обсудить ваши вопросы и дать рекомендации.
+            </h3>
+        </div>
+        <p>
+            <b>Подключайтесь к эфиру и задавайте ваши вопросы, если вас интересует:</b>
+        </p>
+
+        <ul>
+            <li>Подбор композиции остекления с расчетом на воздействие нагрузок (ветровые, снеговые, климатические);</li>
+            <li>Подбор композиции в соответствии с требуемыми характеристиками, в том числе с региональными требованиями по теплотехнике;</li>
+            <li>Расчет стеклопакетов на теплотехнику, температуры в камерах, риск возникновения термошока;</li>
+            <li>Расчет звукоизоляции стеклопакета;</li>
+            <li>Консультация по техническим характеристикам стеклопакетов;</li>
+            <li>Консультация по техническим особенностям переработки продуктов AGC;</li>
+            <li>Подбор режимов переработки нашей продукции на вашем производстве;</li>
+            <li>Сертификация по результатам тестов;</li>
+            <li>Изготовление образцов (mock-up).</li>
+        </ul>
+
+
+        <h3 class="h3 margin-top-x2 text-uppercase" id="agc-online-videos">Архив видео</h3>
+
+        <div class="agc-video_slider-wrap">
+            <div class="agc-video_slider" id="agc-video_slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="item">
+                            <div class="video-wrap">
+                                <iframe width="100%" height="205" src="https://www.youtube-nocookie.com/embed/DTTpRImIGbs ?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                            </div>
+                            <div class="title">AGC Online. Техническая поддержка от 28.05</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="item">
+                            <div class="video-wrap">
+                                <iframe width="100%" height="205" src="https://www.youtube-nocookie.com/embed/DTTpRImIGbs ?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                            </div>
+                            <div class="title">AGC Online. Техническая поддержка от 28.05</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="item">
+                            <div class="video-wrap">
+                                <iframe width="100%" height="205" src="https://www.youtube-nocookie.com/embed/DTTpRImIGbs ?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                            </div>
+                            <div class="title">AGC Online. Техническая поддержка от 28.05</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="swiper-arrows">
+                <div class="swiper-button swiper-button-prev">
+                    <img src="./img/agc/newsitem-read-more.svg" alt="">
+                </div>
+                <div class="swiper-button swiper-button-next">
+                    <img src="./img/agc/newsitem-read-more.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>
