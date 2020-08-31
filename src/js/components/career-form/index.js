@@ -44,22 +44,22 @@ export class CareerForm {
 
       let $formData = {};
 
-      $(this).find('input, textarea, select').each(function() {
+      this.$form.find('input, textarea, select').each(function() {
          $formData[this.name] = $(this).val();
       });
 
       let data = {
-         sub:49,
-         cc:72,
+         isNaked: 1,
          f_name:$formData.career_name,
-         f_phone:$formData.career_phone,
-         f_file:$formData.career_file,
-         catalogue:1,
-         posting:1,
-      };
+         f_phone: $formData.career_phone,
+         f_rezume: $formData.career_file,
+         catalogue: 1,
+         cc: 13,
+         sub: 11
+      }
 
       $.ajax({
-         url: this.$form.attr('action'),
+         url: '/netcat/add.php',
          type: 'POST',
          dataType: 'text',
          data: data,
