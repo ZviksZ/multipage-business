@@ -245,18 +245,21 @@
 
             @include only-mobile {
                 width: 98%;
+                margin-bottom: 10px;
                 &:before {
                     display: block;
                     content: '';
                     float: left;
-                    padding-top: 84%;
+                    padding-top: 72%;
                 }
                 .bg-wrap {
                     height: 70%;
                 }
                 .item-info {
                     height: 30%;
+                    padding-top: 15px;
                     .text {
+                        justify-content: flex-start;
                         .title {
                             height: 40px;
                             font-size: 20px;
@@ -270,11 +273,21 @@
                 }
                 &.item-first {
                     width: 98%;
+                    .item-info {
+                        height: 30%;
+                        padding-top: 15px;
+                        .text {
+                            justify-content: flex-start;
+                        }
+                    }
+                    .bg-wrap {
+                        height: 70%;
+                    }
                     &:before {
                         display: block;
                         content: '';
                         float: left;
-                        padding-top: 84%;
+                        padding-top: 72%;
                     }
                 }
             }
