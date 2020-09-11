@@ -406,7 +406,12 @@
         text-transform: inherit;
     }
     @include desktop-small {
+        .page-header_date {
+            left: 8%;
+        }
         .page-header_title {
+            font-size: 40px !important;
+            left: 8%;
             max-width: 100%;
         }
     }
