@@ -24,8 +24,8 @@
         }
     }
     &.fullscreen.products-section {
-        height: calc(100vh - 64px);
-        min-height: calc(100vh - 64px);
+        height: 100vh;
+        min-height: 100vh;
         padding: 0 !important;
         @include only-mobile {
             min-height: auto;
