@@ -84,7 +84,8 @@ export const partners = {
             "longitude": "37.6059",
             "weight": "0"
          }]
-      }, "2": {
+      },
+      "2": {
          "0": {},
          "id": 2,
          "title": "Оконные компании",
@@ -259,7 +260,8 @@ export const partners = {
             "longitude": "40.5392",
             "weight": "1"
          }]
-      }, "3": {
+      },
+      "3": {
          "0": {},
          "id": 3,
          "title": "Фасадные компании",
@@ -343,7 +345,8 @@ export const partners = {
             "longitude": "38.8568",
             "weight": "0"
          }]
-      }, "4": {
+      },
+      "4": {
          "0": {},
          "id": 4,
          "title": "Переработка стекла и стеклопакеты",
@@ -570,7 +573,8 @@ export const partners = {
             "longitude": "37.6367",
             "weight": "0"
          }]
-      }, "5": {
+      },
+      "5": {
          "0": {},
          "id": 5,
          "title": "Переработчики интерьерного стекла",
@@ -667,7 +671,8 @@ export const partners = {
             "longitude": "37.6482",
             "weight": "0"
          }]
-      }, "6": {
+      },
+      "6": {
          "0": {},
          "id": 6,
          "title": "Мебельные компании",
@@ -712,7 +717,8 @@ export const partners = {
             "longitude": "37.6482",
             "weight": "0"
          }]
-      }, "7": {
+      },
+      "7": {
          "0": {},
          "id": 7,
          "title": "Региональные склады LDC AGC",
@@ -1134,7 +1140,8 @@ export const partners = {
             "longitude": "23.9671",
             "weight": "0"
          }]
-      }, "all": {
+      },
+      "all": {
          "id": "all",
          "title": "Все компании",
          "description": "Все партнерские компании",

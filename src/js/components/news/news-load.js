@@ -6,7 +6,7 @@ export class NewsLoad {
    constructor() {
       this.$newsContainer = $('#news-list');
 
-      if (!this.$newsContainer) {
+      if (this.$newsContainer.length === 0) {
          return false
       }
 
@@ -42,9 +42,7 @@ export class NewsLoad {
          if (!this.$isLast && !this.$isLoading) {
             this.getNews();
          }
-
       }
-
    }
 
    getNews = async () => {
