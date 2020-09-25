@@ -46,7 +46,7 @@ export class ProjectsPage {
   };
 
   onScroll = async () => {
-    if ($(window).scrollTop() === $(document).height() - $(window).height()) {
+    if ($(window).scrollTop() + $(window).height() >= $(document).height() - 200) {
       if (!this.isLast && !this.isLoading) {
         this.addLoader();
         let data = await this.getData();

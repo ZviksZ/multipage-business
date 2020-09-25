@@ -38,7 +38,7 @@ export class NewsLoad {
    }
 
    onScroll = () => {
-      if  ($(window).scrollTop() === $(document).height() - $(window).height()) {
+      if ($(window).scrollTop() + $(window).height() >= $(document).height() - 200) {
          if (!this.$isLast && !this.$isLoading) {
             this.getNews();
          }
