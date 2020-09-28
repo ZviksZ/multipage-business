@@ -29,7 +29,7 @@ export class ProductsSearch {
          for (let i = 0; i < this.$items.length; i++) {
             let item = $(this.$items[i]);
 
-            if (!item.text().toLowerCase().includes(text)) {
+            if (!item.text().toLowerCase().includes(text.toLowerCase())) {
                item.addClass('hide');
             } else {
                item.removeClass('hide');
@@ -45,16 +45,6 @@ export class ProductsSearch {
          this.$items.removeClass('hide');
          this.$columnBlocks.find('.title').removeClass('hide');
       }
-
-    /*  for (let j = 0; j < this.$columnBlocks.length; j++) {
-         let item = $(this.$columnBlocks[j]);
-
-         if (!item.find('.item:not(.hide)').length){
-            item.find('.title').addClass('hide')
-         } else {
-            item.find('.title').removeClass('hide')
-         }
-      }*/
    }
 
 }

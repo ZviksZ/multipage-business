@@ -63,11 +63,13 @@ export class ProjectsPage {
   };
 
   addLoader = () => {
+    this.isLoading = true;
     if (this.$listContainer.find(".loader-wrap").length === 0) {
       this.$listContainer.append(`<div class="loader-wrap"><div class="loader"></div></div>`);
     }
   };
   removeLoader = () => {
+    this.isLoading = false;
     if (this.$listContainer.find(".loader-wrap").length > 0) {
       this.$listContainer.find(".loader-wrap").remove();
     }
