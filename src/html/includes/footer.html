@@ -224,7 +224,7 @@
 </div>
 <div class="modal-window fade-in custom-form" data-modal="manager-form">
     <div class="modal-content">
-        <form action="callback" class="form manager-form">
+        <form action="managerForm" class="form manager-form">
             <div class="title">
                 <span>Связаться с менеджером</span>
                 <div class="close-btn" data-close-modal-button="manager-form" data-effect-type="open-modal-fade-effect"></div>
@@ -248,7 +248,7 @@
 
                 <label class="field field-input item delay-200">
                     <input class="input-text placeholder validate input-mask" data-placeholder="Удобное время для звонка" data-validate="required"
-                           name="feedback_phone" type="text">
+                           name="feedback_time" type="text">
                     <p class="error-message"></p>
                 </label>
                 <!--  <div class="form-item">
@@ -279,7 +279,7 @@
 </div>
 <div class="modal-window fade-in custom-form" data-modal="question-form">
     <div class="modal-content">
-        <form action="callback" class="form question-form">
+        <form action="questionForm" class="form question-form">
             <div class="title">
                 <span>Задать вопрос</span>
                 <div class="close-btn" data-close-modal-button="question-form" data-effect-type="open-modal-fade-effect"></div>
@@ -353,6 +353,16 @@
                     <p class="error-message"></p>
                 </label>
                 <label class="field field-input item delay-200">
+                    <input class="input-text placeholder validate" data-placeholder="Компания" data-validate="required"
+                           name="company" type="text">
+                    <p class="error-message"></p>
+                </label>
+                <label class="field field-input item delay-200">
+                    <input class="input-text placeholder validate input-mask" data-placeholder="Телефон для связи" data-validate="number_phone-required" data-mask_tpl="phone_plus7"
+                           name="feedback_phone" type="text">
+                    <p class="error-message"></p>
+                </label>
+                <label class="field field-input item delay-200">
                     <input class="input-text placeholder validate" data-placeholder="Название проекта" data-validate="required"
                            name="project_name" type="text">
                     <p class="error-message"></p>
@@ -364,7 +374,7 @@
                 </label>
 
                 <label class="field field-input item delay-200">
-                    <select name="glassType" id="glass-type" class="input-text placeholder validate" data-placeholder="Используемое стекло" data-validate="required">
+                    <select name="glass" id="glass-type" class="input-text placeholder validate" data-placeholder="Используемое стекло" data-validate="required">
                         <option value=""></option>
                     </select>
                     <p class="error-message"></p>
@@ -373,29 +383,29 @@
                 <p class="form-text">Партнер:</p>
                 <label class="field field-input item delay-200">
                     <input class="input-text placeholder" data-placeholder="Переработчик стекла"
-                           name="address" type="text">
+                           name="pererabotka" type="text">
                     <p class="error-message"></p>
                 </label>
                 <label class="field field-input item delay-200">
                     <input class="input-text placeholder " data-placeholder="Архитектор"
-                           name="address" type="text">
+                           name="architrctor" type="text">
                     <p class="error-message"></p>
                 </label>
                 <label class="field field-input item delay-200">
                     <input class="input-text placeholder " data-placeholder="Фасадная компания"
-                           name="address" type="text">
+                           name="fasadCompany" type="text">
                     <p class="error-message"></p>
                 </label>
 
                 <p class="form-text">Другой партнер:</p>
                 <label class="field field-input item delay-200">
                     <input class="input-text placeholder " data-placeholder="Название компании"
-                           name="address" type="text">
+                           name="company2" type="text">
                     <p class="error-message"></p>
                 </label>
                 <label class="field field-input item delay-200">
                     <input class="input-text placeholder " data-placeholder="Вид деятельности"
-                           name="address" type="text">
+                           name="type" type="text">
                     <p class="error-message"></p>
                 </label>
 

@@ -37,24 +37,59 @@ export class MatelacForm {
          $formData[this.name] = $(this).val();
       });
 
-      console.log($formData)
 
-      let data = {
-         sub:49,
-         cc:72,
-         f_name:$formData.career_name,
-         f_phone:$formData.career_phone,
-         f_file:$formData.career_file,
-         catalogue:1,
-         posting:1,
-      };
+      let data = {};
+
+      switch (currentForm.attr('action')) {
+         case 'takeSample':
+            data = {
+               isNaked: 1,
+               catalogue: 1,
+               sub:  38,
+               cc: 46,
+               posting: 1,
+               f_contact:$formData.feedback_name,
+               f_company:$formData.company,
+               f_phone:$formData.feedback_phone,
+               f_email:$formData.feedback_email,
+               f_count:$formData.countSamples,
+            }
+            break;
+         case 'managerForm':
+            data = {
+               isNaked: 1,
+               catalogue: 1,
+               sub:  38,
+               cc: 44,
+               posting: 1,
+               f_contact:$formData.feedback_name,
+               f_company:$formData.company,
+               f_phone:$formData.feedback_phone,
+               f_time:$formData.feedback_time,
+            }
+            break;
+         case 'questionForm':
+            data = {
+               isNaked: 1,
+               catalogue: 1,
+               sub:  38,
+               cc: 48,
+               posting: 1,
+               f_contact:$formData.feedback_name,
+               f_company:$formData.company,
+               f_phone:$formData.feedback_phone,
+               f_email:$formData.feedback_email,
+               f_question:$formData.feedback_text,
+            }
+            break;
+      }
 
 
       $.ajax({
-         url: currentForm.attr('action'),
+         url: '/netcat/add.php',
          type: 'POST',
          dataType: 'text',
-         data: $formData,
+         data: data,
          success: (res) => {
             this.successForm(currentForm)
          },

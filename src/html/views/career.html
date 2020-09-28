@@ -39,13 +39,13 @@ footer: "black"
             <div class="form-row">
                 <label class="field field-input item delay-200">
                     <input class="input-text placeholder validate" placeholder="Ваше Имя" data-placeholder="Как к вам обращаться" data-validate="required"
-                           name="career_name" type="text">
+                           name="f_name" type="text">
                     <p class="error-message"></p>
                 </label>
 
                 <label class="field field-input item delay-300">
                     <input class="input-text placeholder validate input-mask" placeholder="Ваш телефон" data-mask_tpl="phone_plus7" data-placeholder="Номер телефона" data-validate="mobile_phone"
-                           name="career_phone" type="text" value="" inputmode="text">
+                           name="f_phone" type="text" value="" inputmode="text">
                     <p class="error-message"></p>
                 </label>
             </div>
@@ -55,8 +55,14 @@ footer: "black"
 
 
             <div style='height: 0px;width: 0px; overflow:hidden;'>
-                <input id="career_file-input" accept=".doc, .docx, .pdf, .jpg" type="file" value="upload" name="career_file" />
+                <input id="career_file-input" accept=".doc, .docx, .pdf, .jpg" type="file" value="upload" name="f_rezume" />
             </div>
+
+            <input type="text" hidden value="44" name="cc"/>
+            <input type="text" hidden value="38" name="sub"/>
+            <input type="text" hidden value="1" name="posting"/>
+            <input type="text" hidden value="1" name="catalogue"/>
+            <input type="text" hidden value="1" name="isNaked"/>
 
 
             <div class="form-message">

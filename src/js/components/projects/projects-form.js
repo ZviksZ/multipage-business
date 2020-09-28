@@ -63,21 +63,31 @@ export class ProjectsForm {
       console.log($formData)
 
       let data = {
-         sub:49,
-         cc:72,
-         f_name:$formData.career_name,
-         f_phone:$formData.career_phone,
-         f_file:$formData.career_file,
-         catalogue:1,
-         posting:1,
+         isNaked: 1,
+         catalogue: 1,
+         sub:  38,
+         cc: 47,
+         posting: 1,
+         f_contact:$formData.feedback_name,
+         f_company:$formData.company,
+         f_phone:$formData.feedback_phone,
+         f_email:$formData.feedback_email,
+         f_projectName:$formData.project_name,
+         f_glass:$formData.glass,
+         f_pererabotka:$formData.pererabotka,
+         f_architrctor:$formData.architrctor,
+         f_fasadCompany:$formData.fasadCompany,
+         f_company2:$formData.company2,
+         f_type:$formData.type,
+         f_projectDesc:$formData.feedback_text,
       };
 
 
       $.ajax({
-         url: currentForm.attr('action'),
+         url: '/netcat/add.php',
          type: 'POST',
          dataType: 'text',
-         data: $formData,
+         data: data,
          success: (res) => {
             this.successForm(currentForm)
          },

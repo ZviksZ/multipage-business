@@ -34,35 +34,60 @@ export class CareerForm {
 
    fileInputChange = (e) => {
       let file = e.target.value;
+
       let fileName = file.split("\\");
 
       this.$fileBtn.text(fileName[fileName.length - 1]);
    }
 
-   onSubmit = (e) => {
+   onSubmit = async (e) => {
       e.preventDefault();
 
-      let $formData = {};
+     /* let $formData = {};
 
       this.$form.find('input, textarea, select').each(function() {
          $formData[this.name] = $(this).val();
       });
 
-      let data = {
+
+
+      /!*let data = {
          isNaked: 1,
          f_name:$formData.career_name,
          f_phone: $formData.career_phone,
-         f_rezume: $formData.career_file,
+         f_rezume:  new FormData(file),
          catalogue: 1,
-         cc: 13,
-         sub: 11
+         cc: 44,
+         sub: 38,
+         posting: 1
+      }*!/
+      let form = $(e.currentTarget)*/
+
+
+      let form = document.getElementById('career_form')
+      let file = document.getElementById('career_file-input').files[0];
+      let formData = new FormData(form);
+      formData.append( 'f_rezume', file );
+
+      try {
+         await fetch('/netcat/add.php', {
+            method: 'POST',
+            body: formData
+         });
+
+         this.successForm()
+      } catch (e) {
+         this.errorForm()
       }
 
-      $.ajax({
+
+
+      this.successForm()
+
+    /*  $.ajax({
          url: '/netcat/add.php',
          type: 'POST',
-         dataType: 'text',
-         data: data,
+         data: formData,
          success: (res) => {
             this.successForm()
          },
@@ -70,7 +95,7 @@ export class CareerForm {
             this.errorForm()
          },
          timeout: 30000
-      });
+      });*/
    }
 
    successForm = () => {
