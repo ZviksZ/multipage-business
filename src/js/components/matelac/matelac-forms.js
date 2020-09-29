@@ -60,7 +60,7 @@ export class MatelacForm {
                isNaked: 1,
                catalogue: 1,
                sub:  38,
-               cc: 44,
+               cc: 45,
                posting: 1,
                f_contact:$formData.feedback_name,
                f_company:$formData.company,

@@ -29,10 +29,11 @@ export class InitPartnersPage {
    }
 
    init = async () => {
-      this.$data = await this.getData();
+      let data = await this.getData();
+      this.$data = data;
 
       this.initMap();
-      this.initStartView(this.$data);
+      this.initStartView(data);
       this.initHandlers();
    }
 
@@ -383,34 +384,36 @@ export class InitPartnersPage {
 
          this.$typesList.append(this.getTypeTemplate(id,title));
 
-         for (let j = 0; j < data[key].partners.length; j++) {
-            let partner = data[key].partners[j];
+         if (data[key].partners) {
+            for (let j = 0; j < data[key].partners.length; j++) {
+               let partner = data[key].partners[j];
 
-            let marker = new google.maps.Marker({
-               position:
-                  {
-                     lat: +partner.latitude,
-                     lng: +partner.longitude
-                  },
-               map: this.$map,
-               category: id,
-               title: partner.title
-            });
+               let marker = new google.maps.Marker({
+                  position:
+                     {
+                        lat: +partner.latitude,
+                        lng: +partner.longitude
+                     },
+                  map: this.$map,
+                  category: id,
+                  title: partner.title
+               });
 
-            this.$gmarkersArray = [...this.$gmarkersArray, marker]
-
-
-
-            marker.addListener('click', () => {
-               let template = this.getPartnerDetailTemplate(partner);
+               this.$gmarkersArray = [...this.$gmarkersArray, marker]
 
 
-               this.$modal.open('partners-modal', 'open-modal-fade-effect');
+
+               marker.addListener('click', () => {
+                  let template = this.getPartnerDetailTemplate(partner);
 
 
-               $('#partners-modal').find('.modal-info').html(template);
-            });
+                  this.$modal.open('partners-modal', 'open-modal-fade-effect');
 
+
+                  $('#partners-modal').find('.modal-info').html(template);
+               });
+
+            }
          }
       }
 
@@ -419,22 +422,9 @@ export class InitPartnersPage {
    }
 
    getData = () => {
-      let groups = partners.groups;
-
-      $.ajax({
-         url: '/getPartners',
-         type: 'GET',
-         dataType: 'text',
-         success: (res) => {
-            groups = partners.groups;
-         },
-         error: (res) => {
-            groups = partners.groups;
-         },
-         timeout: 30000
-      });
-
-      return groups;
+      return fetch(`${location.pathname}?nc_ctpl=45&isNaked=1`)
+         .then(res => res.json())
+         .catch(err => this.onError());
    }
 
    initHandlers = () => {
@@ -542,8 +532,10 @@ export class InitPartnersPage {
          if (key === this.$currentType) {
             partnersTitle = this.$data[key].title;
 
-            for (let j = 0; j < this.$data[key].partners.length; j++) {
-               partnersList += this.getPartnerTemplate(this.$data[key].partners[j].id, this.$data[key].partners[j].title);
+            if (this.$data[key].partners) {
+               for (let j = 0; j < this.$data[key].partners.length; j++) {
+                  partnersList += this.getPartnerTemplate(this.$data[key].partners[j].id, this.$data[key].partners[j].title);
+               }
             }
          }
       }

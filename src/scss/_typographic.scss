@@ -164,49 +164,7 @@ h3, .h3 {
         font-size: 16px;
     }
 }
-/*h4, .h4 {
-    @extend %title-shared;
-    font-size: 38px;
 
-    @include mobile {
-        font-size: 24px;
-    }
-}
-h5, .h5 {
-    @extend %title-shared;
-    font-size: 30px;
-
-    @include mobile {
-        font-size: 22px;
-    }
-}
-h6, .h6 {
-    @extend %title-shared;
-    font-size: 24px;
-
-    @include mobile {
-        font-size: 20px;
-    }
-}*/
-/*%text-shared {
-
-}
-%text-small-shared {
-    @extend %text-shared;
-    font-size: 12px;
-
-    @include mobile {
-        font-size: 11px;
-    }
-}
-%text-medium-shared {
-    @extend %text-shared;
-    font-size: 18px;
-}
-%text-big-shared {
-    @extend %text-shared;
-    font-size: 20px;
-}*/
 
 p {
     margin: 20px 0;
@@ -283,6 +241,11 @@ a {
     @include mobile {
         font-size: 16px;
     }
+}
+
+blockquote {
+    padding-left: 20%;
+    padding-right: 10%;
 }
 
 .bold-text {
