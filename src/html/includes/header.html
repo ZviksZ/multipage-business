@@ -16,6 +16,27 @@
   <link href="css/style.bundle.css?v=1" rel="stylesheet"/>
 
     <title><%=title%></title>
+
+    <!-- FaceBook -->
+    <script>
+       window.fbAsyncInit = function() {
+          FB.init({
+             appId            : '614578855565297',
+             autoLogAppEvents : true,
+             xfbml            : true,
+             version          : 'v3.1'
+          });
+       };
+
+       (function(d, s, id){
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "https://connect.facebook.net/en_US/sdk.js";
+          fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- End FaceBook -->
 </head>
 <body>
 

@@ -10,11 +10,11 @@ import {GlassBusForm, GlassBusSlider}                  from "./components/glass-
 import {Header}                                        from './components/header';
 import {HeaderMenu}                                    from './components/header-menu';
 import {MatelacJuxtapose, MatelacGallery, MatelacForm} from "./components/matelac";
-import {ModalWindowFullScreen}                                       from './components/modal-window-fullscreen';
-import {PageFilter}                                                                                 from './components/page-filter';
+import {ModalWindowFullScreen}                                                                                from './components/modal-window-fullscreen';
+import {PageFilter}                                                                                           from './components/page-filter';
 import {InitPartnersPage}                                                                                     from "./components/partners";
 import {ProductsModal, ProductsSlider, ProductsTabs}                                                          from './components/products';
-import {NewsLoad}                                                                                             from './components/news';
+import {NewsLoad, NewsSendForm}                                                                               from './components/news';
 import {MediaVideo}                                                                                           from './components/media-video';
 import {GlassesSlider, ProductsInfoSlider, ProductsMainSlider, ProductsSearch, ProductsSmallSlider, ShowMore} from "./components/products-new";
 import {ProjectsForm, ProjectSlider, ProjectsPage, ProjectTopSlider}                                          from "./components/projects";
@@ -68,6 +68,7 @@ $(function () {
 
    // инициализация функционала загрузки новостей
    new NewsLoad();
+   new NewsSendForm(modal);
 
    // инициализация функционала модального окна с видео
    new MediaVideo();

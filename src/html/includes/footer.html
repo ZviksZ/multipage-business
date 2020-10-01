@@ -83,7 +83,7 @@
         </div>
 
         <div class="modal-info">
-            <form class="form" action="">
+            <form class="form" action="" id="news-form">
                 <label class="field field-input item">
                     <input class="input-text placeholder validate input-mask" data-placeholder="Ваш email" placeholder="mail@example.ru" data-validate="email"
                            name="news_email" type="text" value="" inputmode="text">
@@ -97,9 +97,9 @@
             <a href="#" class="close-btn" data-close-modal-button="news-email-modal" data-effect-type="open-modal-fade-effect">
                 Закрыть
             </a>
-            <a href="#" class="button" id="news-email-submit">
+            <button class="button" form="news-form" id="news-email-submit" data-close-modal-button="news-email-modal" data-effect-type="open-modal-fade-effect">
                 Отправить
-            </a>
+            </button>
         </div>
 
 
@@ -448,6 +448,18 @@
 <script defer src="dflip/js/dflip.js"></script>
 <script data-cfasync="false">
    if(window.DFLIP && DFLIP.parseBooks){DFLIP.parseBooks();}
+</script>
+
+<script type="text/javascript">
+   function shareFb() {
+      var currUrl = window.location.href;
+      console.log(currUrl);
+      FB.ui({
+         method: 'share',
+         mobile_iframe: true,
+         href: currUrl,
+      }, function(response){});
+   }
 </script>
 
 </body>
