@@ -15,11 +15,11 @@ export class MatelacJuxtapose {
       let slider = new juxtapose.JXSlider('#juxtapose',
          [
             {
-               src: './img/agc/matelac/clear.jpg',
+               src: '/img/agc/matelac/clear.jpg',
                label: 'Matelac Silver Clear'
             },
             {
-               src: './img/agc/matelac/crystal.jpg',
+               src: '/img/agc/matelac/crystal.jpg',
                label: 'Matelac Silver Crystalvision'
             }
          ],
