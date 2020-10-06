@@ -87,7 +87,7 @@ export class NewsLoad {
    }
 
    getNewsPage = async () => {
-      return fetch(`/news/?nc_ctpl=22&isNaked=1&curPos=${this.currentPos + 10}`).then(res => res.json()).catch((err) => this.onError())
+      return fetch(`${location.pathname}?nc_ctpl=22&isNaked=1&curPos=${this.currentPos + 10}`).then(res => res.json()).catch((err) => this.onError())
       //return getMockupNews(pageNumber);
    }
 
