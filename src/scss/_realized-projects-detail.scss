@@ -234,7 +234,10 @@
             right: 0;
             width: 20%;
             background: transparent !important;
-            overflow: visible;
+            overflow: hidden;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
             @include mobile {
                 width: 30%;
             }
@@ -242,11 +245,9 @@
                 width: 50%;
             }
             .ro__slider {
-                width: 100%;
-                overflow: hidden;
-
+                width: 80%;
+                overflow: visible;
                 .swiper-slide {
-                    width: 80%;
                     &:before {
                         display: block;
                         content: '';
@@ -267,6 +268,7 @@
                 right: auto;
                 margin-top: 15px !important;
                 margin-right: 20px !important;
+                margin-left: auto;
             }
         }
     }

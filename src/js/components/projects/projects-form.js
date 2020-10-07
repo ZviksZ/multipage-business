@@ -33,18 +33,7 @@ export class ProjectsForm {
    }
 
    getGlassData = () => {
-      $.ajax({
-         url: '/getGlassData',
-         type: 'GET',
-         dataType: 'text',
-         success: (res) => {
-            console.log('success')
-         },
-         error: (res) => {
-            console.log('error')
-         },
-         timeout: 30000
-      });
+
 
       return [{name: '1', value: '1'}, {name: '2', value: '2'}, {name: '3', value: '3'}]
    }

@@ -5,7 +5,7 @@ export class ProjectsPage {
   constructor(modal) {
     this.$modal = modal;
     this.$container = $("#ro-section");
-    if (!this.$container.length) return false;
+    if (this.$container.length === 0) return false;
 
     this.$tabs = this.$container.find(".ro-tab");
     this.$mapContainer = this.$container.find("#ro_map");
@@ -33,8 +33,7 @@ export class ProjectsPage {
 
   getMapData = () => {
     return fetch(`${location.pathname}?nc_ctpl=36&isNaked=1`)
-      .then(res => res.json())
-      .catch(err => this.onError());
+      .then(res => res.json());
   };
 
   getData = () => {

@@ -14,6 +14,8 @@ export class ProjectTopSlider {
    init = () => {
       this.initPagination();
       this.initSlider();
+
+      console.log(+this.$instance.activeIndex + 1)
    }
 
    initSlider = () => {
@@ -23,9 +25,9 @@ export class ProjectTopSlider {
          preloadImages: false,
          lazy: true,
          resistance: false,
-         freeMode: true,
-         slidesPerView: 'auto',
+         slidesPerView: 1,
          spaceBetween: 30,
+         freeMode: true,
          navigation: {
             nextEl: '.ro_top__slider-wrap .ro-top__slider-controls .swiper-button-next',
             prevEl: '.ro_top__slider-wrap .ro-top__slider-controls .swiper-button-prev'
@@ -37,18 +39,17 @@ export class ProjectTopSlider {
          on: {
             slideChange: () => {
                let slideIndex = +this.$instance.activeIndex + 1;
-
-
                this.$sliderControls.find('.swiper-pagination-current').text(slideIndex);
             },
-            reachEnd: () => {
+           /* reachEnd: () => {
+               console.log('end')
                setTimeout(() => {
                   this.$sliderControls.find('.swiper-pagination-current').text(this.totalSlides);
 
                   this.$instance.activeIndex = this.totalSlides + '';
                }, 100)
 
-            }
+            }*/
 
          }
       });

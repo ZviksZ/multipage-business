@@ -1,20 +1,27 @@
-import * as $                    from 'jquery';
+import * as $ from "jquery";
 
 export class ShowMore {
-   constructor() {
-      this.$btn = $('#show-more');
+  constructor() {
+    this.$btn = $("#show-more");
 
-      if (this.$btn.length === 0) return false;
+    if (this.$btn.length === 0) return false;
 
-      this.init();
-   }
+    this.init();
+  }
 
-   init = () => {
-      this.$btn.on('click', this.showMore)
-   }
+  init = () => {
+    if (this.$btn.closest(".text").find(".hide-mobile").length !== 0) {
+      this.$btn.on("click", this.showMore);
+    } else {
+      this.$btn.addClass("hide-mobile");
+    }
+  };
 
-   showMore = () => {
-      this.$btn.closest('.text').find('.hide-mobile').removeClass('hide-mobile');
-      this.$btn.remove();
-   }
+  showMore = () => {
+    this.$btn
+      .closest(".text")
+      .find(".hide-mobile")
+      .removeClass("hide-mobile");
+    this.$btn.remove();
+  };
 }
