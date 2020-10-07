@@ -5,7 +5,7 @@ export class ProjectsPage {
   constructor(modal) {
     this.$modal = modal;
     this.$container = $("#ro-section");
-    if (this.$container.length === 0) return false;
+    if (this.$container.length === 0 || $('#ro-content').length > 0) return false;
 
     this.$tabs = this.$container.find(".ro-tab");
     this.$mapContainer = this.$container.find("#ro_map");
@@ -543,7 +543,7 @@ export class ProjectsPage {
                 </div>
                 <a href=${project.link} class="detail-link">
                         Подробнее
-                        <img src="./img/agc/newsitem-read-more.svg" alt="">                   
+                        <img src="/img/agc/newsitem-read-more.svg" alt="">                   
                     </a>
          
          </div>      

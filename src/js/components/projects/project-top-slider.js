@@ -4,7 +4,7 @@ import Swiper from 'swiper/js/swiper.min';
 export class ProjectTopSlider {
    constructor() {
       this.$slider = $('#ro-top_slider');
-      if (!this.$slider.length) return false;
+      if (this.$slider.length === 0) return false;
 
       this.$sliderControls = $('#ro-top_slider-controls');
 
@@ -12,10 +12,13 @@ export class ProjectTopSlider {
    }
 
    init = () => {
-      this.initPagination();
-      this.initSlider();
+      if (this.$slider.find('.swiper-slide').length > 0) {
+         this.initPagination();
+         this.initSlider();
+      } else {
+         $('#ro-top_slider-controls').hide();
+      }
 
-      console.log(+this.$instance.activeIndex + 1)
    }
 
    initSlider = () => {
