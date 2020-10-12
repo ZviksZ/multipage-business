@@ -498,6 +498,7 @@
 }
 
 .ro__page-detail {
+    flex-direction: column;
     .ro__content {
         width: 100% !important;
     }
