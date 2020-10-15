@@ -371,9 +371,12 @@
         .product-glasses_tabs {
             width: 100%;
             padding-left: 80px;
-            display: flex;
-            flex-wrap: wrap;
             padding-top: 20px;
+            .product-glasses-wrap {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+            }
             .item + .item {
                 margin-left: 2.5%;
             }
@@ -382,7 +385,9 @@
                 height: 100%;
                 margin-bottom: 10px;
                 cursor: pointer;
-
+                &.hide-item {
+                    display: none;
+                }
                 .image {
                     position: relative;
                     display: flex;
@@ -445,6 +450,12 @@
                     }
                 }
             }
+
+            &.show-more-items {
+                .item.hide-item {
+                    display: block;
+                }
+            }
             @include mobile {
                 .item {
                     width: 23%;
@@ -458,7 +469,9 @@
             }
 
             @include only-mobile {
-                justify-content: space-between;
+                .product-glasses-wrap {
+                    justify-content: space-between;
+                }
                 .item {
                     width: 48%;
                     margin: 0 0 25px;

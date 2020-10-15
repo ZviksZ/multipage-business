@@ -13,9 +13,24 @@ export class GlassesSlider {
    }
 
    init = () => {
+      if (this.$tabs.find('.show-more-btn').length > 0) {
+         this.$tabs.find('.show-more-btn').on('click', this.initTabsShowMore)
+      }
       this.initSlider();
       this.initTabs();
       this.initProgressBars();
+   }
+
+   initTabsShowMore = (e) => {
+      e.preventDefault();
+
+      if (this.$tabs.hasClass('show-more-items')) {
+         this.$tabs.removeClass('show-more-items')
+         this.$tabs.find('.show-more-btn').text('Показать больше')
+      } else {
+         this.$tabs.addClass('show-more-items')
+         this.$tabs.find('.show-more-btn').text('Скрыть')
+      }
    }
 
    initSlider = () => {
