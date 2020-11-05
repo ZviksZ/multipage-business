@@ -168,7 +168,7 @@ export class FullscreenScroll {
   };
 
   transform = translateY => {
-    this.container.style.transform = "translateY(" + translateY + "px)";
+    this.container.style.transform = "translateY(" + translateY + "px) translateZ(0)";
 
     setTimeout(() => {
       this.animating = false;

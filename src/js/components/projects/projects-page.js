@@ -22,10 +22,12 @@ export class ProjectsPage {
   }
 
   init = async () => {
-    let data = await this.getMapData();
+    if (this.$container.closest('#product-projects').length === 0) {
+      let data = await this.getMapData();
+      this.initMap();
+      this.initProjectsView(data);
+    }
 
-    this.initMap();
-    this.initProjectsView(data);
     this.initHandlers();
 
     $(window).on("scroll", this.onScroll);
@@ -75,8 +77,6 @@ export class ProjectsPage {
   };
 
   initProjectsView = data => {
-    //let template = ``;
-
     let pinImage = new google.maps.MarkerImage(
       "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|E31A52",
       new google.maps.Size(30, 45),
@@ -86,8 +86,6 @@ export class ProjectsPage {
 
     for (let i = 0; i < data.length; i++) {
       let project = data[i];
-
-      //template += this.getProjectTemplate(project);
 
       let marker = new google.maps.Marker({
         position: {
@@ -109,7 +107,6 @@ export class ProjectsPage {
           .html(template);
       });
     }
-    //this.$listContainer.append(template);
   };
 
   initProjectsTemplates = data => {
