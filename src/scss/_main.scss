@@ -394,6 +394,9 @@
                 color: $colorWhite;
                 margin-top: 25px;
                 text-align: center;
+                @include desktop-small {
+                    font-size: 18px;
+                }
             }
         }
 
@@ -469,11 +472,16 @@
                     .news-content {
                         width: 85%;
                         .news-title {
-                            font-size: 25px;
+                            font-size: 23px;
                         }
                     }
                 }
-
+                .more-btn-block {
+                    .btn {
+                        font-size: 18px;
+                        padding: 10px 16px;
+                    }
+                }
             }
         }
 

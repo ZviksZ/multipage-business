@@ -59,6 +59,9 @@
                 color: $colorWhite;
             }
         }
+        @include desktop-small {
+            font-size: 20px;
+        }
         @include mobile {
             font-size: 18px;
         }

@@ -11,6 +11,16 @@
         font-size: 45px;
         margin-bottom: 30px;
     }
+    @include desktop-small {
+        .big {
+            font-size: 50px;
+            margin-bottom: 25px;
+        }
+        .text {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+    }
 
     @include mobile {
         .big {

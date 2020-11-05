@@ -181,7 +181,6 @@
                 }
             }
             @include desktop-small {
-                width: 48%;
                 .bg-wrap {
                     height: 75%;
                 }
@@ -190,18 +189,19 @@
                     .text {
                         width: 75%;
                         .title {
-                            height: 48px;
-                            font-size: 24px;
-                            line-height: 24px;
+                            height: 52px;
+                            font-size: 19px;
+                            line-height: 21px;
+                            margin-top: 4px;
                         }
-                        .date {
-                            margin-top: 12px;
+                        .type {
+                            margin-top: 2px;
                         }
                     }
                     .btn {
                         width: 10%;
                         padding: 0 5px;
-                        font-size: 19px;
+                        font-size: 17px;
                         span {
                             font-size: 0;
                             width: 0;
