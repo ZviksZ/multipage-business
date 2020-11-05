@@ -15,27 +15,11 @@ export class ProjectsForm {
    init = () => {
       initFormWithValidate(this.$form);
 
-      this.glassData = this.getGlassData();
-
-      this.initGlassSelect();
       this.initHandlers();
    }
 
    initHandlers = () => {
       this.$form.on('submit', this.onSubmit);
-   }
-
-   initGlassSelect = () => {
-      for (let i = 0; i < this.glassData.length; i++) {
-         let item = this.glassData[i];
-         this.$glassSelect.append(`<option value=${item.value}>${item.name}</option>`)
-      }
-   }
-
-   getGlassData = () => {
-
-
-      return [{name: '1', value: '1'}, {name: '2', value: '2'}, {name: '3', value: '3'}]
    }
 
    onSubmit = (e) => {
