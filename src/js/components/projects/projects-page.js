@@ -26,11 +26,11 @@ export class ProjectsPage {
       let data = await this.getMapData();
       this.initMap();
       this.initProjectsView(data);
+
+      this.initHandlers();
+
+      $(window).on("scroll", this.onScroll);
     }
-
-    this.initHandlers();
-
-    $(window).on("scroll", this.onScroll);
   };
 
   getMapData = () => {
