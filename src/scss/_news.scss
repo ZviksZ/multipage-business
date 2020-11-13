@@ -256,12 +256,13 @@
                     height: 70%;
                 }
                 .item-info {
-                    height: 30%;
+                    height: auto;
                     padding-top: 15px;
                     .text {
                         justify-content: flex-start;
                         .title {
-                            height: 40px;
+                            padding-top: 10px;
+                            height: auto;
                             font-size: 20px;
                             line-height: 20px;
                         }
@@ -274,10 +275,16 @@
                 &.item-first {
                     width: 98%;
                     .item-info {
-                        height: 30%;
+                        height: auto;
                         padding-top: 15px;
                         .text {
                             justify-content: flex-start;
+                            .title {
+                                padding-top: 10px;
+                                height: auto;
+                                font-size: 20px;
+                                line-height: 20px;
+                            }
                         }
                     }
                     .bg-wrap {
