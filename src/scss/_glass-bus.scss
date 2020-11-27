@@ -315,3 +315,21 @@
     }
 }
 
+.pyrobel-form.glass-bus-form {
+    @include mobile {
+        .form {
+            padding-bottom: 0 !important;
+            .form-footer {
+                flex-wrap: wrap;
+                justify-content: center !important;
+                .select-types-info {
+                    width: 100%;
+                    text-align: left;
+                }
+                .button {
+                    margin-top: 15px !important;
+                }
+            }
+        }
+    }
+}

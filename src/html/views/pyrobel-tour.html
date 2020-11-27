@@ -1,0 +1,100 @@
+<% var data = {
+title: "Pyrobel tour | AGC Glass Russia",
+url: "pyrobel-tour.html",
+header: "white",
+footer: "black"
+}; %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+
+<div class="page-header">
+    <div class="page-header_bg" style="background-image: url('./img/pyrobel/bg.jpg')"></div>
+    <div class="page-header_overlay"></div>
+    <h1 class="h1 page-header_title color-white">Pyrobel tour</h1>
+</div>
+
+
+<section class="section glass-bus-info padding-top no-padding-bottom">
+    <div class="container container-sm">
+        <div class="caption-with-line caption-black caption-no-overflow margin-bottom-x3 margin-top-x2">
+            <h2 class="h2 color-text">
+                Pyrobel tour
+            </h2>
+        </div>
+        <p>
+            Соединение знаний и передовых технологий — одна из главных миссий группы AGC, и в этом стремлении создаются инновационные и технологичные сервисы для клиентов и партнеров компании. Просим Вас зарегистрироваться, чтобы воспользоваться сервисом 3D-тура и ознакомиться со зданиями, в которых установлены огнестойкие конструкции Pyrobel/ Pyropane.
+        </p>
+    </div>
+</section>
+
+
+<section class="section glass-bus-form pyrobel-form custom-form">
+    <div class="container">
+        <form action="/" class="form" id="pyrobel-form" data-tour="">
+            <div class="title">
+                <span>Регистрация на 3D-тур</span>
+            </div>
+            <div class="form-fields">
+                <label class="field field-input item delay-200">
+                    <input class="input-text placeholder validate" data-placeholder="Фамилия" data-validate="required"
+                           name="f_surname" type="text">
+                    <p class="error-message"></p>
+                </label>
+                <label class="field field-input item delay-200">
+                    <input class="input-text placeholder validate" data-placeholder="Имя" data-validate="required"
+                           name="f_name" type="text">
+                    <p class="error-message"></p>
+                </label>
+                <label class="field field-input item delay-200">
+                    <input class="input-text placeholder " data-placeholder="Отчество"
+                           name="f_name" type="text">
+                    <p class="error-message"></p>
+                </label>
+                <label class="field field-input item delay-200">
+                    <input class="input-text placeholder validate" data-placeholder="Электронная почта" data-validate="email-required"
+                           name="f_email" type="text">
+                    <p class="error-message"></p>
+                </label>
+                <label class="field field-input item delay-200">
+                    <input class="input-text placeholder " data-placeholder="Компания"
+                           name="f_company" type="text">
+                    <p class="error-message"></p>
+                </label>
+                <label class="field field-input item delay-200">
+                    <input class="input-text placeholder input-mask" data-placeholder="Телефон для связи" data-mask_tpl="phone_plus7"
+                           name="f_phone" type="text">
+                    <p class="error-message"></p>
+                </label>
+                <input type="text" hidden name="cc" value="3">
+                <input type="text" hidden name="sub" value="3">
+                <input type="text" hidden name="catalogue" value="3">
+                <input type="text" hidden name="posting" value="3">
+
+                <div class="form-footer">
+                    <div class="select-types-info">
+                        Нажимая на кнопку, вы даете согласие на обработку своих персональных данных. <a href="#">Политика конфиденциальности</a>
+                    </div>
+
+
+
+                    <button type="submit" class="button no-margin-top no-margin-bottom margin-left-x2">Войти в Тур</button>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="form-message">
+                <div class="form-info">
+                    <span class="message-icon success"><img src="./img/success.svg" alt="success"></span>
+                    <span class="message-icon error"><img src="./img/error.svg" alt="error"></span>
+                    <p class="message-title"></p>
+                    <p class="message-subtitle"></p>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>

@@ -18,6 +18,7 @@ import {NewsLoad, NewsSendForm}                                                 
 import {MediaVideo}                                                                                           from './components/media-video';
 import {GlassesSlider, ProductsInfoSlider, ProductsMainSlider, ProductsSearch, ProductsSmallSlider, ShowMore} from "./components/products-new";
 import {ProjectsForm, ProjectSlider, ProjectsPage, ProjectTopSlider}                                          from "./components/projects";
+import {PyrobelForm}                                                                                          from "./components/pyrobel-tour";
 import {SearchPage}                                                                                           from "./components/search-page";
 import {WidgetTabs}                                                                                           from "./components/widgets-tabs";
 
@@ -91,6 +92,8 @@ $(function () {
    //Glass Bus Page
    new GlassBusSlider();
    new GlassBusForm();
+
+   new PyrobelForm();
 
    //Страница проектов
    new ProjectTopSlider();
