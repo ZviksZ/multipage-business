@@ -7,7 +7,7 @@ footer: "black"
 <%= _.template(require('./../includes/header.html').default)(data) %>
 
 <div class="page-header">
-    <div class="page-header_bg" style="background-image: url('./img/pyrobel/bg.jpg')"></div>
+    <div class="page-header_bg" style="background-image: url('/img/pyrobel/bg.jpg')"></div>
     <div class="page-header_overlay"></div>
     <h1 class="h1 page-header_title color-white">Pyrobel tour</h1>
 </div>
@@ -46,7 +46,7 @@ footer: "black"
                 </label>
                 <label class="field field-input item delay-200">
                     <input class="input-text placeholder " data-placeholder="Отчество"
-                           name="f_name" type="text">
+                           name="f_patronymic" type="text">
                     <p class="error-message"></p>
                 </label>
                 <label class="field field-input item delay-200">
@@ -64,10 +64,10 @@ footer: "black"
                            name="f_phone" type="text">
                     <p class="error-message"></p>
                 </label>
-                <input type="text" hidden name="cc" value="3">
-                <input type="text" hidden name="sub" value="3">
-                <input type="text" hidden name="catalogue" value="3">
-                <input type="text" hidden name="posting" value="3">
+                <input type="text" hidden name="cc" value="52">
+                <input type="text" hidden name="sub" value="40">
+                <input type="text" hidden name="catalogue" value="1">
+                <input type="text" hidden name="posting" value="1">
 
                 <div class="form-footer">
                     <div class="select-types-info">
@@ -86,8 +86,8 @@ footer: "black"
 
             <div class="form-message">
                 <div class="form-info">
-                    <span class="message-icon success"><img src="./img/success.svg" alt="success"></span>
-                    <span class="message-icon error"><img src="./img/error.svg" alt="error"></span>
+                    <span class="message-icon success"><img src="/img/success.svg" alt="success"></span>
+                    <span class="message-icon error"><img src="/img/error.svg" alt="error"></span>
                     <p class="message-title"></p>
                     <p class="message-subtitle"></p>
                 </div>
